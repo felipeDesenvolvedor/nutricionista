@@ -1,0 +1,31 @@
+.painel-lado-esquerdo {
+    background: #222d32;
+    color: #fff;
+}
+
+.foto-usuario {
+    width: 43px;
+    border-radius:100%;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:10px;
+}
+
+.plataforma {
+    font-size:20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #008d4c;
+}
+
+.menu-painel {
+    padding:0 10px;
+}
+
+.fa {
+	margin-right: 10px;
+}

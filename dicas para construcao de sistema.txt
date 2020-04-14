@@ -1,0 +1,14 @@
+<!-- 4 passos para criar um sistema -->
+
+<!-- Passo 1 -->
+    <!-- Fazer uma lista de todas as funcionalidades do sistema -->
+
+<!-- Passo 2 -->
+    <!-- Fazer um planejamento\esboço geral do sistema -->
+
+<!-- Passo 3 -->
+    <!-- Desenhar o banco de dados -->
+
+<!-- Passo 4 -->
+   <!-- Desenhar a primeira tela\ Programar -->
+   <!-- Pensar em uma tela de cada vez -->

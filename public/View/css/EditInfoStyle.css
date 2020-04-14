@@ -1,0 +1,49 @@
+/* .fa {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ } */
+
+.actions {
+    display:none
+}
+
+.actions-active .actions{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -100px;
+    top: 0;
+    width: 100px;
+}
+
+.info-actions {
+    position: relative;
+}
+
+.actions-active td {
+    border-color:blue;
+}
+
+.actions-active:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: solid 1px blue;
+}
+
+.actions .info-actions {
+
+}
+
+.container-pacientes {
+    overflow: visible;
+}

@@ -1,0 +1,9 @@
+.erro-container {
+    background-color: red;
+    display:inline-block;
+    color:#fff;
+}
+
+.erro-show {
+    padding: 10px;
+}
