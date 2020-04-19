@@ -1,5 +1,5 @@
 <?php
-    require_once $path.'\autoload.php';
+    require_once($GLOBALS['caminhoDosArquivos']['autoload']);
 
     use Nutricionista\Model\ModelPessoa;
     use Nutricionista\Model\ModelPacienteCaracteristicasFisicas;
@@ -10,8 +10,4 @@
     $ModelPacienteCaracteristicasFisicas = new ModelPacienteCaracteristicasFisicas(10.1, 10.1, 10.1, 10.1);
     $endereco                            = new ModelEndereco('08490009', 'Rua barão de gouvinhas', '4', 'São Paulo', 'Prestes maia', 'casa 2');
     $pacientes                           = new ModelPaciente($ModelPessoa, $ModelPacienteCaracteristicasFisicas, $endereco);
-
-    echo '<pre>';
-        var_dump($pacientes);
-    echo '</pre>';
 ?>

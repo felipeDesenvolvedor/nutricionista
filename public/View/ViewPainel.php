@@ -1,29 +1,16 @@
-<?php 
-    require_once($path.'\public\View\ViewPacienteAcoes.php');
-    require_once($path.'\public\View\ViewListaPaciente.php');
-    require_once($path.'\public\View\ViewMenuPainel.php');
+<?php
+    $caminho = $_SERVER['REQUEST_URI'];    
+    
+    require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        
-        <link rel="stylesheet" href="View/css/reset.css">
-        <link rel="stylesheet" href="View/css/font-awesome.css"> 
-        <link rel="stylesheet" href="View/css/ViewPainelLadoEsquerdo.css">
-        <link rel="stylesheet" href="View/css/ViewPainelLadoDireito.css">
-        <link rel="stylesheet" href="View/css/index.css">
-
-        <style>
-            pre {
-                font-size: 16px;
-                line-height: 23px;
-            }
-        </style>
-    </head>
+    
+    <?php
+        require_once($GLOBALS['caminhoDosArquivos']['ViewHead']);
+    ?>
+    
     <body>
         <main class="main">
             <section class="painel-lado-esquerdo">
@@ -32,7 +19,7 @@
                     <div class="usuario">
                         
                         <div class="foto">
-                            <img class="foto-usuario" src="View/img/foto-user.png"/>
+                            <img class="foto-usuario" src="/View/img/foto-user.png"/>
                         </div>
                         
                         <div>
@@ -57,7 +44,7 @@
                                     if(isset($item['subitem']))
                                     {
                                         echo '<li>'.$item['subitem']['subItem2'].'</li>';
-                                        echo '<li>'.$item['subitevicom']['subItem3'].'</li>';
+                                        echo '<li>'.$item['subitem']['subItem3'].'</li>';
                                     }
                                 echo '</li>';
                             }
@@ -75,17 +62,18 @@
                 <div class="painel-corpo">
                     <h1 class="painel-titulo">Consulta Pacientes</h1>      
                     
-                    <div class="acoes">
-                        <div>
-                            <?php 
-                                acoes(); 
-                            ?>
-                        </div>
-                        <div class="lista-pacientes">
-                            <?php 
-                                listarPacientes(); 
-                            ?>
-                        </div>   
+                    <div class="acoes">                
+                        <?php
+
+                        if($caminho === '/' || $caminho === '/pacientes') {
+                            require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+                            require_once($GLOBALS['caminhoDosArquivos']['ViewListaPaciente']);
+                            acoes(); 
+                            listarPacientes(); 
+                        }elseif($caminho === '/pacientes/cadastrar') {
+                            require_once($GLOBALS['caminhoDosArquivos']['ViewCadastrarPaciente']);
+                        }
+                        ?>   
                     </div>      
                 </div>       
             </section>

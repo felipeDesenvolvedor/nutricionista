@@ -1,13 +1,9 @@
 <?php 
-	$path = dirname(__FILE__);
-	
-	require_once($path.'\autoload.php');
-?>
+	require_once($GLOBALS['caminhoDosArquivos']['autoload']);
 
-<?php 
-	// require_once('View\ViewTablePacientes.php');
-	// require_once('View\ViewStylesTable.php');
-	// require_once('View\ViewScriptsTable.php');
+	 require_once($GLOBALS['caminhoDosArquivos']['ViewTablePacientes']);
+	 require_once($GLOBALS['caminhoDosArquivos']['ViewStylesTable']);
+	 require_once($GLOBALS['caminhoDosArquivos']['ViewScriptsTable']);
 ?>
 
 <!DOCTYPE html>
