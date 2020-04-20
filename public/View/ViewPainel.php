@@ -60,9 +60,9 @@
                 </div>       
                 
                 <div class="painel-corpo">
-                    <h1 class="painel-titulo">Consulta Pacientes</h1>      
-                    
+                         
                     <div class="acoes">                
+                        <h1 class="painel-titulo">Consulta Pacientes</h1>
                         <?php
 
                         if($caminho === '/' || $caminho === '/pacientes') {
@@ -71,7 +71,8 @@
                             acoes(); 
                             listarPacientes(); 
                         }elseif($caminho === '/pacientes/cadastrar') {
-                            require_once($GLOBALS['caminhoDosArquivos']['ViewCadastrarPaciente']);
+                            require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteFormCadastrar']);
+                            require_once($GLOBALS['caminhoDosArquivos']['PacienteCadastrar']);
                         }
                         ?>   
                     </div>      

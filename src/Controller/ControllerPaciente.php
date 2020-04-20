@@ -7,16 +7,12 @@
   use Nutricionista\Model\ModelPessoa;
   use Nutricionista\Model\ModelPacienteCaracteristicasFisicas;
   use Nutricionista\Model\ModelEndereco;
-
-  //$paciente = new ControllerPaciente();
-  //$paciente->definirPaciente();
-  
+    
   class ControllerPaciente
   {
-      private $pessoa                         = [];
-      private $pacienteCaracteristicasFisicas = [];
-      private $endereco                       = [];
-
+    private $pessoa = [];
+    private $pacienteCaracteristicasFisicas = [];
+    private $endereco = [];
       /*
       public function __construct(array $pessoa, array $pacienteCaracteristicasFisicas, array $endereco)
       {
@@ -29,24 +25,8 @@
       {
       }
 
-
-      public function recuperaPaciente():array
-      {
-        $paciente = [$this->pessoa, $this->pacienteCaracteristicasFisicas, $this->endereco];  
-        return $paciente;   
-      }
-
-      public function definirPaciente() 
-      {
-        //$pessoa                         = $this->pessoa;
-        //$pacienteCaracteristicasFisicas = $this->pacienteCaracteristicasFisicas;
-        //$endereco                       = $this->endereco;
-        
-        //$modelPaciente = new ModelPaciente($pessoa, $pacienteCaracteristicasFisicas, $endereco);
-        echo '<pre>';
-        var_dump($_POST);
-        echo '</pre>';
-        echo 'Teste';
+      public function cadastrar($pessoa) {
+        var_dump($pessoa);
       }
 
       public function iniciaPainel() 
