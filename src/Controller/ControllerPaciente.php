@@ -7,6 +7,9 @@
   use Nutricionista\Model\ModelPessoa;
   use Nutricionista\Model\ModelPacienteCaracteristicasFisicas;
   use Nutricionista\Model\ModelEndereco;
+
+  //$paciente = new ControllerPaciente();
+  //$paciente->definirPaciente();
   
   class ControllerPaciente
   {
@@ -35,16 +38,20 @@
 
       public function definirPaciente() 
       {
-        $pessoa                         = $this->pessoa;
-        $pacienteCaracteristicasFisicas = $this->pacienteCaracteristicasFisicas;
-        $endereco                       = $this->endereco;
+        //$pessoa                         = $this->pessoa;
+        //$pacienteCaracteristicasFisicas = $this->pacienteCaracteristicasFisicas;
+        //$endereco                       = $this->endereco;
         
-        $modelPaciente = new ModelPaciente($pessoa, $pacienteCaracteristicasFisicas, $endereco);
+        //$modelPaciente = new ModelPaciente($pessoa, $pacienteCaracteristicasFisicas, $endereco);
+        echo '<pre>';
+        var_dump($_POST);
+        echo '</pre>';
+        echo 'Teste';
       }
 
       public function iniciaPainel() 
       {   
           require_once($GLOBALS['caminhoDosArquivos']['ViewPainel']);
       }
-  }  
+  }
 ?>

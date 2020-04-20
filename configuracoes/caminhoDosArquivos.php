@@ -25,7 +25,8 @@ $caminhoDosArquivos = [
     "ViewPainelLadoEsquerdo"  => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoEsquerdo.css",
     "ViewPainelLadoDireito"   => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoDireito.css",
     "index"                   => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."index.css",
-    "ViewHead"                => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewHead.php" 
+    "ViewHead"                => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewHead.php", 
+    "ControllerPaciente"      => $path."src".DIRECTORY_SEPARATOR."Controller".DIRECTORY_SEPARATOR."ControllerPaciente.php"  
 ];
 
 $GLOBALS['caminhoDosArquivos'] = $caminhoDosArquivos;

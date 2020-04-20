@@ -11,10 +11,7 @@ if (!array_key_exists($caminho, $rotas)) {
     exit();
 }
 
-echo $rotas[$caminho];
 $classControladora = $rotas[$caminho];
 
 $controlador = new $classControladora();
 $controlador->iniciaPainel();
-
-echo 'Teste';
