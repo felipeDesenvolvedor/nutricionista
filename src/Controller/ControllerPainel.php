@@ -1,7 +1,6 @@
 <?php
 
 namespace Nutricionista\Controller;
-//use Nutricionista\Controller\InterfaceController;
 
 class ControllerPainel implements InterfaceController
 {

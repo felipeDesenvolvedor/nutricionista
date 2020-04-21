@@ -5,7 +5,7 @@
         
         <link rel="stylesheet" href="/View/css/reset.css">
         <link rel="stylesheet" href="/View/css/font-awesome.css"> 
-        <link rel="stylesheet" href="/View/css/ViewPainelLadoEsquerdo.css">
+        <link rel="stylesheet" href="/View/css/ViewPainelLadoEsquerdoStyle.css">
         <link rel="stylesheet" href="/View/css/ViewPainelLadoDireito.css">
         <link rel="stylesheet" href="/View/css/index.css">
 
