@@ -10,6 +10,11 @@
         <input type="text" name="cpf" id="id-cpf">
         </label>
 
+        <label for="id-rg">
+        RG: 
+        <input type="text" name="rg" id="id-rg">
+        </label>
+
         <label for="id-dataNascimento">
         Data de Nascimento: 
         <input type="text" name="dataNascimento" id="id-dataNascimento">

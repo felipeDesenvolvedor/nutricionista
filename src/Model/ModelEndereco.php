@@ -10,16 +10,15 @@ class ModelEndereco
     private $municipio;
     private $bairro;
     private $complemento;
-    private $metodo;
 
-    public function __construct(string $cep, string $endereco, string $numero, string $municipio, string $bairro, string $complemento) 
+    public function __construct(array $ModelEndereco) 
     {
-        $this->cep         = $cep;
-        $this->endereco    = $endereco;
-        $this->numero      = $numero;
-        $this->municipio   = $municipio;
-        $this->bairro      = $bairro;
-        $this->complemento = $complemento;
+        $this->cep         = $ModelEndereco['cep'];
+        $this->endereco    = $ModelEndereco['endereco'];
+        $this->numero      = $ModelEndereco['numero'];
+        $this->municipio   = $ModelEndereco['municipio'];
+        $this->bairro      = $ModelEndereco['bairro'];
+        $this->complemento = $ModelEndereco['complemento'];
     }
 
     public function recuperaCep():string 
@@ -45,12 +44,5 @@ class ModelEndereco
     public function recuperaComplemento():string 
     {
         return $this->complemento;
-    }
-
-    public function __get(string $metodo) 
-    {
-        $this->metodo = 'recupeca'.ucfirs($metodo);
-        
-        $this->metodo();
     }
 }

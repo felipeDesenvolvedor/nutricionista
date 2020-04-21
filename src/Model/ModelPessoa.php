@@ -12,15 +12,15 @@ class ModelPessoa
     private $responsavel;
     private $cpfResponsavel;
     
-    public function __construct(string $nome, string $cpf, string $rg, string $dataNascimento, string $sexo, string $responsavel, string $cpfResponsavel) 
+    public function __construct(array $ModelPessoa) 
     {
-        $this->nome = $nome;
-        $this->cpf = $cpf;
-        $this->rg = $rg;
-        $this->dataNascimento = $dataNascimento;
-        $this->sexo = $sexo;
-        $this->responsavel = $responsavel;
-        $this->cpfResponsavel = $cpfResponsavel;
+        $this->nome           = $ModelPessoa['nome'];
+        $this->cpf            = $ModelPessoa['cpf'];
+        $this->rg             = $ModelPessoa['rg'];
+        $this->dataNascimento = $ModelPessoa['dataNascimento'];
+        $this->sexo           = $ModelPessoa['sexo'];
+        $this->responsavel    = $ModelPessoa['responsavel'];
+        $this->cpfResponsavel = $ModelPessoa['cpfResponsavel'];
     }
 
     public function exibirNome():string
@@ -50,8 +50,7 @@ class ModelPessoa
     public function exibirCpfResponsavel():string
     {
         return $this->cpfResponsavel;
-    }
-    
+    }  
 }
 
 ?>

@@ -9,12 +9,12 @@ class ModelPacienteCaracteristicasFisicas
     private $gorduraCorporal;
     private $imc;
 
-    public function __construct(float $peso, float $altura, float $gorduraCorporal, float $imc) 
+    public function __construct(array $PacienteCaracteristicasFisicas) 
     {
-        $this->peso           = $peso;
-        $this->altura         = $altura;
-        $this->gorduraCorporal = $gorduraCorporal;
-        $this->imc            = $imc;
+        $this->peso            = $PacienteCaracteristicasFisicas['peso'];
+        $this->altura          = $PacienteCaracteristicasFisicas['altura'];
+        $this->gorduraCorporal = $PacienteCaracteristicasFisicas['gorduraCorporal'];
+        $this->imc             = $PacienteCaracteristicasFisicas['imc'];
     }
 
     // public function exibirPeso():float 
