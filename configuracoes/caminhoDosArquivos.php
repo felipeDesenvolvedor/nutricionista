@@ -24,14 +24,13 @@ $caminhoDosArquivos = [
     "ViewFimHTML"                 => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewFimHTML.php",
     "PacienteCadastrar"           => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."PacienteCadastrar.php",
     "ViewPacienteNovoForm"        => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewPacienteNovoForm.php",
-    "ControllerPaciente"          => $path."src".DIRECTORY_SEPARATOR."Controller".DIRECTORY_SEPARATOR."ControllerPaciente.php",
+    "ControllerPacienteNovoForm"  => $path."src".DIRECTORY_SEPARATOR."Controller".DIRECTORY_SEPARATOR."ControllerPacienteNovoForm.php",
     "reset"                       => "nutricionista/public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."reset.css",
     "font-awesome"                => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."font-awesome.css",
     "ViewPainelLadoEsquerdoStyle" => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoEsquerdoStyle.css",
     "ViewPainelLadoDireitoStyle"  => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoDireitoStyle.css",
     "index"                       => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."index.css",
-    "ViewHead"                    => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewHead.php", 
-    "ControllerPaciente"          => $path."src".DIRECTORY_SEPARATOR."Controller".DIRECTORY_SEPARATOR."ControllerPaciente.php"  
+    "ViewHead"                    => $path."public".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewHead.php",  
 ];
 
 $GLOBALS['caminhoDosArquivos'] = $caminhoDosArquivos;

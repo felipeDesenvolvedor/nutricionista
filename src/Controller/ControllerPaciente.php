@@ -18,9 +18,7 @@
     public function __construct()
     {
     }
-
     
-
     public function cadastrar(array $ModelPessoa) {
       $ModelPessoa = new ModelPessoa($ModelPessoa);
       header('Location: /pacientes', true, 302);
