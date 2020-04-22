@@ -21,7 +21,7 @@
     
     public function cadastrar(array $ModelPessoa) {
       $ModelPessoa = new ModelPessoa($ModelPessoa);
-      header('Location: /pacientes', true, 302);
+      //header('Location: /pacientes', true, 302);
     }
 
     public function iniciaPainel():void 

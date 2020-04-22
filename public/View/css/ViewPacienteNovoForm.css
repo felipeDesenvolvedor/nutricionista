@@ -1,0 +1,40 @@
+.paciente-novo-form {
+    display:flex;
+    flex-direction:column;
+    padding: 30px 0 0 20px;
+}
+
+.paciente-novo-form div{
+    display:flex;
+}
+
+.paciente-novo-form div label{
+    margin-right:20px;
+}
+
+.paciente-novo-form span {
+    display: block;
+}
+
+.paciente-novo-form div input{
+    width: 266px;
+}
+
+.paciente-novo-form div:not(:last-of-type){
+    margin-bottom:30px;
+}
+
+.novo-paciente-salvar {
+    position: absolute;
+    bottom: 10px;
+    left: 21px;
+}
+
+.foto-paciente {
+    position: absolute;
+    right: 30px;
+    top: 200px;
+    background-color: green;
+    padding: 30px;
+    color: white;
+}

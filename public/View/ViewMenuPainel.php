@@ -4,7 +4,7 @@ $menuPainel = [
     "item0" => [
                 "info"=>"Operações",
                 "class"=>"",               
-                "link"=>""               
+                "link"=>"/"               
                 ],
     "item1" => [
                 "info"=>"Pacientes",

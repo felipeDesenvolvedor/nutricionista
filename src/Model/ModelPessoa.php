@@ -21,6 +21,10 @@ class ModelPessoa
         $this->sexo           = $ModelPessoa['sexo'];
         $this->responsavel    = $ModelPessoa['responsavel'];
         $this->cpfResponsavel = $ModelPessoa['cpfResponsavel'];
+        
+        echo '<pre>';
+        var_dump($ModelPessoa);
+        echo '</pre>';
     }
 
     public function exibirNome():string

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/View/css/font-awesome.css"> 
         <link rel="stylesheet" href="/View/css/ViewPainelLadoEsquerdoStyle.css">
         <link rel="stylesheet" href="/View/css/ViewPainelLadoDireitoStyle.css">
+        <link rel="stylesheet" href="/View/css/ViewPacienteNovoForm.css">
         <link rel="stylesheet" href="/View/css/index.css">
 
         <style>

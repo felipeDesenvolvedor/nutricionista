@@ -26,6 +26,10 @@
     padding:0 10px;
 }
 
+.menu-painel li{
+    margin-bottom:10px;
+}
+
 .fa {
 	margin-right: 10px;
 }
