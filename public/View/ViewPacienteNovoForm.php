@@ -74,6 +74,23 @@
             <input type="text" name="complemento" id="idComplemento">
         </label>
     </div>
+   
+    <div>
+        <label for="idTelefone1">
+            <span>Telefone 1</span>
+            <input type="text" name="telefone1" id="idTelefone1">
+        </label>
+        
+        <label for="idTelefone2">
+            <span>Telefone 2</span> 
+            <input type="text" name="telefone2" id="idTelefone2">
+        </label>
+        
+        <label for="idEmail">
+            <span>Email</span> 
+            <input type="text" name="email" id="idEmail">
+        </label>
+    </div>
 
     <div class="foto-paciente">Foto do paciente</div>
 
