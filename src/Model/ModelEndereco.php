@@ -4,26 +4,26 @@ namespace Nutricionista\Model;
 
 class ModelEndereco 
 {
-    private $cep;
+    private $CEP;
     private $endereco;
-    private $numero;
+    private $numeroEndereco;
     private $municipio;
     private $bairro;
     private $complemento;
 
     public function __construct(array $ModelEndereco) 
     {
-        $this->cep         = $ModelEndereco['cep'];
-        $this->endereco    = $ModelEndereco['endereco'];
-        $this->numero      = $ModelEndereco['numero'];
-        $this->municipio   = $ModelEndereco['municipio'];
-        $this->bairro      = $ModelEndereco['bairro'];
-        $this->complemento = $ModelEndereco['complemento'];
+        $this->CEP            = $ModelEndereco['CEP'];
+        $this->endereco       = $ModelEndereco['endereco'];
+        $this->numeroEndereco = $ModelEndereco['numeroEndereco'];
+        $this->municipio      = $ModelEndereco['municipio'];
+        $this->bairro         = $ModelEndereco['bairro'];
+        $this->complemento    = $ModelEndereco['complemento'];
     }
 
     public function recuperaCep():string 
     {
-        return $this->cep;
+        return $this->CEP;
     }
     public function recuperaEndereco():string 
     {

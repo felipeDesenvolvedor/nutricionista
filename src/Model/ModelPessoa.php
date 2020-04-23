@@ -27,10 +27,6 @@ class ModelPessoa
         $this->telefone1      = $ModelPessoa['telefone1'];
         $this->telefone2      = $ModelPessoa['telefone2'];
         $this->email          = $ModelPessoa['email'];
-        
-        echo '<pre>';
-        var_dump($ModelPessoa);
-        echo '</pre>';
     }
 
     public function exibirNome():string

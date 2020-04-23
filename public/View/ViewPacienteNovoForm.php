@@ -95,4 +95,5 @@
     <div class="foto-paciente">Foto do paciente</div>
 
     <input type="submit" id="id-salvar" value="Salvar" class="novo-paciente-salvar">
+    <input type="submit" id="novo-paciente-salvar-atender" value="Salvar e Iniciar Atendimento" class="novo-paciente-salvar-atender">
 </form>
