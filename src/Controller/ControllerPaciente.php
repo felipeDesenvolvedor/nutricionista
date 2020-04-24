@@ -23,11 +23,11 @@
       $ModelPessoa   = new ModelPessoa($pessoa);
       $ModelEndereco = new ModelEndereco($pessoa);
     
-      header('Location: /pacientes', true, 302);
+      header('Location:/pacientes', true, 302);
     }
 
     public function iniciaPainel():void 
-    {   
+    {  
         require_once($GLOBALS['caminhoDosArquivos']['ViewPainel']);
     }
   }

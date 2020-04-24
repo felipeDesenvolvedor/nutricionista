@@ -7,7 +7,7 @@
     <div class="painel-corpo">
                 
         <div class="acoes">                
-            <h1 class="painel-titulo">Consulta Pacientes</h1>
+            <h1 class="painel-titulo"><?php echo $titulo ?></h1>
             <?php
 
             if($caminho === '/' || $caminho === '/pacientes') {

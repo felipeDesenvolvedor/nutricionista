@@ -14,6 +14,7 @@
       
       public function iniciaPainel():void 
       {   
+          $titulo = "Cadastro de paciente";
           require_once($GLOBALS['caminhoDosArquivos']['ViewPainel']);
       }
   }

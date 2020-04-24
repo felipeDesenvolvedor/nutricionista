@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="/View/css/ViewPainelLadoEsquerdoStyle.css">
         <link rel="stylesheet" href="/View/css/ViewPainelLadoDireitoStyle.css">
         <link rel="stylesheet" href="/View/css/ViewPacienteNovoForm.css">
+        <link rel="stylesheet" href="/View/css/ErrorMesage.css">
         <link rel="stylesheet" href="/View/css/index.css">
+        <script src="/View/js/formPaciente.js"></script>
 
         <style>
             pre {
