@@ -1,12 +1,12 @@
 <form action="/pacientes/cadastrar" method="post" class="paciente-novo-form"> 
     <div>
         <label for="idNome">
-            <span>Nome:</span> 
+            <span class="campo-obrigatorio">Nome:</span> 
             <input type="text" name="nome" id="idNome">
         </label>
 
         <label for="idCpf">
-            <span>CPF:</span>
+            <span> CPF:</span>
             <input type="text" name="cpf" id="idCpf">
         </label>
 
@@ -18,14 +18,14 @@
     
     <div>
         <label for="idSexo">
-            <span>Sexo:</span> 
+            <span class="campo-obrigatorio">Sexo:</span> 
             <input type="text" name="sexo" id="idSexo">
         </label>
     </div>
 
     <div>
         <label for="idDataNascimento">
-            <span>Data de Nascimento:</span>
+            <span class="campo-obrigatorio">Data de Nascimento:</span>
             <input type="text" name="dataNascimento" id="idDataNascimento">
         </label>
 

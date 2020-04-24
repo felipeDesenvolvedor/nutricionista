@@ -13,17 +13,28 @@
 }
 
 
-.mensagem-erro {
+#mensagem-erro {
     color:white;
     background-color:orange;
     width:200px;
-    height:200px;
+    padding: 10px;
+    border-radius:4px;
     opacity: 0;
     visibility: hidden;
-    transition: visibility 200ms;
+    transition: all 2000s;
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    bottom:0;
+    transform: translateX(-50%);
+    display: none;
+    text-align: center;
+    margin: 4px;
+    font-size:16px;
 }
 
-.mensagem-erro.exibir {
+#mensagem-erro.exibir {
     opacity: 1;
     visibility: visible;
+    display: inline-block;
 }

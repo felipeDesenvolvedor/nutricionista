@@ -13,10 +13,6 @@
     margin-right:20px;
 }
 
-.paciente-novo-form span {
-    display: block;
-}
-
 .paciente-novo-form div input{
     width: 266px;
 }
@@ -46,4 +42,13 @@
     background-color: green;
     padding: 30px;
     color: white;
+}
+
+.paciente-novo-form span {
+    display: block;
+}
+
+.paciente-novo-form .campo-obrigatorio:after {
+    content:'*';
+    color:red;
 }

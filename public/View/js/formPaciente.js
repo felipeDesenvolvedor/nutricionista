@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){    
-    var idNome           = document.querySelector("#idNome");
     var idCpf            = document.querySelector("#idCpf");
     var idRG             = document.querySelector("#idRG");
     var idSexo           = document.querySelector("#idSexo");
@@ -8,16 +7,15 @@ document.addEventListener('DOMContentLoaded', function(){
     var idCEP            = document.querySelector("#idCEP"); 
     var idEmail          = document.querySelector("#idEmail");
     var fotoPaciente     = document.querySelector("#foto-paciente");
-    var campoVazio;
 
     formPaciente();
 });
 
 
 function formPaciente() {
-    var mostrouErro;
+    var mostrarErro;
     var mensagem = {
-        "campoVazio":"Campo vazio",
+        "campoVazio":"Por favor prencha todos os campos obrigatórios.",
         "emailInvalido":"email invalido"
     };
     
@@ -26,6 +24,7 @@ function formPaciente() {
             validaCampoVazio(this.nome);
             validaCampoVazio(this.dataNascimento);
             validaCampoVazio(this.sexo);
+            mensagemErro(mensagem.campoVazio);
         });   
     
     function validaCampoVazio(campo) {
@@ -34,8 +33,8 @@ function formPaciente() {
     
         if(!campo.value) {
             addErro(elementoFilho);
-            mensagemErro(mensagem.campoVazio);
-    
+            
+            mostrarErro = true;
             event.preventDefault();
         }else {
             removeErro(elementoFilho);
@@ -51,11 +50,16 @@ function formPaciente() {
     }
        
     function mensagemErro(erro) {
-        // mostrouErro = false;
+        mostrarErro = false;
         
-        // if(!mostrouErro) {
-        //     alert(erro);
-        //     mostrouErro = true;
-        // }
+        if(!mostrarErro) {
+            var popupMensagem = document.querySelector('#mensagem-erro');
+                popupMensagem.classList.add('exibir');
+                popupMensagem.textContent = erro;
+        }
+
+        setTimeout(function(){
+            popupMensagem.classList.remove('exibir');
+        }, 2000)
     }
 }

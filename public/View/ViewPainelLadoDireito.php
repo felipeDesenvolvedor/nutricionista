@@ -21,6 +21,8 @@
                 require_once($GLOBALS['caminhoDosArquivos']['PacienteCadastrar']);
             }
             ?>   
-        </div>      
+        </div>
+
+        <div id="mensagem-erro"></div>      
     </div>       
 </section>

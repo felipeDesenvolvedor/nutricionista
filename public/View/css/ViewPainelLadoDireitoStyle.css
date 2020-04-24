@@ -8,7 +8,6 @@
 
 .painel-titulo {
     padding:10px 20px;
-    position: relative;
     font-size: 20px;
 }
 
@@ -55,6 +54,8 @@ form {
     height:calc(100% - 60px);
 }
 
+.painel-titulo,
+.painel-corpo,
 .acoes {
     position: relative;
 }
