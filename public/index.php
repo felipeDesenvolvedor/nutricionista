@@ -15,3 +15,6 @@ $classControladora = $rotas[$caminho];
 
 $controlador = new $classControladora();
 $controlador->iniciaPainel();
+
+
+echo 'TESTE';
