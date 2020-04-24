@@ -17,4 +17,4 @@ $controlador = new $classControladora();
 $controlador->iniciaPainel();
 
 
-echo 'TESTE';
+echo 'TESTE222';
