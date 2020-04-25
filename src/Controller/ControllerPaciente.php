@@ -23,6 +23,7 @@
         
         require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoRodape']);
         require_once($GLOBALS['caminhoDosArquivos']['ViewFimHTML']);
+    
     }
   }
 ?>

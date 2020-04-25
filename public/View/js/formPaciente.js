@@ -50,12 +50,13 @@ function formPaciente() {
     }
        
     function mensagemErro(erro) {
-        mostrarErro = false;
         
-        if(!mostrarErro) {
+        
+        if(mostrarErro) {
             var popupMensagem = document.querySelector('#mensagem-erro');
                 popupMensagem.classList.add('exibir');
                 popupMensagem.textContent = erro;
+                mostrarErro = false;
         }
 
         setTimeout(function(){

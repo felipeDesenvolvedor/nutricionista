@@ -45,8 +45,7 @@
     public function processaRequisicao():void 
     {  
         $ModelPessoa   = new ModelPessoa($this->cadastrar());
-        $ModelEndereco = new ModelEndereco($this->cadastrar());
-      
+        $ModelEndereco = new ModelEndereco($this->cadastrar());    
         header('Location:/pacientes', true, 302);
     }
   }
