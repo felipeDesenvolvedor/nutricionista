@@ -1,34 +1,28 @@
 <?php
 
-  namespace Nutricionista\Controller;
-
-  require_once($GLOBALS['caminhoDosArquivos']['autoload']);
-  use Nutricionista\Mode\ModelPaciente;
-  use Nutricionista\Model\ModelPessoa;
-  use Nutricionista\Model\ModelPacienteCaracteristicasFisicas;
-  use Nutricionista\Model\ModelEndereco;
+  namespace Nutricionista\Controller; 
     
   class ControllerPaciente implements InterfaceController
   {
-    private $pessoa = [];
-    private $pacienteCaracteristicasFisicas = [];
-    private $endereco = [];
-   
-
     public function __construct()
     {
     }
     
-    public function cadastrar(array $pessoa) {
-      $ModelPessoa   = new ModelPessoa($pessoa);
-      $ModelEndereco = new ModelEndereco($pessoa);
-    
-      header('Location:/pacientes', true, 302);
-    }
-
-    public function iniciaPainel():void 
+    public function processaRequisicao():void 
     {  
-        require_once($GLOBALS['caminhoDosArquivos']['ViewPainel']);
+        $titulo = "Consulta Paciente";
+        require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoEsquerdo']);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoTopo']);
+
+        require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewListaPaciente']);
+        acoes(); 
+        listarPacientes();
+        
+        require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoRodape']);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewFimHTML']);
     }
   }
 ?>

@@ -3,12 +3,13 @@
 use Nutricionista\Controller\ControllerPainel;
 use Nutricionista\Controller\ControllerPacienteNovoForm;
 use Nutricionista\Controller\ControllerPaciente;
+use Nutricionista\Controller\ControllerPacienteCadastrar;
 
 $rotas = [
-    '/' => ControllerPainel::class,
-    '/pacientes' => ControllerPainel::class,
-    '/pacientes/novo' => ControllerPacienteNovoForm::class,
-    '/pacientes/cadastrar' => ControllerPaciente::class
+    '/'                    => ControllerPaciente::class,
+    '/pacientes'           => ControllerPaciente::class,
+    '/pacientes/novo'      => ControllerPacienteNovoForm::class,
+    '/pacientes/cadastrar' => ControllerPacienteCadastrar::class
 ];
 
 return $rotas;
