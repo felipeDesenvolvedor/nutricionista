@@ -1,9 +1,6 @@
 <?php
-
-$diretorioAtual = explode(DIRECTORY_SEPARATOR, $_SERVER['DOCUMENT_ROOT']);
-                  unset($diretorioAtual[count($diretorioAtual) - 1]);
-$path           = implode(DIRECTORY_SEPARATOR, $diretorioAtual);
-$path           .= DIRECTORY_SEPARATOR;
+$path  = $_SERVER['DOCUMENT_ROOT'];
+$path .= DIRECTORY_SEPARATOR;
 
 $caminhoDosArquivos = [
     "IndexModel"                  => $path."src".DIRECTORY_SEPARATOR."Model".DIRECTORY_SEPARATOR."IndexModel.php",
