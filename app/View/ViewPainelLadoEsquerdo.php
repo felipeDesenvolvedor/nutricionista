@@ -4,7 +4,7 @@
                     <div class="usuario">
                         
                         <div class="foto">
-                            <img class="foto-usuario" src=<?php $GLOBALS['caminhoDosArquivos']['FotoUser']?>>
+                            <img class="foto-usuario" src=<?php echo $GLOBALS['caminhoDosArquivos']['FotoUser']?>>
                         </div>
                         
                         <div>
