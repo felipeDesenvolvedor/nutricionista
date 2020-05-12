@@ -1,0 +1,17 @@
+{
+    "name": "felipe/nutricionista",
+    "description": "Sitema nutricionista",
+    "authors": [
+        {
+            "name": "felipeDesenvolvedor",
+            "email": "felipedasilvasantos30@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "src\\":"../src/",
+            "app\\":"../app/"
+        }
+    }
+}

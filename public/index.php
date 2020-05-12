@@ -5,18 +5,24 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 require_once('..'.DIRECTORY_SEPARATOR.'configuracoes'.DIRECTORY_SEPARATOR.'caminhoDosArquivos.php');
+require_once('../configuracoes/configuracoes.php');
+require_once('../src/vendor/autoload.php');
 
-require_once($GLOBALS['caminhoDosArquivos']['autoload']);
-$rotas = $GLOBALS['caminhoDosArquivos']["rotas"];
+use app\Dispatch;    
+$dispatch = new Dispatch();
 
-$caminho = $_SERVER['REQUEST_URI'];
 
-if (!array_key_exists($caminho, $rotas)) {
-    http_response_code(404);
-    exit();
-}
+// require_once($GLOBALS['caminhoDosArquivos']['autoload']);
+// $rotas = $GLOBALS['caminhoDosArquivos']["rotas"];
 
-$classControladora = $rotas[$caminho];
+// $caminho = $_SERVER['REQUEST_URI'];
 
-$controlador = new $classControladora();
-$controlador->processaRequisicao();
+// if (!array_key_exists($caminho, $rotas)) {
+//     http_response_code(404);
+//     exit();
+// }
+
+// $classControladora = $rotas[$caminho];
+
+// $controlador = new $classControladora();
+// $controlador->processaRequisicao();

@@ -1,6 +1,6 @@
 <?php
 
-  namespace Nutricionista\Controller;
+  namespace app;
 
   require_once($GLOBALS['caminhoDosArquivos']['autoload']);
   

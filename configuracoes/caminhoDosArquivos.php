@@ -1,7 +1,7 @@
 <?php
 $path  = $_SERVER['DOCUMENT_ROOT'];
 $path .= DIRECTORY_SEPARATOR;
-define("DIRPAGE", "http://{$_SERVER['HTTP_HOST']}/");
+define("DIRPAGE_teste", "http://{$_SERVER['HTTP_HOST']}/");
 
 $caminhoDosArquivos = [
     "IndexModel"                  => $path."app".DIRECTORY_SEPARATOR."Model".DIRECTORY_SEPARATOR."IndexModel.php",
@@ -25,15 +25,15 @@ $caminhoDosArquivos = [
     "PacienteCadastrar"           => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."PacienteCadastrar.php",
     "ViewPacienteNovoForm"        => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewPacienteNovoForm.php",
     "ControllerPacienteNovoForm"  => $path."app".DIRECTORY_SEPARATOR."Controller".DIRECTORY_SEPARATOR."ControllerPacienteNovoForm.php",
-    "reset"                       => DIRPAGE."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."reset.css",
-    "font-awesome"                => DIRPAGE."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."font-awesome.css",
-    "ViewPainelLadoEsquerdoStyle" => DIRPAGE."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoEsquerdoStyle.css",
-    "ViewPainelLadoDireitoStyle"  => DIRPAGE."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoDireitoStyle.css",
-    "index"                       => DIRPAGE."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."index.css",
-    "ErrorMesage"                 => DIRPAGE."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ErrorMesage.css",
+    "reset"                       => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."reset.css",
+    "font-awesome"                => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."font-awesome.css",
+    "ViewPainelLadoEsquerdoStyle" => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoEsquerdoStyle.css",
+    "ViewPainelLadoDireitoStyle"  => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPainelLadoDireitoStyle.css",
+    "index"                       => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."index.css",
+    "ErrorMesage"                 => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ErrorMesage.css",
     "ViewHead"                    => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewHead.php",  
-    "ViewPacienteNovoFormStyle"   => DIRPAGE."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPacienteNovoFormStyle.css",  
-    "formPaciente"                => DIRPAGE."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."formPaciente.js",
-    "iconFrutas"                  => DIRPAGE."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."icon-frutas.ico", 
-    "FotoUser"                    => DIRPAGE."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."foto-user.png" 
+    "ViewPacienteNovoFormStyle"   => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPacienteNovoFormStyle.css",  
+    "formPaciente"                => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."formPaciente.js",
+    "iconFrutas"                  => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."icon-frutas.ico", 
+    "FotoUser"                    => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."foto-user.png" 
 ];

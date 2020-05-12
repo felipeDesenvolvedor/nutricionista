@@ -1,6 +1,6 @@
 <?php
 
-namespace Nutricionista\Model;
+namespace app;
 
 class ModelEndereco 
 {
