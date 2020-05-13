@@ -7,9 +7,14 @@ use src\traits\TraitUrlParser;
 class ClassRoutes {
     use TraitUrlParser;
 
-    private $rota;
+    public $rota;
     # metodo de retorno da rota
     
+    public function __construct() 
+    {
+
+    }
+
     public function getRota() {
         $url = $this->parseUrl();
         $i = $url[0];

@@ -1,42 +1,46 @@
 <?php
-
   namespace app\Controller; 
-    
+  
+  use src\classes\ClassRoutes;
+  
   class ControllerPaciente
-  {
-    public function __construct()
+  { 
+    public $rota;
+    public $titulo;
+
+    public function __construct($method)
+    {   
+        if(!$method) {
+          self::pacientes();
+        }
+    }
+
+    public function getRota():string 
     {
-      self::pacientes();
+      return $this->rota;
+    }
+
+    public function setRota(string $rota) 
+    {
+      $this->rota = $rota;
     }
     
     public function pacientes()
-    {  
-        $titulo = "Consulta Paciente";
-        require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-        require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
-        require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoEsquerdo']);
-        require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoTopo']);
-
-        require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
-        require_once($GLOBALS['caminhoDosArquivos']['ViewListaPaciente']);
-        acoes(); 
-        listarPacientes();
-        
-        require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoRodape']);
-        require_once($GLOBALS['caminhoDosArquivos']['ViewFimHTML']);
+    {   
+      $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+      
+      $this->titulo = "Consulta Paciente";
+      require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+      require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
     }
 
-    public function novo() {
-      $titulo = "Cadastro de paciente";
+    public function novo() 
+    {
+      $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
+
+      $this->titulo = "Cadastro de paciente";
       require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
       require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
-      require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoEsquerdo']);
-      require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoTopo']);
-
-      require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
-      
-      require_once($GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoRodape']);
-      require_once($GLOBALS['caminhoDosArquivos']['ViewFimHTML']);
     }
   }
 ?>
