@@ -35,5 +35,6 @@ $caminhoDosArquivos = [
     "ViewPacienteNovoFormStyle"   => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPacienteNovoFormStyle.css",  
     "formPaciente"                => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."formPaciente.js",
     "iconFrutas"                  => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."icon-frutas.ico", 
-    "FotoUser"                    => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."foto-user.png" 
+    "FotoUser"                    => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."foto-user.png", 
+    "Conexao"                     => $path."app".DIRECTORY_SEPARATOR."Model".DIRECTORY_SEPARATOR."Conexao.php"  
 ];

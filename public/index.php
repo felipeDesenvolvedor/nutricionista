@@ -10,19 +10,3 @@ require_once('../src/vendor/autoload.php');
 
 use app\Dispatch;    
 $dispatch = new Dispatch();
-
-
-// require_once($GLOBALS['caminhoDosArquivos']['autoload']);
-// $rotas = $GLOBALS['caminhoDosArquivos']["rotas"];
-
-// $caminho = $_SERVER['REQUEST_URI'];
-
-// if (!array_key_exists($caminho, $rotas)) {
-//     http_response_code(404);
-//     exit();
-// }
-
-// $classControladora = $rotas[$caminho];
-
-// $controlador = new $classControladora();
-// $controlador->processaRequisicao();

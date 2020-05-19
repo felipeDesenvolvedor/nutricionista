@@ -12,7 +12,7 @@
         ';
 
         echo '<div class="lista-pacientes">';
-        if(0) {
+        if(count($this->pacientes)) {
             echo '<p>lista de pacientes</p>';     
         }
         else{

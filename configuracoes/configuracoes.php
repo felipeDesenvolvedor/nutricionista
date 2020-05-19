@@ -19,7 +19,7 @@ define("DIRVIDEO",  DIRPAGE."public/video/");
 
 # Acesso ao banco de dados
 define("HOST", "localhost");
-define("DB",   "mvccompleto");
-define("USER", "root");
-define("PASS", "");
+define("USER", "nutricionista");
+define("PASS", "1234");
+define("DB",   "nutricionista");
 ?>

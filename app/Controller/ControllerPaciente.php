@@ -3,11 +3,13 @@
   
   use src\classes\ClassRoutes;
   use app\Model\ModelPessoa;
+  use app\Model\ModelPaciente;
   
   class ControllerPaciente
   { 
     public $rota;
     public $titulo;
+    public $pacientes;
 
     public function __construct($method)
     {   
@@ -29,7 +31,9 @@
     public function pacientes()
     {   
       $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
-      
+      $this->pacientes = new ModelPaciente();
+      $this->pacientes = $this->pacientes->buscarPaciente();
+       
       $this->titulo = "Consulta Paciente";
       require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
       require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
