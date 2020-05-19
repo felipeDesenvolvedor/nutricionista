@@ -45,10 +45,6 @@ form {
     font-size:30px;
 }
 
-.lista-pacientes {
-    text-align: center;
-}
-
 .painel-corpo,
 .acoes {
     height:calc(100% - 60px);
@@ -61,8 +57,25 @@ form {
 }
 
 .lista-pacientes {
-    position: absolute;
-    top: 200px;
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.lista-paciente {
+    flex-basis:40%;
+    margin-top:20px;
+    display:flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+}
+
+.separador {
+    flex-basis:10%;
+}
+
+.lista-paciente-foto {
+    padding: 20px;
 }
 
 .lista-pacientes .btn-novo-paciente{
@@ -70,3 +83,20 @@ form {
     height: 20px;
     margin-top: 20px;
 }
+
+.lista-paciente-dados span {
+    display:block;
+}
+
+.lista-paciente-dados{
+    position:relative;
+    padding:20px;
+    width: 80%;
+}
+
+.lista-paciente-dados .idade {
+    position:absolute;
+    right:0;
+    top:0;
+}
+
