@@ -57,7 +57,7 @@ form {
 }
 
 .lista-pacientes {
-    margin-top:20px;
+    margin:20px 0;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
