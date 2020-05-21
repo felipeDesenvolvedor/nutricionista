@@ -9,8 +9,6 @@ class ModelPessoa
     private $rg;
     private $dataNascimento;
     private $sexo;
-    private $responsavel;
-    private $cpfResponsavel;
     private $telefone1;
     private $telefone2;
     private $email;
@@ -22,8 +20,6 @@ class ModelPessoa
         $this->rg             = $ModelPessoa['rg'];
         $this->dataNascimento = $ModelPessoa['dataNascimento'];
         $this->sexo           = $ModelPessoa['sexo'];
-        $this->responsavel    = $ModelPessoa['responsavel'];
-        $this->cpfResponsavel = $ModelPessoa['cpfResponsavel'];
         $this->telefone1      = $ModelPessoa['telefone1'];
         $this->telefone2      = $ModelPessoa['telefone2'];
         $this->email          = $ModelPessoa['email'];

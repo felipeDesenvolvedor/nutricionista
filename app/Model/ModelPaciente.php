@@ -2,26 +2,40 @@
 namespace app\Model;
 
 use app\Model\Crud;
+use app\Model\ModelPessoa;
 
-class ModelPaciente extends Crud
+class ModelPaciente extends ModelPessoa
 {
     private $pessoa;
-    private $pacienteCaracteristicasFisicas;
-    private $endereco;
-
-    // public function __construct(ModelPessoa $pessoa, ModelPacienteCaracteristicasFisicas $pacienteCaracteristicasFisicas , ModelEndereco $endereco) 
-    // {
-    //     $this->pessoa = $pessoa;
-    //     $this->pacienteCaracteristicasFisicas = $pacienteCaracteristicasFisicas;
-    //     $this->endereco = $endereco;
-    // }
+    private $responsavel;
+    private $cpfResponsavel;
 
     public function __construct() 
     {
+        // $this->pessoa = $pessoa;
+        // $this->pacienteCaracteristicasFisicas = $pacienteCaracteristicasFisicas;
+        // $this->endereco = $endereco;
     }
     
-    public function buscarPaciente():array
+    public function salvarPaciente(array $pessoa, string $responsavel, string $cpfResponsavel) 
     {
-        return $this->buscar('paciente');
+        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
+
+        $this->pessoa = new ModelPessoa($pessoa);
+
+        $this->responsavel    = $responsavel;
+        $this->cpfResponsavel = $cpfResponsavel;
+
+        $query = $mysql->prepare('INSERT INTO paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email) VALUES(?,?,?,?,?,?,?,?,?,?);');
+        
+        $query->bind_param('ssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email']);
+        $query->execute();
+        $query->close();
+    }
+
+    public function buscarPaciente():array
+    {   
+        $crud = new Crud();
+        return $crud->buscar('paciente');
     }
 }
