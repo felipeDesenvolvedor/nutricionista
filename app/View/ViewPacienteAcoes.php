@@ -14,19 +14,23 @@
             if(count($this->pacientes)) {
                 $indice = 0;
 
+                // var_dump($this->pacientes);
+
                 foreach($this->pacientes as $paciente)
                 {   
                     $indice += 1;
                     
-                    echo '<div class=lista-paciente>';
-                        echo '<div class="lista-paciente-foto"></div>';
-                        
-                        echo '<div class="lista-paciente-dados">';
-                            echo '<span>'.$paciente['nome'].'</span>';
-                            echo '<span>'.$paciente['sexo'].'</span>';
-                            echo '<span class="idade">'.$paciente['dataNascimento'].'</span>';
+                    echo '<a href=/pacientes/'.$paciente['idPaciente'].'>';
+                        echo '<div class=lista-paciente>';
+                            echo '<div class="lista-paciente-foto"></div>';
+                    
+                            echo '<div class="lista-paciente-dados">';
+                                echo '<span>'.$paciente['nome'].'</span>';
+                                echo '<span>'.$paciente['sexo'].'</span>';
+                                echo '<span class="idade">'.$paciente['dataNascimento'].'</span>';
+                            echo '</div>';
                         echo '</div>';
-                    echo '</div>';
+                    echo '</a>';
 
                     if ($indice % 2 != 0) {
                         echo '<div class="separador"></div>';

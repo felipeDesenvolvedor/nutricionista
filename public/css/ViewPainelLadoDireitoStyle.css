@@ -63,9 +63,13 @@ form {
     justify-content:center;
 }
 
+.lista-pacientes a {
+
+    flex-basis:45%;
+}
+
 .lista-paciente {
     height: 120px;
-    flex-basis:45%;
     margin-top:20px;
     display:flex;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
