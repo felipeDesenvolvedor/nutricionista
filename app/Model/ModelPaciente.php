@@ -33,7 +33,13 @@ class ModelPaciente extends ModelPessoa
         $query->close();
     }
 
-    public function buscarPaciente():array
+    public function buscarPaciente(string $valorParametro):array
+    {   
+        $crud = new Crud();
+        return $crud->buscarRegistro('paciente', 'idPaciente', $valorParametro);
+    }
+
+    public function buscarPacientes():array
     {   
         $crud = new Crud();
         return $crud->buscar('paciente');

@@ -62,6 +62,12 @@ class Dispatch extends ClassRoutes{
     }
     #metodo de adição de parametro de controlle
     private function addParametro() {
+        if(isset($this->parseUrl()[2])) {
 
+            $this->setParametro(["parametro"=>$this->parseUrl()[2]]);
+        }else {
+            echo 'parametro de metodo necessario';
+            die();
+        }
     }
 }

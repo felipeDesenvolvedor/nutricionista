@@ -27,11 +27,22 @@
       $this->rota = $rota;
     }
     
+    public function editar(string $valorParametro) 
+    {
+      $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
+      $this->pacientes = new ModelPaciente();
+      $this->pacientes = $this->pacientes->buscarPaciente($valorParametro);
+       
+      $this->titulo = "Editar Paciente";
+      require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+      require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
+    }
+
     public function pacientes()
     {   
       $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
       $this->pacientes = new ModelPaciente();
-      $this->pacientes = $this->pacientes->buscarPaciente();
+      $this->pacientes = $this->pacientes->buscarPacientes();
        
       $this->titulo = "Consulta Paciente";
       require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);

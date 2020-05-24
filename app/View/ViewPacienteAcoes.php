@@ -20,7 +20,7 @@
                 {   
                     $indice += 1;
                     
-                    echo '<a href=/pacientes/'.$paciente['idPaciente'].'>';
+                    echo '<a href=/pacientes/editar/'.$paciente['idPaciente'].'>';
                         echo '<div class=lista-paciente>';
                             echo '<div class="lista-paciente-foto"></div>';
                     

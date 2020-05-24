@@ -10,4 +10,13 @@ class Crud {
 
         return $resultado;
     }
+
+    public function buscarRegistro(string $tabela, string $parametro, string $valorParametro):array {   
+        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
+    
+        $query = $mysql->query('SELECT * FROM '.$tabela.' where '.$parametro.' = '.$valorParametro);                       
+        $resultado = $query->fetch_all(MYSQLI_ASSOC);
+
+        return $resultado;
+    }
 }
