@@ -65,9 +65,6 @@ class Dispatch extends ClassRoutes{
         if(isset($this->parseUrl()[2])) {
 
             $this->setParametro(["parametro"=>$this->parseUrl()[2]]);
-        }else {
-            echo 'parametro de metodo necessario';
-            die();
         }
     }
 }

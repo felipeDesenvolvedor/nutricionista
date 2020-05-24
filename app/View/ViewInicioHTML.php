@@ -79,7 +79,7 @@
                         <h1 class="painel-titulo"><?php echo $this->titulo ?></h1>
 
                         <?php 
-                            require_once($this->getRota());
+                            require_once($this->getLayout());
                         ?> 
 
                     </div>

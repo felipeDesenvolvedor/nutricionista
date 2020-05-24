@@ -23,7 +23,8 @@ class ClassRoutes {
             ""                     => "ControllerPaciente",
             "pacientes"            => "ControllerPaciente",
             "pacientes/novo"       => "ControllerPaciente",
-            "pacientes/cadastrar"  => ""
+            "pacientes/cadastrar"  => "",
+            "pacientes/editar"  => ""
         ];
         
         if(array_key_exists($i, $this->rota)) {

@@ -1,6 +1,3 @@
-<?php 
-echo $this->pacientes[0]['nome'];
-?>
 <form action="/pacientes/cadastrar" method="post" class="paciente-novo-form"> 
     <div>
         <label for="idNome">

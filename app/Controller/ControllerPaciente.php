@@ -9,6 +9,7 @@
     public $rota;
     public $titulo;
     public $pacientes;
+    public $layout;
 
     public function __construct($method)
     {   
@@ -17,19 +18,19 @@
         }
     }
 
-    public function getRota():string 
+    public function getLayout():string 
     {
-      return $this->rota;
+      return $this->layout;
     }
 
-    public function setRota(string $rota) 
+    public function setLayout(string $layout) 
     {
-      $this->rota = $rota;
+      $this->layout = $layout;
     }
     
     public function editar(string $valorParametro) 
     {
-      $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
+      $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
       $this->pacientes = new ModelPaciente();
       $this->pacientes = $this->pacientes->buscarPaciente($valorParametro);
        
@@ -40,7 +41,7 @@
 
     public function pacientes()
     {   
-      $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+      $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
       $this->pacientes = new ModelPaciente();
       $this->pacientes = $this->pacientes->buscarPacientes();
        
@@ -51,7 +52,7 @@
 
     public function novo() 
     {
-      $this->setRota($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
+      $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
 
       $this->titulo = "Cadastro de paciente";
       require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
