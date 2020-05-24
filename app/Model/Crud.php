@@ -19,4 +19,10 @@ class Crud {
 
         return $resultado;
     }
+
+    public function editarRegistro(string $tabela, string $coluna, string $valores, string $colunaid, string $id) {
+        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
+
+        $query = $mysql->query("UPDATE $tabela SET $coluna = '$valores' where $colunaid = '$id'");
+    }
 }

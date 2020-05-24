@@ -44,4 +44,10 @@ class ModelPaciente extends ModelPessoa
         $crud = new Crud();
         return $crud->buscar('paciente');
     }
+
+    public function editarPaciente(string $valores, string $idPaciente)
+    {   
+        $crud = new Crud();
+        return $crud->editarRegistro('paciente', 'nome', $valores, 'idPaciente', $idPaciente);
+    }
 }

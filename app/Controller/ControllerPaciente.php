@@ -31,11 +31,12 @@
     
     public function editar(string $valorParametro) 
     {
+      $this->pacientes = new ModelPaciente();
+
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
         
         $action = "editar";
         $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
-        $this->pacientes = new ModelPaciente();
         $this->pacientes = $this->pacientes->buscarPaciente($valorParametro);
         
         $this->titulo = "Editar Paciente";
@@ -45,7 +46,9 @@
         $renderizado = false;
         
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
-        echo $_POST['nome'];
+        
+        $this->pacientes->editarPaciente($_POST['nome'], $valorParametro);
+        header('Location:/pacientes', true, 302);
       }
     }
 
