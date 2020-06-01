@@ -14,8 +14,6 @@
             if(count($this->pacientes)) {
                 $indice = 0;
 
-                // var_dump($this->pacientes);
-
                 foreach($this->pacientes as $paciente)
                 {   
                     $indice += 1;
