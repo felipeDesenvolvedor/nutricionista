@@ -18,17 +18,19 @@ class ClassRoutes {
     public function getRota() {
         $url = $this->parseUrl();
         $i = $url[0];
-
+        
         $this->rota = [
-            ""                     => "ControllerPaciente",
-            "pacientes"            => "ControllerPaciente",
-            "pacientes/novo"       => "ControllerPaciente",
-            "pacientes/cadastrar"  => "",
-            "pacientes/editar"  => ""
+            ""                    => "ControllerPaciente",
+            "pacientes"           => "ControllerPaciente",
+            "pacientes/novo"      => "ControllerPaciente",
+            "pacientes/cadastrar" => "ControllerPaciente",
+            "pacientes/editar"    => "ControllerPaciente",
+            "pacientes/inativar"  => "ControllerPaciente"
         ];
         
         if(array_key_exists($i, $this->rota)) {
             if(file_exists(DIRREQUISICAO."app/Controller/{$this->rota[$i]}.php")) {
+                
                 return $this->rota[$i];
             }else {
                 return "ControllerHome";    

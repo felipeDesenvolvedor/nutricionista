@@ -21,6 +21,7 @@
     margin-bottom:30px;
 }
 
+.inativar-paciente,
 .novo-paciente-salvar-atender,
 .novo-paciente-salvar {
     position: absolute;
@@ -33,6 +34,10 @@
 
 .novo-paciente-salvar-atender {
     left: 100px;
+}
+
+.inativar-paciente {
+    left:300px
 }
 
 .foto-paciente {

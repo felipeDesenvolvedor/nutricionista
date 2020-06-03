@@ -1,4 +1,4 @@
-<form action=<?php echo "/pacientes/$action/".$this->pacientes[0]['idPaciente']?> method="post" class="paciente-novo-form"> 
+<form action=<?php echo "/pacientes/$this->action/".$this->pacientes[0]['idPaciente']?> method="post" class="paciente-novo-form"> 
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span> 
@@ -96,4 +96,10 @@
 
     <input type="submit" id="id-salvar" value="Salvar" class="novo-paciente-salvar">
     <input type="submit" id="novo-paciente-salvar-atender" value="Salvar e Iniciar Atendimento" class="novo-paciente-salvar-atender">
+    
+    <?php
+    if($this->action == 'editar') {
+        echo '<a href="/pacientes/inativar/'.$this->pacientes[0]['idPaciente'].'"'.'class=""><input type="button" id="inativar-paciente" value="Inativar Paciente" class="inativar-paciente"></a>';
+    }
+    ?>
 </form>

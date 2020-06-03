@@ -4,5 +4,5 @@
 
     if ($mysql === false){
         echo 'erro de conexão';
-    }    
+    }
 ?>

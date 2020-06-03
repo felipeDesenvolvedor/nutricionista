@@ -11,6 +11,7 @@
     public $pacientes;
     public $layout;
     public $renderizado;
+    public $action;
 
     public function __construct($method)
     {   
@@ -35,7 +36,7 @@
 
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
         
-        $action = "editar";
+        $this->action = "editar";
         $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
         $this->pacientes = $this->pacientes->buscarPaciente($valorParametro);
         
@@ -48,6 +49,22 @@
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $this->pacientes->editarPaciente($_POST['nome'], $valorParametro);
+        header('Location:/pacientes', true, 302);
+      }
+    }
+
+    public function inativar(string $valorParametro)
+    {
+      $this->pacientes = new ModelPaciente();
+      $pacientes = $this->pacientes->buscarPaciente($valorParametro);
+
+      if($pacientes[0]['status'] == '1') {
+
+        $this->pacientes->inativarPaciente($valorParametro, '0');
+        header('Location:/pacientes', true, 302);  
+      }else {
+    
+        $this->pacientes->inativarPaciente($valorParametro, '1');
         header('Location:/pacientes', true, 302);
       }
     }
@@ -65,7 +82,7 @@
 
     public function novo() 
     {
-      $action = "cadastrar";
+      $this->action = "cadastrar";
       $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
 
       $this->titulo = "Cadastro de paciente";

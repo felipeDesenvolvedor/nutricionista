@@ -50,4 +50,10 @@ class ModelPaciente extends ModelPessoa
         $crud = new Crud();
         return $crud->editarRegistro('paciente', 'nome', $valores, 'idPaciente', $idPaciente);
     }
+
+    public function inativarPaciente(string $idPaciente, string $status)
+    {
+        require($GLOBALS['caminhoDosArquivos']['Conexao']);
+        $query = $mysql->query('UPDATE paciente SET status = '.$status.' where idPaciente = '.$idPaciente);
+    }
 }

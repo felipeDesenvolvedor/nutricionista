@@ -40,8 +40,7 @@ class Dispatch extends ClassRoutes{
     #metodo de adição de controlle
     private function addController() {
         $rotaController = $this->getRota();
-        $nameSpace = "app\\Controller\\{$rotaController}";
-        
+        $nameSpace = "app\\Controller\\{$rotaController}"; 
 
         if(!isset($this->parseUrl()[1])) {
             $this->setObjeto(new $nameSpace(false));
