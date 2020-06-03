@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){    
+    
+    $formPaciente = document.querySelector('.paciente-novo-form');
+
+    if (!$formPaciente) {
+        return;
+    }
+    
     var idCpf            = document.querySelector("#idCpf");
     var idRG             = document.querySelector("#idRG");
     var idSexo           = document.querySelector("#idSexo");
