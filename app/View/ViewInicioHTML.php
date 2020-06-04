@@ -12,10 +12,11 @@
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ViewPainelLadoEsquerdoStyle'];?>>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoStyle'];?>>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ViewPacienteNovoFormStyle'];?>>
+        <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['listaPacienteStyle'];?>>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ErrorMesage'];?>>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['index'];?>>
         <script src=<?php echo $GLOBALS['caminhoDosArquivos']['formPaciente'];?>></script>
-
+        <script src=<?php echo $GLOBALS['caminhoDosArquivos']['listaPacienteScript'];?>></script>
         <style>
             pre {
                 font-size: 16px;
