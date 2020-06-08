@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var fotoPaciente     = document.querySelector("#foto-paciente");
 
     formPaciente();
+    buscaEndereco();
 });
 
 
@@ -69,5 +70,40 @@ function formPaciente() {
         setTimeout(function(){
             popupMensagem.classList.remove('exibir');
         }, 2000)
+    }
+}
+
+function buscaEndereco() {
+    var campoCep = document.querySelector("#idCEP");
+    
+    campoCep.addEventListener('input', function(){
+        if(this.value.length == 8) {
+            endereco(this.value);
+        }
+    });
+
+    function endereco(cep) {
+        var url = "http://viacep.com.br/ws/"+cep+"/json";
+        var xhr = new XMLHttpRequest();   
+        xhr.open('GET', url, true);
+            
+        xhr.onreadystatechange = function() {
+            // requisição finalizada 
+         if(xhr.readyState == 4) {
+                // requisicao bem sucedida 
+             if(xhr.status == 200) {
+                prencherCampos(JSON.parse(xhr.responseText));
+             }
+         }
+ 
+        }
+        xhr.send();
+    }
+    
+    function prencherCampos(dados) {
+        document.querySelector("#idEndereco").value    = dados.logradouro;
+        document.querySelector("#idMunicipio").value   = dados.uf;
+        document.querySelector("#idBairro").value      = dados.bairro;
+        document.querySelector("#idComplemento").value = dados.complemento;
     }
 }
