@@ -80,6 +80,9 @@ function buscaEndereco() {
         if(this.value.length == 8) {
             endereco(this.value);
         }
+        else if(this.value.length < 8) {
+            prencherCampos({logradouro:'', uf:'', bairro:'', complemento:''});            
+        }
     });
 
     function endereco(cep) {
