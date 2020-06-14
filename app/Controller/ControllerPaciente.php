@@ -47,8 +47,26 @@
         $renderizado = false;
         
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $paciente = [
+          "nome"           =>$_POST['nome'],
+          "cpf"            =>$_POST['cpf'],
+          "rg"             =>$_POST['rg'],
+          "sexo"           =>$_POST['sexo'],
+          "dataNascimento" => $_POST['dataNascimento'],
+          "responsavel"    => $_POST['responsavel'],
+          "cpfResponsavel" => $_POST['cpfResponsavel'],
+          "CEP"            => $_POST['CEP'],
+          "endereco"       => $_POST['endereco'],
+          "numeroEndereco" => $_POST['numeroEndereco'],
+          "municipio"      => $_POST['municipio'],
+          "bairro"         => $_POST['bairro'],
+          "complemento"    => $_POST['complemento'],
+          "telefone1"      => $_POST['telefone1'],
+          "telefone2"      => $_POST['telefone2'],
+          "email"          => $_POST['email']
+        ];
         
-        $this->pacientes->editarPaciente($_POST['nome'], $valorParametro);
+        $this->pacientes->editarPaciente($paciente, $valorParametro);
         header('Location:/pacientes', true, 302);
       }
     }

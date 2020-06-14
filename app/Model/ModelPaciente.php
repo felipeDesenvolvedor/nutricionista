@@ -45,10 +45,11 @@ class ModelPaciente extends ModelPessoa
         return $crud->buscar('paciente');
     }
 
-    public function editarPaciente(string $valores, string $idPaciente)
+    public function editarPaciente(array $valores, string $idPaciente)
     {   
-        $crud = new Crud();
-        return $crud->editarRegistro('paciente', 'nome', $valores, 'idPaciente', $idPaciente);
+        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
+        
+        $query = $mysql->query("UPDATE paciente SET nome = '$valores[nome]', cpf = '$valores[cpf]', rg = '$valores[rg]', sexo = '$valores[sexo]', dataNascimento = '$valores[dataNascimento]', responsavel = '$valores[responsavel]', cpfResponsavel = '$valores[cpfResponsavel]', telefone1 = '$valores[telefone1]', telefone2 = '$valores[telefone2]', email = '$valores[email]' where idPaciente = '$idPaciente'");
     }
 
     public function inativarPaciente(string $idPaciente, string $status)
