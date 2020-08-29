@@ -29,10 +29,10 @@
 
         <label for="idStatus">
             <span>Status</span>
-            <select>
-                <option>Todos</option>
-                <option>Inativo</option>
-                <option>Ativo</option>
+            <select name="status" id="idStatus">
+                <option value="todos">Todos</option>
+                <option value="0">Inativo</option>
+                <option value="1">Ativo</option>
             </select>
         </label>
     </div>    

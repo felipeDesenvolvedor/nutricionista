@@ -7,6 +7,7 @@
         <title>Document</title>
         <link rel="icon" href=<?php echo $GLOBALS['caminhoDosArquivos']['iconFrutas'];?>>
         
+        <script src=<?php echo $GLOBALS['caminhoDosArquivos']['jquery'];?>></script>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['reset'];?>>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['font-awesome'];?>> 
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ViewPainelLadoEsquerdoStyle'];?>>

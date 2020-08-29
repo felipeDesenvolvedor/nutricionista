@@ -38,6 +38,7 @@ $caminhoDosArquivos = [
     "listaPacienteScript"         => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."listaPacienteScript.js",  
     "formPaciente"                => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."formPaciente.js",
     "iconFrutas"                  => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."icon-frutas.ico", 
-    "FotoUser"                    => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."foto-user.png", 
+    "FotoUser"                    => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."foto-user.png",
+    "jquery"                      => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."jquery-3.4.1.min.js", 
     "Conexao"                     => $path."app".DIRECTORY_SEPARATOR."Model".DIRECTORY_SEPARATOR."Conexao.php"  
 ];

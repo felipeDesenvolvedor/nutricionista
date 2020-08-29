@@ -22,7 +22,9 @@
                 {   
                     $indice += 1;
                     
-                    echo '<a href=/pacientes/editar/'.$paciente['idPaciente'].' data-status='.$paciente['status'].'>';
+                    $inativo = $paciente['status'] ? '' : 'esconder';
+                    
+                    echo "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente {$inativo}'>";
                         echo '<div class=lista-paciente>';
                             echo '<div class="lista-paciente-foto"></div>';
                     
