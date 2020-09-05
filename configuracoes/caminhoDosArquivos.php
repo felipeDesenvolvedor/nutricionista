@@ -17,7 +17,6 @@ $caminhoDosArquivos = [
     "ViewStylesTable"             => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewStylesTable.php",
     "ViewTablePacientes"          => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewTablePacientes.php",
     "ViewPainelLadoEsquerdo"      => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewPainelLadoEsquerdo.php",
-    "ViewPainelLadoDireito"       => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewPainelLadoDireito.php",
     "ViewPainelLadoDireitoTopo"   => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewPainelLadoDireitoTopo.php",
     "ViewPainelLadoDireitoRodape" => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewPainelLadoDireitoRodape.php",
     "ViewInicioHTML"              => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewInicioHTML.php",
