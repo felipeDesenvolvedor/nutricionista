@@ -1,11 +1,48 @@
 <?php 
         echo 
         '   <div>
-                <form>
-                    <input class="input-busca-paciente" type="text" name="" placeholder="Pesquisar por nome"/>
-                    <input class="btn-filtro-paciente" type="button" name="" value="Filtros"/>
-                    <input class="btn-busca-paciente" type="button" name="" value="Buscar"/>
-                    <a href=/pacientes/novo><input class="btn-novo-paciente" type="button" name="" value="Novo"/></a>
+                <form action="/pacientes" methode="get" class="view-filtro-paciente-form">
+                    <div>
+                        <input class="input-busca-paciente" type="text" name="" placeholder="Pesquisar por nome"/>
+                        <input class="btn-filtro-paciente" type="button" name="" value="Filtros"/>
+                        <input class="btn-busca-paciente" type="button" name="" value="Buscar"/>
+                        <a href=/pacientes/novo><input class="btn-novo-paciente" type="button" name="" value="Novo"/></a>
+                    </div>
+                    <div class="view-filtro-paciente">
+                        <label for="idCpf">
+                            <span> CPF:</span>
+                            <input type="text" name="cpf" id="idCpf">
+                        </label>
+
+                        <label for="idRG">
+                            <span>RG:</span>            
+                            <input type="text" name="rg" id="idRG">
+                        </label>
+                        
+                        <label for="idResponsavel">
+                            <span>Responsavel: </span>
+                            <input type="text" name="responsavel" id="idResponsavel">
+                        </label>
+                        
+                        <label for="idCpfResponsavel">
+                            <span>CPF Responsavel:</span> 
+                            <input type="text" name="cpfResponsavel" id="idCpfResponsavel">
+                        </label>
+
+                        <label for="idMunicipio">
+                            <span>Municipio</span>
+                            <input type="text" name="municipio" id="idMunicipio">
+                        </label>
+
+                        <label for="idStatus">
+                            <span>Status</span>
+                            <select name="status" id="idStatus">
+                                <option value="todos">Todos</option>
+                                <option value="0">Inativo</option>
+                                <option value="1">Ativo</option>
+                            </select>
+                        </label>
+                    </div>
                 </form>
             </div>    
         ';
@@ -14,10 +51,10 @@
                 require_once($GLOBALS['caminhoDosArquivos']['ViewFiltroPaciente']);            
         echo '</div>';
 
-        echo '<div class="lista-pacientes">';
             if(count($this->pacientes)) {
+                echo '<div class="lista-pacientes">';
                 $indice = 0;
-
+                
                 foreach($this->pacientes as $paciente)
                 {   
                     $indice += 1;
@@ -40,10 +77,11 @@
                         echo '<div class="separador"></div>';
                     }
                 }
+
+                echo '</div>';
             }
             else{
                 echo '<p>Voçê ainda não possui pacientes cadastrados, para cadastrar clique no botão abaixo</p>';
                 echo '<a href=/pacientes/novo><input class="btn-novo-paciente" type="button" name="" value="Novo"/></a>';
             }
-        echo '</div>';
 ?>

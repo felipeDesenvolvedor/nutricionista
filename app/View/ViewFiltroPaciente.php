@@ -1,6 +1,6 @@
 <form action="/pacientes" method="post">
     <div>
-        <label for="idCpf">
+        <!-- <label for="idCpf">
             <span> CPF:</span>
             <input type="text" name="cpf" id="idCpf">
         </label>
@@ -13,11 +13,11 @@
         <label for="idResponsavel">
             <span>Responsavel: </span>
             <input type="text" name="responsavel" id="idResponsavel">
-        </label>
+        </label> -->
     </div>
 
     <div>
-        <label for="idCpfResponsavel">
+        <!-- <label for="idCpfResponsavel">
             <span>CPF Responsavel:</span> 
             <input type="text" name="cpfResponsavel" id="idCpfResponsavel">
         </label>
@@ -34,6 +34,6 @@
                 <option value="0">Inativo</option>
                 <option value="1">Ativo</option>
             </select>
-        </label>
+        </label> -->
     </div>    
 </form>

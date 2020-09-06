@@ -30,15 +30,20 @@ function filtrarPaciente() {
   
   $buscar.addEventListener('click', function() {
     var statusSelecionado = $selectStatus.options[$selectStatus.selectedIndex].value;
-    console.log('Teste'); 
-    
-    if(statusSelecionado) {
-      
-    }else {
-      console.log(statusSelecionado);
-      if($('.paciente').hasClass('esconder')) {
-        $('.paciente').removeClass('esconder');
-      }
+   
+    switch(statusSelecionado) {
+      case 'todos':
+        console.log(statusSelecionado); 
+      break;
+      case '0':
+        if($('.paciente').hasClass('esconder')) {
+          $('.paciente').removeClass("esconder");
+        }
+      break;
+      case '1':
+        console.log(statusSelecionado);
+      break;  
     }
+
   });
 }

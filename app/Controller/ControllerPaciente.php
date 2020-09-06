@@ -89,13 +89,15 @@
 
     public function pacientes()
     {   
-      $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+      // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
       $this->pacientes = new ModelPaciente();
       $this->pacientes = $this->pacientes->buscarPacientes();
-       
-      $this->titulo = "Consulta Paciente";
-      require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-      require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
+      // $this->titulo = "Consulta Paciente";
+      // require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+      // require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
+      
+      header('Content-Type: application/json');
+      echo json_encode($this->pacientes);
     }
 
     public function novo() 

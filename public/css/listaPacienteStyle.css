@@ -6,3 +6,12 @@
 .esconder + .separador {
     display:none;
 }
+
+.view-filtro-paciente {
+    display: block;
+}
+
+.view-filtro-paciente-form {
+    display: flex;
+    flex-direction: column;
+}
