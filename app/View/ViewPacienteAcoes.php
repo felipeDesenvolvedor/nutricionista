@@ -51,10 +51,6 @@
             </div>    
         ';
 
-        echo '<div class="lista-pacientes-filtro esconder">';
-                require_once($GLOBALS['caminhoDosArquivos']['ViewFiltroPaciente']);            
-        echo '</div>';
-
             if(count($this->pacientes)) {
                 echo '<div class="lista-pacientes">';
                 $indice = 0;

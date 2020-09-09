@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function filtro() {
-  $filtro = document.querySelector('.lista-pacientes-filtro');  
+  $filtro = document.querySelector('.view-filtro-paciente');  
   $btnFiltros = document.querySelector('.btn-filtro-paciente');
   
   $btnFiltros.addEventListener('click', function(){
-    $filtro.classList.toggle('esconder');
+    $filtro.classList.toggle('fechado');
   });
 }
 
