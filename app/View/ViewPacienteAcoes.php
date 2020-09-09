@@ -1,11 +1,11 @@
 <?php 
         echo 
         '   <div>
-                <form action="/pacientes" methode="get" class="view-filtro-paciente-form">
+                <form action="/pacientes/buscar" method="post" class="view-filtro-paciente-form">
                     <div>
                         <input class="input-busca-paciente" type="text" name="" placeholder="Pesquisar por nome"/>
                         <input class="btn-filtro-paciente" type="button" name="" value="Filtros"/>
-                        <input class="btn-busca-paciente" type="button" name="" value="Buscar"/>
+                        <input class="btn-busca-paciente" type="submit" name="" value="Buscar"/>
                         <a href=/pacientes/novo><input class="btn-novo-paciente" type="button" name="" value="Novo"/></a>
                     </div>
                     <div class="view-filtro-paciente">
@@ -61,7 +61,7 @@
                     
                     $inativo = $paciente['status'] ? '' : 'esconder';
                     
-                    echo "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente {$inativo}'>";
+                    echo "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
                         echo '<div class=lista-paciente>';
                             echo '<div class="lista-paciente-foto"></div>';
                     

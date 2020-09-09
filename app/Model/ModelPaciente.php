@@ -45,6 +45,12 @@ class ModelPaciente extends ModelPessoa
         return $crud->buscar('paciente');
     }
 
+    public function buscarPacientesStatus(string $valorParametro):array
+    {   
+        $crud = new Crud();
+        return $crud->buscarRegistro('paciente', 'status', $valorParametro);
+    }
+
     public function editarPaciente(array $valores, string $idPaciente)
     {   
         require_once($GLOBALS['caminhoDosArquivos']['Conexao']);

@@ -22,6 +22,7 @@ class ClassRoutes {
         $this->rota = [
             ""                    => "ControllerPaciente",
             "pacientes"           => "ControllerPaciente",
+            "pacientes/buscar"    => "ControllerPaciente",
             "pacientes/novo"      => "ControllerPaciente",
             "pacientes/cadastrar" => "ControllerPaciente",
             "pacientes/editar"    => "ControllerPaciente",

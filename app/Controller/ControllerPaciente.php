@@ -88,13 +88,33 @@
     }
 
     public function pacientes()
-    {   
-      $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
-      $this->pacientes = new ModelPaciente();
-      $this->pacientes = $this->pacientes->buscarPacientes();
-      $this->titulo = "Consulta Paciente";
-      require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-      require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
+    { 
+ 
+      if($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+        $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+        $this->pacientes = new ModelPaciente();
+        $this->pacientes = $this->pacientes->buscarPacientes();
+        $this->titulo = "Consulta Paciente";
+        require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
+      }
+    }
+
+    public function buscar()
+    {
+      if($_POST['status'] != 'todos') {
+        $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+        $this->pacientes = new ModelPaciente();
+        $this->pacientes = $this->pacientes->buscarPacientesStatus($_POST['status']);
+        $this->titulo = "Consulta Paciente";
+        require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
+
+        return;
+      }
+
+      header('Location:/pacientes', true, 302);
     }
 
     public function novo() 
