@@ -14,7 +14,7 @@ function filtro() {
   $btnFiltros = document.querySelector('.btn-filtro-paciente');
   
   $btnFiltros.addEventListener('click', function(){
-    $filtro.classList.toggle('fechado');
+    $filtro.classList.toggle('aberto');
   });
 }
 

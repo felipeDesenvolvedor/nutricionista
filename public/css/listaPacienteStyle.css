@@ -18,12 +18,12 @@
 
 .view-filtro-paciente {
     display: flex;
-    max-height:400px;
+    max-height:0;
     transition: all 800ms; 
 }
 
-.view-filtro-paciente.fechado {
-    max-height:0;
+.view-filtro-paciente.aberto {
+    max-height:400px;
 }
 
 .view-filtro-paciente label {
