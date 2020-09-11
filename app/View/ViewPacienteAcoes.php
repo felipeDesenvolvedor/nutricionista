@@ -62,20 +62,21 @@
                     $inativo = $paciente['status'] ? '' : 'esconder';
                     
                     echo "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
-                        echo '<div class=lista-paciente>';
+                        echo '<div class=lista-paciente-box>';
                             echo '<div class="lista-paciente-foto"></div>';
                     
                             echo '<div class="lista-paciente-dados">';
                                 echo '<span>'.$paciente['nome'].'</span>';
                                 echo '<span>'.$paciente['sexo'].'</span>';
+                                echo $paciente['dataNascimento'];
                                 echo '<span class="idade">'.$paciente['dataNascimento'].'</span>';
                             echo '</div>';
                         echo '</div>';
                     echo '</a>';
 
-                    if ($indice % 2 != 0) {
-                        echo '<div class="separador"></div>';
-                    }
+                    // if ($indice % 2 != 0) {
+                    //     echo '<div class="separador"></div>';
+                    // }
                 }
 
                 echo '</div>';
