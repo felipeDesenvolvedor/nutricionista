@@ -28,11 +28,11 @@
 
     <body>
         <main class="main">
-            <section class="painel-lado-esquerdo">
+        <section class="painel-lado-esquerdo">
+                
+
                 <div>
-                    <div class="plataforma">Nutricionista</div>
-                    <div class="usuario">
-                        
+                <div class="usuario">
                         <div class="foto">
                             <img class="foto-usuario" src=<?php echo $GLOBALS['caminhoDosArquivos']['FotoUser']?>>
                         </div>
@@ -41,11 +41,7 @@
                             <div class="nome"> Felipe Da Silva Santos</div>
                             <div class="plano">Plano Bronze</div>
                         </div>
-                        
                     </div>
-                </div>
-
-                <div>
                     <ul class="menu-painel"> 
                         <?php 
                             foreach($menuPainel as $item)
