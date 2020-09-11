@@ -36,6 +36,9 @@
 
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
         
+        // header("Cache-Control: no-cache, no-store, must-revalidate"); // limpa o cache
+        // header("Access-Control-Allow-Origin: *");
+        // header("Content-Type: application/json; charset=utf-8"); 
         $this->action = "editar";
         $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
         $this->pacientes = $this->pacientes->buscarPaciente($valorParametro);
@@ -45,6 +48,14 @@
         require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
         
         $renderizado = false;
+
+        /* prepara o documento para comunicação com o JSON, as duas linhas a seguir são obrigatórias 
+	  para que o PHP saiba que irá se comunicar com o JSON, elas sempre devem estar no ínicio da página */
+	// header("Cache-Control: no-cache, no-store, must-revalidate"); // limpa o cache
+	// header("Access-Control-Allow-Origin: *");
+	// header("Content-Type: application/json; charset=utf-8"A); 
+	
+        // echo json_encode($this->pacientes);
         
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
         $paciente = [
