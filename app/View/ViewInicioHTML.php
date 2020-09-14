@@ -63,7 +63,6 @@
                         </ul>   
                     </div>
             </section>
-                    <?php echo 'teste4';?>
             <section class="painel-lado-direito">
                 <div class="painel-cabecalho">
                     <div class="botao-editar-layput">Editar Layout</div>      
