@@ -1,11 +1,11 @@
 <?php 
         echo 
         '   <div class="view-filtro">
-                <form action="/pacientes/buscar" method="post" class="view-filtro-paciente-form">
+                <form class="view-filtro-paciente-form">
                     <div>
                         <input class="input-busca-paciente" type="text" name="" placeholder="Pesquisar por nome"/>
                         <input class="btn-filtro-paciente" type="button" name="" value="Filtros"/>
-                        <input class="btn-busca-paciente" type="submit" name="" value="Buscar"/>
+                        <input class="btn-busca-paciente" type="button" name="" value="Buscar"/>
                         <a href=/pacientes/novo><input class="btn-novo-paciente" type="button" name="" value="Novo"/></a>
                     </div>
                     <div class="view-filtro-paciente">
@@ -66,7 +66,7 @@
                             echo '<div class="lista-paciente-foto"></div>';
                     
                             echo '<div class="lista-paciente-dados">';
-                                echo '<span>'.$paciente['nome'].'</span>';
+                                echo '<span class="js-lista-paciente-nome">'.$paciente['nome'].'</span>';
                                 echo '<span>'.$paciente['sexo'].'</span>';
                                 echo $paciente['dataNascimento'];
                                 echo '<span class="idade">'.$paciente['dataNascimento'].'</span>';

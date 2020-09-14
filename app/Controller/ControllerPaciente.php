@@ -88,37 +88,33 @@
 
     public function pacientes()
     { 
- 
+      var_dump(json_decode('{"status":"todos","cpf":"4","rg":"","responsavel":"","cpfResponsavel":"","municipio":""}'));
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
         $this->pacientes = new ModelPaciente();
-        $this->pacientes = $this->pacientes->buscarPacientes();
+        $this->pacientes = $this->pacientes->buscarPacientes([]);
         $this->titulo = "Consulta Paciente";
         require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
         require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
       }
     }
 
-    public function buscar()
+    public function buscar(string $paciente)
     {
-
+ 
       if(!empty($_POST)) {
-         if($_POST['status'] != 'todos') {
-          $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
-          $this->pacientes = new ModelPaciente();
-          $this->pacientes = $this->pacientes->buscarPacientesStatus($_POST['status']);
-          $this->titulo = "Consulta Paciente";
-          require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-          require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
+        
+        // $array = json_encode($_POST['paciente']);
+        echo $_POST['paciente'];
+        // $this->pacientes = new ModelPaciente();
+        // $this->pacientes = $this->pacientes->buscarPacientes(str_split($_POST['paciente']));
+        // echo json_encode(["teste"=>"teste"]);  
 
-          return;
-        }
-
-      header('Location:/pacientes', true, 302);
+        // header('Location:/pacientes', true, 302);
       }
 
-      header('Location:/pacientes', true, 302);
+      // header('Location:/pacientes', true, 302);
     }
 
     public function novo() 

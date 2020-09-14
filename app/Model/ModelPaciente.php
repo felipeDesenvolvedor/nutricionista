@@ -41,10 +41,16 @@ class ModelPaciente extends ModelPessoa
         return $crud->buscarRegistro('paciente', 'idPaciente', $valorParametro);
     }
 
-    public function buscarPacientes():array
+    public function buscarPacientes(array $paciente):array
     {   
-        $crud = new Crud();
-        return $crud->buscar('paciente');
+        if(count($paciente)) {
+            echo $paciente['cpf'];
+            // return $this->mysql->prepare('SELECT * FROM `paciente` WHERE `cpf` LIKE '%$paciente['cpf']%'');
+            
+        }else {
+            $crud = new Crud();
+            return $crud->buscar('paciente');
+        }
     }
 
     public function buscarPacientesStatus(string $valorParametro):array
