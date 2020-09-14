@@ -143,13 +143,6 @@ button[disabled=disabled], button:disabled  {
 	display:flex;
 }
 
-.painel-lado-esquerdo {
-	width: 20%;
-}
-.painel-lado-direito {
-	width: 80%;
-}
-
 html,
 body,
 main {

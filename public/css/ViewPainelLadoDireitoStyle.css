@@ -1,3 +1,10 @@
+.painel-lado-direito {
+    position: absolute;
+    right: 0;
+    margin:6px;
+    width: 80%;
+}
+
 .painel-cabecalho {
     width: 100%;
     background:#199c60;

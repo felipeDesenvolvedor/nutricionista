@@ -1,6 +1,13 @@
 .painel-lado-esquerdo {
     background: #222d32;
     color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.6);
+    border-top: solid 0px;
+    margin: 6px;
+    position: fixed;
+    float: left;
+    height: calc(100vh - 13px);
+    width: calc(20% - 12px);
 }
 
 .foto-usuario {
@@ -32,19 +39,4 @@
 
 .fa {
 	margin-right: 10px;
-}
-
-.painel-lado-esquerdo {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,.6);
-    border-top: solid 0px;
-    margin: 6px;
-    position: fixed;
-    float: left;
-    height: calc(100vh - 13px);
-    width: calc(20% - 12px);
-}
-
-.painel-lado-direito {
-    position: absolute;
-    right: 0;
 }
