@@ -1,6 +1,6 @@
 <?php 
         echo 
-        '   <div>
+        '   <div class="view-filtro">
                 <form action="/pacientes/buscar" method="post" class="view-filtro-paciente-form">
                     <div>
                         <input class="input-busca-paciente" type="text" name="" placeholder="Pesquisar por nome"/>
