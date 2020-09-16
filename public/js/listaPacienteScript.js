@@ -23,19 +23,15 @@ function filtrarPaciente() {
   var form = document.querySelector('.view-filtro-paciente-form');
 
   $buscar.addEventListener('click', function(){ 
-      var status            = form.status.value;
-      var cpf               = form.cpf.value;
-      var rg                = form.rg.value;
-      var responsavel       = form.responsavel.value;
-      var cpfResponsavel    = form.cpfResponsavel.value;
-      var municipio         = form.municipio.value;
+      var status            = form.status.value ? form.status.value : " ";
+      var cpf               = form.cpf.value ? form.cpf.value : " ";
+      var rg                = form.rg.value ? form.rg.value : " ";
+      var responsavel       = form.responsavel.value ? form.responsavel.value : " ";
+      var cpfResponsavel    = form.cpfResponsavel.value ? form.cpfResponsavel.value: " ";
+      var municipio         = form.municipio.value ? form.municipio.value : " ";
       
-      buscarPaciente({'status':status, 
-      'cpf':cpf, 
-      'rg':rg, 
-      'responsavel':responsavel, 
-      'cpfResponsavel':cpfResponsavel, 
-      'municipio':municipio});
+      // buscarPaciente('{"status":'+status+',"cpf":'+cpf+',"rg":'+rg+',"responsavel":'+responsavel+', "cpfResponsavel":'+cpfResponsavel+', "municipio":'+municipio+'}');
+      buscarPaciente({"status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
   });
   
   // $buscar.addEventListener('click', function() {

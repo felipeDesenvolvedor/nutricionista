@@ -9,6 +9,7 @@ class ModelPaciente extends ModelPessoa
     private $pessoa;
     private $responsavel;
     private $cpfResponsavel;
+    private $mysql;
 
     public function __construct() 
     {
@@ -43,10 +44,17 @@ class ModelPaciente extends ModelPessoa
 
     public function buscarPacientes(array $paciente):array
     {   
+        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
+        
         if(count($paciente)) {
-            echo $paciente['cpf'];
-            // return $this->mysql->prepare('SELECT * FROM `paciente` WHERE `cpf` LIKE '%$paciente['cpf']%'');
+           
+            $buscarPacientes = $mysql->prepare("select * from paciente where cpf = ?");
+            $buscarPacientes->bind_param('s', $paciente['cpf']);
+            $buscarPacientes->execute();
             
+            echo json_encode($buscarPacientes, true);
+            
+            return $paciente = $buscarPacientes->get_result()->fetch_assoc();
         }else {
             $crud = new Crud();
             return $crud->buscar('paciente');

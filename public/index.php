@@ -10,3 +10,6 @@ require_once('../src/vendor/autoload.php');
 
 use app\Dispatch;    
 $dispatch = new Dispatch();
+
+// $array = json_decode('{"status":"todos","cpf":"4","rg":" ","responsavel":" ","cpfResponsavel":" ","municipio":" "}');
+// var_dump($array);
