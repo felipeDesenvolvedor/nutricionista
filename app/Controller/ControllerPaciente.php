@@ -154,7 +154,7 @@
             filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING)
           );
           
-          header('Location:/pacientes', true, 302);
+          // header('Location:/pacientes', true, 302);
         }
     }
   }
