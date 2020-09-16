@@ -75,21 +75,30 @@ function filtrarPaciente() {
       buscar(paciente);
 
       function exibir(pacientes) {
-      //      "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
-      //     '<div class=lista-paciente-box>';
-      //         '<div class="lista-paciente-foto"></div>';
-      
-      //         '<div class="lista-paciente-dados">';
-      //             '<span class="js-lista-paciente-nome">'.$paciente['nome'].'</span>';
-      //             '<span>'.$paciente['sexo'].'</span>';
-      //             $paciente['dataNascimento'];
-      //             '<span class="idade">'.$paciente['dataNascimento'].'</span>';
-      //         '</div>';
-      //     '</div>';
-      // '</a>';
+        var listaPacientes = document.querySelector('.lista-pacientes');
+            listaPacientes.innerText = '';
+        
+            JSON.parse(pacientes).forEach(function(paciente) {
+              var pacienteLinha = `
+                <div class=lista-paciente-box>
+                    <div class="lista-paciente-foto"></div>
+            
+                    <div class="lista-paciente-dados">
+                        <span class="js-lista-paciente-nome">${paciente['nome']}</span>
+                        <span>${paciente['sexo']}</span>
+                        ${paciente['dataNascimento']}
+                        <span class="idade">${paciente['dataNascimento']}</span>
+                    </div>
+                </div>
+              `;
 
-        JSON.parse(pacientes).forEach(function(el) {
-          console.log(el);
+              var elementoPaciente = document.createElement('a');
+                  elementoPaciente.setAttribute('href', `/pacientes/editar/${paciente['idPaciente']}`);
+                  elementoPaciente.classList.add('paciente');
+
+              elementoPaciente.innerHTML = pacienteLinha;
+              listaPacientes.appendChild(elementoPaciente);
+              
         });
       }
   }
