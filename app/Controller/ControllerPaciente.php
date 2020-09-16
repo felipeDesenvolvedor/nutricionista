@@ -109,10 +109,11 @@
           $array = json_decode($_POST['paciente'], true);
           $this->pacientes = new ModelPaciente();
           $this->pacientes = $this->pacientes->buscarPacientes($array);  
+          echo json_encode($this->pacientes, true);
           // $this->titulo = "Consulta Paciente";
           // require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
           // require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
-        // header('Location:/pacientes', true, 302);
+          // header('Location:/pacientes', true, 302);
       }
 
       // header('Location:/pacientes', true, 302);

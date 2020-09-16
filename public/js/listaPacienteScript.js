@@ -53,7 +53,7 @@ function filtrarPaciente() {
 
 
   function buscarPaciente(paciente) {
-      function endereco(paciente) {
+      function buscar(paciente) {
         var xhr = new XMLHttpRequest();   
         var url = `http://nutricionista.com.br/pacientes/buscar/`;
         xhr.open('POST', url, true);
@@ -65,13 +65,32 @@ function filtrarPaciente() {
           if(xhr.readyState == 4) {
                   // requisicao bem sucedida 
               if(xhr.status == 200) {
-                  console.log(xhr.responseText);
+                  exibir(xhr.responseText);
               }
           }
 
         }
       }
 
-      endereco(paciente);
+      buscar(paciente);
+
+      function exibir(pacientes) {
+      //      "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
+      //     '<div class=lista-paciente-box>';
+      //         '<div class="lista-paciente-foto"></div>';
+      
+      //         '<div class="lista-paciente-dados">';
+      //             '<span class="js-lista-paciente-nome">'.$paciente['nome'].'</span>';
+      //             '<span>'.$paciente['sexo'].'</span>';
+      //             $paciente['dataNascimento'];
+      //             '<span class="idade">'.$paciente['dataNascimento'].'</span>';
+      //         '</div>';
+      //     '</div>';
+      // '</a>';
+
+        JSON.parse(pacientes).forEach(function(el) {
+          console.log(el);
+        });
+      }
   }
 }
