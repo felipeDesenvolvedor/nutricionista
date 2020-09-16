@@ -151,10 +151,11 @@
               "email"          => filter_input(INPUT_POST, 'email',          FILTER_SANITIZE_STRING)   
             ],
             filter_input(INPUT_POST, 'responsavel',    FILTER_SANITIZE_STRING),
-            filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING)
+            filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING),
+            '1'
           );
           
-          // header('Location:/pacientes', true, 302);
+          header('Location:/pacientes', true, 302);
         }
     }
   }

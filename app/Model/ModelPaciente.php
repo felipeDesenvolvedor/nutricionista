@@ -20,19 +20,18 @@ class ModelPaciente extends ModelPessoa
         $this->mysql = $mysql;
     }
     
-    public function salvarPaciente(array $pessoa, string $responsavel, string $cpfResponsavel) 
+    public function salvarPaciente(array $pessoa, string $responsavel, string $cpfResponsavel, string $status) 
     {
-        var_dump($pessoa);
-        // $this->pessoa = new ModelPessoa($pessoa);
+        $this->pessoa = new ModelPessoa($pessoa);
 
-        // $this->responsavel    = $responsavel;
-        // $this->cpfResponsavel = $cpfResponsavel;
+        $this->responsavel    = $responsavel;
+        $this->cpfResponsavel = $cpfResponsavel;
 
-        // $query = $this->mysql->prepare('INSERT INTO paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email) VALUES(?,?,?,?,?,?,?,?,?,?);');
+        $query = $this->mysql->prepare('INSERT INTO paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email, status) VALUES(?,?,?,?,?,?,?,?,?,?,?)');
         
-        // $query->bind_param('ssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email']);
-        // $query->execute();
-        // $query->close();
+        $query->bind_param('sssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email'], $status);
+        $query->execute();
+        $query->close();
     }
 
     public function buscarPaciente(string $valorParametro):array
