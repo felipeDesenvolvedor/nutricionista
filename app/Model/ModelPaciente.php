@@ -44,13 +44,11 @@ class ModelPaciente extends ModelPessoa
     {   
         if(count($paciente)) {
            
-            $buscarPacientes = $this->mysql->prepare("select * from paciente where cpf = ?");
-            $buscarPacientes->bind_param('s', $paciente['cpf']);
-            $buscarPacientes->execute();
-            
-            echo json_encode($buscarPacientes, true);
-            
-            return $paciente = $buscarPacientes->get_result()->fetch_assoc();
+            $buscarPacientes = $this->mysql->query("select * from paciente where cpf = '{$paciente['cpf']}'");
+            $paciente = $buscarPacientes->fetch_all(MYSQLI_ASSOC);
+
+            echo json_encode($paciente, true);
+            return [];
         }else {
             $crud = new Crud($this->mysql);
             return $crud->buscar('paciente');
