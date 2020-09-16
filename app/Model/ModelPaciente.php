@@ -16,39 +16,35 @@ class ModelPaciente extends ModelPessoa
         // $this->pessoa = $pessoa;
         // $this->pacienteCaracteristicasFisicas = $pacienteCaracteristicasFisicas;
         // $this->endereco = $endereco;
+        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
+        $this->mysql = $mysql;
     }
     
     public function salvarPaciente(array $pessoa, string $responsavel, string $cpfResponsavel) 
     {
-        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
-
         $this->pessoa = new ModelPessoa($pessoa);
-
-        var_dump($this->pessoa['dataNascimento']);
 
         $this->responsavel    = $responsavel;
         $this->cpfResponsavel = $cpfResponsavel;
 
-        // $query = $mysql->prepare('INSERT INTO paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email) VALUES(?,?,?,?,?,?,?,?,?,?);');
+        $query = $this->mysql->prepare('INSERT INTO paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email) VALUES(?,?,?,?,?,?,?,?,?,?);');
         
-        // $query->bind_param('ssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email']);
-        // $query->execute();
-        // $query->close();
+        $query->bind_param('ssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email']);
+        $query->execute();
+        $query->close();
     }
 
     public function buscarPaciente(string $valorParametro):array
     {   
-        $crud = new Crud();
+        $crud = new Crud($this->mysql);
         return $crud->buscarRegistro('paciente', 'idPaciente', $valorParametro);
     }
 
     public function buscarPacientes(array $paciente):array
     {   
-        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
-        
         if(count($paciente)) {
            
-            $buscarPacientes = $mysql->prepare("select * from paciente where cpf = ?");
+            $buscarPacientes = $this->mysql->prepare("select * from paciente where cpf = ?");
             $buscarPacientes->bind_param('s', $paciente['cpf']);
             $buscarPacientes->execute();
             
@@ -56,27 +52,24 @@ class ModelPaciente extends ModelPessoa
             
             return $paciente = $buscarPacientes->get_result()->fetch_assoc();
         }else {
-            $crud = new Crud();
+            $crud = new Crud($this->mysql);
             return $crud->buscar('paciente');
         }
     }
 
     public function buscarPacientesStatus(string $valorParametro):array
     {   
-        $crud = new Crud();
+        $crud = new Crud($this->mysql);
         return $crud->buscarRegistro('paciente', 'status', $valorParametro);
     }
 
     public function editarPaciente(array $valores, string $idPaciente)
     {   
-        require_once($GLOBALS['caminhoDosArquivos']['Conexao']);
-        
-        $query = $mysql->query("UPDATE paciente SET nome = '$valores[nome]', cpf = '$valores[cpf]', rg = '$valores[rg]', sexo = '$valores[sexo]', dataNascimento = '$valores[dataNascimento]', responsavel = '$valores[responsavel]', cpfResponsavel = '$valores[cpfResponsavel]', telefone1 = '$valores[telefone1]', telefone2 = '$valores[telefone2]', email = '$valores[email]' where idPaciente = '$idPaciente'");
+        $query = $this->mysql->query("UPDATE paciente SET nome = '$valores[nome]', cpf = '$valores[cpf]', rg = '$valores[rg]', sexo = '$valores[sexo]', dataNascimento = '$valores[dataNascimento]', responsavel = '$valores[responsavel]', cpfResponsavel = '$valores[cpfResponsavel]', telefone1 = '$valores[telefone1]', telefone2 = '$valores[telefone2]', email = '$valores[email]' where idPaciente = '$idPaciente'");
     }
 
     public function inativarPaciente(string $idPaciente, string $status)
     {
-        require($GLOBALS['caminhoDosArquivos']['Conexao']);
-        $query = $mysql->query('UPDATE paciente SET status = '.$status.' where idPaciente = '.$idPaciente);
+        $query = $this->mysql->query('UPDATE paciente SET status = '.$status.' where idPaciente = '.$idPaciente);
     }
 }
