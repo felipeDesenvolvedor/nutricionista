@@ -10,3 +10,5 @@ require_once('../src/vendor/autoload.php');
 
 use app\Dispatch;    
 $dispatch = new Dispatch();
+
+// echo count(json_decode('{"status":"todos","cpf":" ","rg":" ","responsavel":" ","cpfResponsavel":" ","municipio":" "}', true));

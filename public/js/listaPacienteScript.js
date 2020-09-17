@@ -23,34 +23,20 @@ function filtrarPaciente() {
   var form = document.querySelector('.view-filtro-paciente-form');
 
   $buscar.addEventListener('click', function(){ 
-      var status            = form.status.value ? form.status.value : " ";
-      var cpf               = form.cpf.value ? form.cpf.value : " ";
-      var rg                = form.rg.value ? form.rg.value : " ";
-      var responsavel       = form.responsavel.value ? form.responsavel.value : " ";
-      var cpfResponsavel    = form.cpfResponsavel.value ? form.cpfResponsavel.value: " ";
-      var municipio         = form.municipio.value ? form.municipio.value : " ";
+      var status         = form.status.value;
+      var cpf            = form.cpf.value;
+      var rg             = form.rg.value;
+      var responsavel    = form.responsavel.value;
+      var cpfResponsavel = form.cpfResponsavel.value;
+      var municipio      = form.municipio.value;
       
-      // buscarPaciente('{"status":'+status+',"cpf":'+cpf+',"rg":'+rg+',"responsavel":'+responsavel+', "cpfResponsavel":'+cpfResponsavel+', "municipio":'+municipio+'}');
-      buscarPaciente({"status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
+      if(status && !cpf && !rg && !responsavel && !cpfResponsavel && !municipio) {
+        buscarPaciente({});
+      }else {
+
+        buscarPaciente({"status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
+      }
   });
-  
-  // $buscar.addEventListener('click', function() {
-  //   var statusSelecionado = 
-   
-  //   switch(statusSelecionado) {
-  //     case 'todos':
-  //       console.log(statusSelecionado); 
-  //     break;
-  //     case '0':
-  //       console.log(statusSelecionado);
-  //     break;
-  //     case '1':
-  //       console.log(statusSelecionado);
-  //     break;  
-  //   }
-
-  // });
-
 
   function buscarPaciente(paciente) {
       function buscar(paciente) {

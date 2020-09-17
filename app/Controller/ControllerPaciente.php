@@ -102,21 +102,20 @@
 
     public function buscar(string $paciente)
     {
- 
-      if(!empty($_POST)) {
-
-          // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
-          $array = json_decode($_POST['paciente'], true);
+      
+      $array = json_decode($_POST['paciente'], true);
+     
+      if(count($array)) {
+        
           $this->pacientes = new ModelPaciente();
           $this->pacientes = $this->pacientes->buscarPacientes($array);  
           echo json_encode($this->pacientes, true);
-          // $this->titulo = "Consulta Paciente";
-          // require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-          // require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']); 
-          // header('Location:/pacientes', true, 302);
-      }
+      }else {
 
-      // header('Location:/pacientes', true, 302);
+        $this->pacientes = new ModelPaciente();
+        $this->pacientes = $this->pacientes->buscarPacientes([]);
+        echo json_encode($this->pacientes, true); 
+      }
     }
 
     public function novo() 
