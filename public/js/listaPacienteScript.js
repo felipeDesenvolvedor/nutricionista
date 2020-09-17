@@ -39,26 +39,8 @@ function filtrarPaciente() {
   });
 
   function buscarPaciente(paciente) {
-      function buscar(paciente) {
-        var xhr = new XMLHttpRequest();   
-        var url = `http://nutricionista.com.br/pacientes/buscar/`;
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send(`paciente=${JSON.stringify(paciente)}`);
 
-        xhr.onreadystatechange = function() {
-            // requisição finalizada 
-          if(xhr.readyState == 4) {
-                  // requisicao bem sucedida 
-              if(xhr.status == 200) {
-                  exibir(xhr.responseText);
-              }
-          }
-
-        }
-      }
-
-      buscar(paciente);
+      buscar('http://nutricionista.com.br/pacientes/buscar/', 'post', 'paciente', paciente, exibir);
 
       function exibir(pacientes) {
         var listaPacientes = document.querySelector('.lista-pacientes');

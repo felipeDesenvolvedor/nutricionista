@@ -78,32 +78,15 @@ function buscaEndereco() {
     
     campoCep.addEventListener('input', function(){
         if(this.value.length == 8) {
-            endereco(this.value);
+            buscar("http://viacep.com.br/ws/"+this.value+"/json", "get", '', '', prencherCampos);
         }
         else if(this.value.length < 8) {
             prencherCampos({logradouro:'', uf:'', bairro:'', complemento:''});            
         }
     });
-
-    function endereco(cep) {
-        var url = "http://viacep.com.br/ws/"+cep+"/json";
-        var xhr = new XMLHttpRequest();   
-        xhr.open('GET', url, true);
-            
-        xhr.onreadystatechange = function() {
-            // requisição finalizada 
-         if(xhr.readyState == 4) {
-                // requisicao bem sucedida 
-             if(xhr.status == 200) {
-                prencherCampos(JSON.parse(xhr.responseText));
-             }
-         }
- 
-        }
-        xhr.send();
-    }
     
     function prencherCampos(dados) {
+        var dados = JSON.parse(dados);
         document.querySelector("#idEndereco").value    = dados.logradouro;
         document.querySelector("#idMunicipio").value   = dados.uf;
         document.querySelector("#idBairro").value      = dados.bairro;
