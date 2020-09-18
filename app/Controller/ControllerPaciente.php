@@ -102,9 +102,8 @@
 
     public function buscar(string $paciente)
     {
-      
       $array = json_decode($_POST['paciente'], true);
-     
+
       if(count($array)) {
         
           $this->pacientes = new ModelPaciente();

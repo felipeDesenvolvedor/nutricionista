@@ -11,4 +11,19 @@ require_once('../src/vendor/autoload.php');
 use app\Dispatch;    
 $dispatch = new Dispatch();
 
-// echo count(json_decode('{"status":"todos","cpf":" ","rg":" ","responsavel":" ","cpfResponsavel":" ","municipio":" "}', true));
+// select * from paciente where `status` like '%0%' and `cpf` like '%461%' and `rg` like '%50%' and `responsavel` like '%%' and `cpfResponsavel` like '%%'
+// $array = json_decode('{"status":"todos","cpf":"461","rg":"50","responsavel":"","cpfResponsavel":"","municipio":""}', true);
+// $query = 'select * from paciente where ';
+
+
+// foreach ($array as $propriedade => $valor) {
+//     if($propriedade === 'cpfResponsavel') {
+
+//         $query .= " $propriedade like '%$valor%'";
+//     break;
+//     }else {
+//         $query .= " $propriedade like '%$valor%' and";
+//      }
+// }
+
+// echo "$query";

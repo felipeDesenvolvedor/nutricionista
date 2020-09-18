@@ -22,6 +22,7 @@ function request(url, method, parametros, dados, funcao) {
                 // requisicao bem sucedida 
             if(xhr.status == 200) {
                 funcao(xhr.responseText);
+                // console.log(xhr.responseText);
             }
         }
     }

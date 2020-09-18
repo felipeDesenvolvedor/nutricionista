@@ -44,14 +44,31 @@ class ModelPaciente extends ModelPessoa
     {   
         if(count($paciente)) {
            
-            $buscarPacientes = $this->mysql->query("select * from paciente where cpf like '%{$paciente['cpf']}%'");
+            $queryString = 'select * from paciente where';
+
+            foreach ($paciente as $propriedade => $valor) {
+
+                if($valor == 'todos') {
+                    $valor = '';    
+                }
+
+                if($propriedade === 'cpfResponsavel') {
+
+                    $queryString .= " $propriedade like '%$valor%'";
+                break;
+                }else {
+                    $queryString .= " $propriedade like '%$valor%' and";
+                }
+            }
+            $buscarPacientes = $this->mysql->query($queryString);
             $paciente = $buscarPacientes->fetch_all(MYSQLI_ASSOC);
         
             return $paciente;
+            // return [];
         }else {
             $crud = new Crud($this->mysql);
             return $crud->buscar('paciente');
-        }
+        }    
     }
 
     public function buscarPacientesStatus(string $valorParametro):array
