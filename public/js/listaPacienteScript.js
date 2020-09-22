@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     filtro();
     filtrarPaciente();
+    filtrarNome();
 });
 
 function filtro() {
@@ -23,6 +24,7 @@ function filtrarPaciente() {
   var form = document.querySelector('.view-filtro-paciente-form');
 
   $buscar.addEventListener('click', function(){ 
+      var nome           = form.nome.value; 
       var status         = form.status.value;
       var cpf            = form.cpf.value;
       var rg             = form.rg.value;
@@ -30,11 +32,11 @@ function filtrarPaciente() {
       var cpfResponsavel = form.cpfResponsavel.value;
       var municipio      = form.municipio.value;
       
-      if(status && !cpf && !rg && !responsavel && !cpfResponsavel && !municipio) {
+      if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel && !municipio) {
         buscarPaciente({});
       }else {
 
-        buscarPaciente({"status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
+        buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
       }
   });
 
@@ -71,3 +73,28 @@ function filtrarPaciente() {
       }
   }
 }
+
+
+function filtrarNome() {
+  var letra = document.querySelector('.input-busca-paciente');
+  var letraNova = letra.value;
+
+letra.addEventListener('input', function(){
+    
+    var arrayLetras = this.value.split(' ');
+        toUpperCase(arrayLetras[arrayLetras.length - 1]);
+   
+});
+
+
+function toUpperCase(palavraFinal) {
+      if(!palavraFinal) {
+        return;
+      }
+
+     letra.value = palavraFinal.charAt(0).toUpperCase() + palavraFinal.slice(1);
+}
+
+}
+
+
