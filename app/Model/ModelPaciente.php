@@ -50,9 +50,14 @@ class ModelPaciente extends ModelPessoa
 
                 if($propriedade === 'cpfResponsavel') {
 
+                    $valor = ucwords($valor);
+
                     $queryString .= " $propriedade like '%$valor%'";
                 break;
                 }else {
+                    
+                    $valor = ucwords($valor);
+
                     $queryString .= " $propriedade like '%$valor%' and";
                 }
             }
