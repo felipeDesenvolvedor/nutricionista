@@ -21,6 +21,7 @@ function filtro() {
 
 function filtrarPaciente() {
   var $buscar = document.querySelector('.btn-busca-paciente');
+  var $campo = document.querySelector('.input-busca-paciente');
   var form = document.querySelector('.view-filtro-paciente-form');
 
   $buscar.addEventListener('click', function(){ 
@@ -39,6 +40,24 @@ function filtrarPaciente() {
         buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
       }
   });
+
+  $campo.addEventListener('keyup', function(){
+    var nome           = form.nome.value; 
+    var status         = form.status.value;
+    var cpf            = form.cpf.value;
+    var rg             = form.rg.value;
+    var responsavel    = form.responsavel.value;
+    var cpfResponsavel = form.cpfResponsavel.value;
+    var municipio      = form.municipio.value;
+    
+    if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel && !municipio) {
+      buscarPaciente({});
+    }else {
+
+      buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
+    }
+
+   });
 
   function buscarPaciente(paciente) {
 
