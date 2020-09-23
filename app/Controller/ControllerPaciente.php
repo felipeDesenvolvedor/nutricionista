@@ -131,7 +131,7 @@
 
     public function cadastrar() 
     {
-        if(isset($_POST['nome']) && !empty($_POST['nome'])) {
+        
           $paciente = new ModelPaciente();
           
           $paciente->salvarPaciente(
@@ -156,8 +156,7 @@
             '1'
           );
           
-          // header('Location:/pacientes', true, 302);
-        }
+          header('Location:/pacientes', true, 302);
     }
   }
 ?>

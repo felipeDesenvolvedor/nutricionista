@@ -25,11 +25,9 @@ class ModelPaciente extends ModelPessoa
         $this->responsavel    = $responsavel;
         $this->cpfResponsavel = $cpfResponsavel;
 
-        // $query = $this->mysql->prepare('insert into paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email, status) values(?,?,?,?,?,?,?,?,?,?,?)');
-        // $query->bind_param('sssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email'], $status);
-        // $query->execute();
-
-        echo $pessoa['nome'];
+        $query = $this->mysql->prepare('insert into paciente(status, nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email) values(?,?,?,?,?,?,?,?,?,?,?)');
+        $query->bind_param('sssssssssss', $status, $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email']);
+        $query->execute();
     }
 
     public function buscarPaciente(string $valorParametro):array
