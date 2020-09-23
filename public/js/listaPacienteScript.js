@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     filtro();
     filtrarPaciente();
-    filtrarNome();
+    // filtrarNome();
 });
 
 function filtro() {
@@ -78,6 +78,7 @@ function filtrarPaciente() {
 function filtrarNome() {
   var letra = document.querySelector('.input-busca-paciente');
   var letraNova = letra.value;
+  var teste = [];
 
 letra.addEventListener('input', function(){
     
