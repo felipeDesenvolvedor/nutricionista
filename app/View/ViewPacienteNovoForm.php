@@ -1,4 +1,4 @@
-<form action=<?php echo "/pacientes/$this->action/".$this->pacientes[0]['idPaciente']?> method="post" class="paciente-novo-form"> 
+<form action=<?php echo "/pacientes/$this->action".$this->pacientes[0]['idPaciente']?> method="post" class="paciente-novo-form"> 
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span> 

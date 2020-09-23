@@ -22,16 +22,14 @@ class ModelPaciente extends ModelPessoa
     
     public function salvarPaciente(array $pessoa, string $responsavel, string $cpfResponsavel, string $status) 
     {
-        $this->pessoa = new ModelPessoa($pessoa);
-
         $this->responsavel    = $responsavel;
         $this->cpfResponsavel = $cpfResponsavel;
 
-        $query = $this->mysql->prepare('INSERT INTO paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email, status) VALUES(?,?,?,?,?,?,?,?,?,?,?)');
-        
-        $query->bind_param('sssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email'], $status);
-        $query->execute();
-        $query->close();
+        // $query = $this->mysql->prepare('insert into paciente(nome, cpf, rg, dataNascimento, sexo, responsavel, cpfResponsavel, telefone1, telefone2, email, status) values(?,?,?,?,?,?,?,?,?,?,?)');
+        // $query->bind_param('sssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $pessoa['dataNascimento'], $pessoa['sexo'], $this->responsavel, $this->cpfResponsavel, $pessoa['telefone1'], $pessoa['telefone2'], $pessoa['email'], $status);
+        // $query->execute();
+
+        echo $pessoa['nome'];
     }
 
     public function buscarPaciente(string $valorParametro):array
@@ -64,7 +62,6 @@ class ModelPaciente extends ModelPessoa
             $paciente = $buscarPacientes->fetch_all(MYSQLI_ASSOC);
         
             return $paciente;
-            // return [];
         }else {
             $crud = new Crud($this->mysql);
             return $crud->buscar('paciente');
