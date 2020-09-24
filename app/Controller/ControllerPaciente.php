@@ -23,12 +23,12 @@
 
     public function getLayout():string
     {
-      return $this->layout;
+      return !empty($this->layout) ? $this->layout : '';
     }
 
     public function setLayout(string $layout)
     {
-      $this->layout = $layout;
+      $this->layout = !empty($layout) ? $layout : '';
     }
 
     public function editar(string $valorParametro)
@@ -123,21 +123,21 @@
     {
       $this->action = "cadastrar";
       // $this->titulo = "Cadastro de paciente";
-
+      // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
       $modal = new Modal(
           ['class'=>''],
           ['titulo'=>'Cadastro de paciente'],
           [
           'tipo'     => 'htmlCompleto',
           'conteudo' => $GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm'],
-          'action' => $this->action
+          'objeto' => $this
           ],
           ['botao'=>'']
       );
-      // $this->setLayout($modal);
 
-      // require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-      // require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
+
+      require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+      require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
     }
 
     public function cadastrar()
