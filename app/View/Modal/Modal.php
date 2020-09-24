@@ -25,8 +25,11 @@ class Modal {
                 break;
             case 'tabela':
                 echo $this->tipoConteudo['tipo'];
-                break;    
-        } 
+                break;
+            case 'htmlCompleto':
+                echo $this->tipoConteudo['tipo'];    
+                break;        
+        }   
     }
 
     public function Formulario() {
@@ -46,5 +49,9 @@ class Modal {
                 echo '</form>';
             echo '</div>';
         echo '</div>';
+    }
+
+    public function htmlCompleto($html) {
+        echo $html;
     }
 }
