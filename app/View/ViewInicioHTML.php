@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" href=<?php echo $GLOBALS['caminhoDosArquivos']['iconFrutas'];?>>
-    
+
     <script src=<?php echo $GLOBALS['caminhoDosArquivos']['jquery'];?>></script>
     <script src=<?php echo $GLOBALS['caminhoDosArquivos']['Ajax'];?>></script>
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['reset'];?>>
-    <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['font-awesome'];?>> 
+    <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['font-awesome'];?>>
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ViewPainelLadoEsquerdoStyle'];?>>
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ViewPainelLadoDireitoStyle'];?>>
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ViewPacienteNovoFormStyle'];?>>
@@ -17,15 +17,9 @@
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ErrorMesage'];?>>
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['index'];?>>
     <link rel="stylesheet" href=<?php  echo $GLOBALS['caminhoDosArquivos']['ModalStyle'];?>>
-    
+
     <script src=<?php echo $GLOBALS['caminhoDosArquivos']['formPaciente'];?>></script>
     <script src=<?php echo $GLOBALS['caminhoDosArquivos']['listaPacienteScript'];?>></script>
-    <style>
-        pre {
-            font-size: 16px;
-            line-height: 23px;
-        }
-    </style>
 </head>
 <body>
     <main class="main">
@@ -40,13 +34,12 @@
                         <div class="plano">Plano Bronze</div>
                     </div>
                 </div>
-
-                <ul class="menu-painel"> 
-                    <?php 
+                <ul class="menu-painel">
+                    <?php
                         foreach($menuPainel as $item):
                             echo '<li>';
                                 echo '<a href='.$item['link'].'>';
-                                    echo '<i class="fa '.$item['class'].'"></i>'; 
+                                    echo '<i class="fa '.$item['class'].'"></i>';
                                     echo '<span>'.$item['info'].'</span>';
                                 echo '</a>';
 
@@ -57,29 +50,26 @@
                             echo '</li>';
                         endforeach;
                     ?>
-                </ul>   
+                </ul>
             </div>
         </section>
 
         <section class="painel-lado-direito">
             <div class="painel-cabecalho">
-            <div class="botao-editar-layput">Editar Layout</div>      
-            <div class="botao-sair">Sair</div>      
-            </div>       
+              <div class="botao-editar-layput">Editar Layout</div>
+              <div class="botao-sair">Sair</div>
+            </div>
 
             <div class="painel-corpo">
-
-            <div class="acoes">                
-            <h1 class="painel-titulo"><?php echo $this->titulo ?></h1>
-
-            <?php 
-            require_once($this->getLayout());
-            ?> 
-
+              <div class="acoes">
+                <h1 class="painel-titulo"><?php echo $this->titulo ?></h1>
+                <?php
+                require_once($this->getLayout());
+                ?>
+              </div>
+              <div id="mensagem-erro"></div>
             </div>
-            <div id="mensagem-erro"></div>  
-            </div>       
-        </section>                
+        </section>
     </main>
 </body>
 
@@ -89,12 +79,12 @@
 
     // use app\View\Modal;
     // $modal = new Modal(
-    //     ['class'=>'anexos'], 
-    //     ['titulo'=>'Anexos'], 
+    //     ['class'=>'anexos'],
+    //     ['titulo'=>'Anexos'],
     //     [
-    //     'tipo'     => 'formulario', 
+    //     'tipo'     => 'formulario',
     //     'conteudo' => [['label'=>'tabela de alimentos', 'campo'=> 'text'], ['label'=>'Alimentos', 'campo'=> 'text']]
-    //     ], 
+    //     ],
     //     ['botao'=>'novo']
     // );
 
@@ -102,4 +92,3 @@
 
 
 </html>
-       
