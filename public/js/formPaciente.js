@@ -96,8 +96,25 @@ function buscaEndereco() {
 }
 
 function Modal() {
-  var botao = document.querySelector('.fechar');
-  botao.addEventListener('click', function(){
-    document.querySelector('.modal').classList.toggle('aberto');
-  });
+  function fechar() {
+    var botao = document.querySelector('.fechar');
+    botao.addEventListener('click', function(){
+      document.querySelector('.modal').classList.toggle('aberto');
+
+      setTimeout(function(){
+        location.href='/pacientes';
+      },100);
+    });
+  }
+  // function abrir() {
+  //   var botao = document.querySelector('.btn-novo-paciente');
+  //   botao.addEventListener('click', function(){
+  //     setTimeout(function(){
+  //       document.querySelector('.modal').classList.add('aberto');
+  //     },1000);
+  //   });
+  // }
+
+  fechar();
+  // abrir();
 }

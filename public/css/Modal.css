@@ -8,9 +8,7 @@
   background: rgba(0,0,0,0.8);
   z-index: 99999;
   opacity:0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
+  transition: opacity 400ms;
   pointer-events: none;
 }
 
@@ -27,6 +25,7 @@
   .modal.aberto {
     opacity: 1;
     pointer-events: auto;
+    transition: opacity 400ms;
   }
 
   .modal-titulo {

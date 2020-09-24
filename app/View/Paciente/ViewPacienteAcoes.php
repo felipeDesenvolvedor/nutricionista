@@ -1,5 +1,5 @@
-<?php 
-        echo 
+<?php
+        echo
         '   <div class="view-filtro">
                 <form class="view-filtro-paciente-form">
                     <div>
@@ -16,19 +16,19 @@
                             </label>
 
                             <label for="idRG">
-                                <span>RG:</span>            
+                                <span>RG:</span>
                                 <input type="text" name="rg" id="idRG">
                             </label>
-                            
+
                             <label for="idResponsavel">
                                 <span>Responsavel: </span>
                                 <input type="text" name="responsavel" id="idResponsavel">
                             </label>
                         </div>
-                        
+
                         <div>
                             <label for="idCpfResponsavel">
-                                <span>CPF Responsavel:</span> 
+                                <span>CPF Responsavel:</span>
                                 <input type="text" name="cpfResponsavel" id="idCpfResponsavel">
                             </label>
 
@@ -48,23 +48,23 @@
                         </div>
                     </div>
                 </form>
-            </div>    
+            </div>
         ';
 
             if(count($this->pacientes)) {
                 echo '<div class="lista-pacientes">';
                 $indice = 0;
-                
+
                 foreach($this->pacientes as $paciente)
-                {   
+                {
                     $indice += 1;
-                    
+
                     $inativo = $paciente['status'] ? '' : 'esconder';
-                    
+
                     echo "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
                         echo '<div class=lista-paciente-box>';
                             echo '<div class="lista-paciente-foto"></div>';
-                    
+
                             echo '<div class="lista-paciente-dados">';
                                 echo '<span class="js-lista-paciente-nome">'.$paciente['nome'].'</span>';
                                 echo '<span>'.$paciente['sexo'].'</span>';
