@@ -17,8 +17,6 @@
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ErrorMesage'];?>>
     <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['index'];?>>
     <link rel="stylesheet" href=<?php  echo $GLOBALS['caminhoDosArquivos']['ModalStyle'];?>>
-
-    <script src=<?php echo $GLOBALS['caminhoDosArquivos']['formPaciente'];?>></script>
     <script src=<?php echo $GLOBALS['caminhoDosArquivos']['listaPacienteScript'];?>></script>
 </head>
 <body>
@@ -75,6 +73,7 @@
 
         </section>
     </main>
+    <script src=<?php echo $GLOBALS['caminhoDosArquivos']['formPaciente'];?>></script>
 </body>
 
     <?php

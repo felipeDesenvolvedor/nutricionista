@@ -61,6 +61,7 @@ class Modal {
 
       echo '<div class="modal aberto">';
         echo '<div class="conteudo">';
+          echo '<h2 class="modal-titulo">'.$this->titulo["titulo"].'<span class="fechar">x</span>'.'</h1>';
           require_once($html);
         echo '</div>';
       echo '</div>';
