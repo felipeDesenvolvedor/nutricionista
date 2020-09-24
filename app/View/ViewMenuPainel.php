@@ -14,37 +14,37 @@ $menuPainel = [
     "item2" => [
                 "info"=>"Alimentos", 
                 "class"=>"fa-apple",
-                "link"=>"/nutricionista/alimentos"
+                "link"=>"/alimentos"
                 ],
     "item3" => [
                 "info"=>"Modelos Alimentares", 
                 "class"=>"fa-coffee",
-                "link"=>"/nutricionista/modelos"
+                "link"=>"/modelos"
                 ],
     "item4" => [
                 "info"=>"Lista de Substituições",
                 "class"=>"fa-list",
-                "link"=>"/nutricionista/substituicoes"
+                "link"=>"/substituicoes"
                 ],
     "item5" => [
                 "info"=>"Receitas", 
                 "class"=>"fa-list",
-                "link"=>"/nutricionista/receitas"
+                "link"=>"/receitas"
                 ],
     "item6" => [
                 "info"=>"Agendas", 
                 "class"=>"fa-calendar",
-                "link"=>"/nutricionista/agenda"
+                "link"=>"/agenda"
                 ],
     "item7" => [
                 "info"=>"Financeiro", 
                 "class"=>"fa-dollar",
-                "link"=>"/nutricionista/financeiro"
+                "link"=>"/financeiro"
     ],
     "item8" => [
                 "info"=>"Secretárias", 
                 "class"=>"fa-laptop",
-                "link"=>"/nutricionista/secretarias"
+                "link"=>"/secretarias"
     ],
     "item9" => [
         "info"=>"Configurações",

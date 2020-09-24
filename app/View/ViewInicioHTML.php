@@ -17,6 +17,8 @@
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['listaPacienteStyle'];?>>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['ErrorMesage'];?>>
         <link rel="stylesheet" href=<?php echo $GLOBALS['caminhoDosArquivos']['index'];?>>
+        <link rel="stylesheet" href=<?php  echo $GLOBALS['caminhoDosArquivos']['ModalStyle'];?>>
+        
         <script src=<?php echo $GLOBALS['caminhoDosArquivos']['formPaciente'];?>></script>
         <script src=<?php echo $GLOBALS['caminhoDosArquivos']['listaPacienteScript'];?>></script>
         <style>
@@ -28,7 +30,7 @@
     </head>
 
     <body>
-        <main class="main">
+        <!-- <main class="main">
             <section class="painel-lado-esquerdo">
                     
 
@@ -83,7 +85,26 @@
                     <div id="mensagem-erro"></div>  
                 </div>       
             </section>                
-        </main>
+        </main> -->
     </body>
+
+    <?php
+
+    require_once($GLOBALS['caminhoDosArquivos']['Modal']);
+
+    use app\View\Modal;
+    $modal = new Modal(
+        ['class'=>'anexos'], 
+        ['titulo'=>'Anexos'], 
+        [
+        'tipo'     => 'formulario', 
+        'conteudo' => [['label'=>'tabela de alimentos', 'campo'=> 'text'], ['label'=>'Alimentos', 'campo'=> 'text']]
+        ], 
+        ['botao'=>'novo']
+    );
+
+    ?>
+
+
 </html>
        
