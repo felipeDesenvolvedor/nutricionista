@@ -60,15 +60,17 @@
               <div class="botao-sair">Sair</div>
             </div>
 
+
             <div class="painel-corpo">
               <div class="acoes">
                 <h1 class="painel-titulo"><?php echo $this->titulo ?></h1>
                 <?php
-                require_once($this->getLayout());
+                  require_once($this->getLayout());
                 ?>
               </div>
               <div id="mensagem-erro"></div>
             </div>
+
         </section>
     </main>
 </body>

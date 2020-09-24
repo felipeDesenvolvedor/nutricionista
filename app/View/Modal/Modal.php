@@ -1,11 +1,12 @@
 <?php
-namespace app\View;
+namespace app\View\Modal;
 
 class Modal {
     public $boxClass = [];
     public $titulo = [];
     public $tipoConteudo = [];
     public $botao = [];
+    public $action;
 
     public function __construct($boxClass, $titulo, $tipoConteudo, $botao) {
         $this->boxClass     = $boxClass;
@@ -20,30 +21,30 @@ class Modal {
     {
         switch($this->tipoConteudo['tipo']) {
             case 'formulario':
-                $this->tipoConteudo = $this->tipoConteudo['conteudo'];    
+                $this->tipoConteudo = $this->tipoConteudo['conteudo'];
                 $this->Formulario();
                 break;
             case 'tabela':
                 echo $this->tipoConteudo['tipo'];
                 break;
             case 'htmlCompleto':
-                echo $this->tipoConteudo['tipo'];    
-                break;        
-        }   
+                $this->htmlCompleto($this->tipoConteudo['conteudo']);
+                break;
+        }
     }
 
     public function Formulario() {
         echo '<div class="modal aberto">';
             echo '<div class="conteudo">';
-                
+
                 echo '<h2 class="modal-titulo">'.$this->titulo["titulo"].'<span class="fechar">x</span>'.'</h1>';
-                
+
                 echo '<form>';
                 foreach($this->tipoConteudo as $conteudo => $campo):
                     echo '<fieldset>';
                         echo "<label>".$campo['label']."</label>";
                         echo "<input type=".$campo['campo']."/>";
-                    echo '</fieldset>';    
+                    echo '</fieldset>';
                 endforeach;
                     echo "<input type='button' value={$this->botao['botao']} >";
                 echo '</form>';
@@ -52,6 +53,12 @@ class Modal {
     }
 
     public function htmlCompleto($html) {
-        echo $html;
+      $this->action = $this->tipoConteudo['action'];
+
+      echo '<div class="modal aberto">';
+        echo '<div class="conteudo">';
+          require_once($html);
+        echo '</div>';
+      echo '</div>';
     }
 }
