@@ -1,0 +1,16 @@
+
+Compativel ate gulp-html-replace
+node: v12.16.1
+npm: 6.13.4
+CLI version 3.9.0
+Local version 3.9.1
+
+
+
+{
+  "dependencies": {
+    "graceful-fs": {
+        "version": "4.2.2"
+     }
+  }
+}
