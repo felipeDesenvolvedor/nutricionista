@@ -3,7 +3,8 @@ var gulp = require('gulp'),
   clean = require('gulp-clean'),
   concat = require('gulp-concat'),
   htmlReplace = require('gulp-html-replace'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  browserSync = require('browser-sync');;
 
 
 // tarefa padrao que executa todo o resto
@@ -45,3 +46,14 @@ gulp.task('build-html', function() {
     }))
     .pipe(gulp.dest('dist'));
 });
+
+
+gulp.task('server', function() {
+    browserSync.init({
+        server: {
+            baseDir: 'src'
+        }
+    });
+
+    gulp.watch('src/**/*').on('change', browserSync.reload);
+  });
