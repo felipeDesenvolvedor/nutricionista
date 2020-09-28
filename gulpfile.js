@@ -4,7 +4,7 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   htmlReplace = require('gulp-html-replace'),
   uglify = require('gulp-uglify'),
-  browserSync = require('browser-sync'),
+  browserSync = require('browser-sync').create(),
   babel = require("gulp-babel"),
   php = require('gulp-connect-php');
 
@@ -60,39 +60,14 @@ gulp.task('build-html', function() {
     .pipe(gulp.dest('public'));
 });
 
-
-// gulp.task('php', function(){
-//     php.server({base:'./', port:80, keepalive:true});
-// });
-//
-//
-// // tarefa que ouve alteracoes nos arquivos e reflete na pagina automaticamente
-// gulp.task('browserSync',['php'], function() {
-//     browserSync.init({
-//         proxy:"http://nutricionista.com.br:80",
-//         baseDir: "./",
-//         open:true,
-//         notify:false
-//
-//     });
-//   });
-//
-//
-// gulp.task('dev', [ 'browserSync'], function() {
-//      gulp.watch('./*.php', browserSync.reload);
-// });
-
-
-var reload  = browserSync.reload;
-
-// gulp.task('php', function() {
-//     php.server({ base: './', port: 80, keepalive: true});
-// });
+gulp.task('php', function() {
+    return php.server({ base: './', port: 80, keepalive: true});
+});
 
 gulp.task('browser-sync', function() {
-    browserSync.init({
+  return browserSync.init({
         proxy: {
-          target:'http://nutricionista.com.br',
+          target:'http://nutricionista.com.br:80',
           proxyReq: [
             function(proxyReq) {
               proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
@@ -104,12 +79,15 @@ gulp.task('browser-sync', function() {
             }
           ]
         },
-        baseDir: "./",
-        open: true,
+        host:'nutricionista.com.br',
+        open: 'external',
         notify: true,
-        keepalive: true
+        files: [
+          'public/css/**.css',
+          'public/js/**.js',
+          'app/**/*.php',
+          'public/index.php',
+          '.htaccess'
+        ]
     });
-});
-gulp.task('default', ['browser-sync'], function () {
-    gulp.watch(['./*.php'], [reload]);
 });
