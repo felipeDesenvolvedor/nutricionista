@@ -1,0 +1,42 @@
+.painel-lado-esquerdo {
+    background: #222d32;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.6);
+    border-top: solid 0px;
+    margin: 6px;
+    position: fixed;
+    float: left;
+    height: calc(100vh - 13px);
+    width: calc(20% - 12px);
+}
+
+.foto-usuario {
+    width: 43px;
+    border-radius:100%;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:10px;
+}
+
+.plataforma {
+    font-size:20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #008d4c;
+}
+
+.menu-painel {
+    padding:0 10px;
+}
+
+.menu-painel li{
+    margin-bottom:10px;
+}
+
+.fa {
+	margin-right: 10px;
+}

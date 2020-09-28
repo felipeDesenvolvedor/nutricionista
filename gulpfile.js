@@ -4,56 +4,69 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   htmlReplace = require('gulp-html-replace'),
   uglify = require('gulp-uglify'),
-  browserSync = require('browser-sync');;
-
+  browserSync = require('browser-sync'),
+  babel = require("gulp-babel");
 
 // tarefa padrao que executa todo o resto
 gulp.task('default', ['copy'], function(){
   gulp.start('build-img', 'build-js', 'build-html');
 });
 
-// removida a dependência de build-img
+
+// tarefa copy que duplica a pasta dist
 gulp.task('copy', ['clean'], function() {
-    return gulp.src('src/**/*')
-        .pipe(gulp.dest('dist'));
+    return gulp.src('dist/**/*')
+        .pipe(gulp.dest('public'));
 });
 
+
+// tarefa clean que apaga a pasta clean
 gulp.task('clean', function() {
-    return gulp.src('dist')
+    return gulp.src('public')
         .pipe(clean());
 });
 
-// adicionando a dependência copy
+
+// tarefa build-img que otimiza as imagens
 gulp.task('build-img', function() {
 
-  gulp.src('dist/img/**/*')
+  gulp.src('public/img/**/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('dist/img'));
+    .pipe(gulp.dest('public/img'));
 });
 
+
+// tarefa build-js que minifica, concatena e transpila ES6 para ES5
 gulp.task('build-js', function() {
-    gulp.src(['dist/js/jquery.js', 'dist/js/home.js', 'dist/js/produto.js'])
-    .pipe(concat('all.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
+
+      gulp.src("public/**/*.js")
+      .pipe(babel({ presets: ["@babel/preset-env"] }))
+      .pipe(concat('all.js'))
+      .pipe(uglify())
+      .pipe(uglify().on('error', function(e){
+              console.log(e);
+        }))
+      .pipe(gulp.dest('public/js'));
 });
 
 
+// tarefa build-html que faz replace dos js para all.js
 gulp.task('build-html', function() {
-    gulp.src('dist/**/*.html')
+    gulp.src('app/View/**/*.php')
     .pipe(htmlReplace({
       js:'js/all.js'
     }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('public'));
 });
 
 
+// tarefa que ouve alteracoes nos arquivos e reflete na pagina automaticamente
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            baseDir: 'src'
+            baseDir: 'public'
         }
     });
 
-    gulp.watch('src/**/*').on('change', browserSync.reload);
+    gulp.watch('public/**/*').on('change', browserSync.reload);
   });

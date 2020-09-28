@@ -1,5 +1,5 @@
 
-Compativel ate gulp-html-replace
+Compativel ate gulp-babel:^8.0.0
 node: v12.16.1
 npm: 6.13.4
 CLI version 3.9.0
@@ -7,6 +7,7 @@ Local version 3.9.1
 
 
 
+//Usar no arquivo npm-shrinkwrap.json
 {
   "dependencies": {
     "graceful-fs": {
