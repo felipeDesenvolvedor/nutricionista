@@ -5,12 +5,13 @@ var gulp = require('gulp'),
   htmlReplace = require('gulp-html-replace'),
   uglify = require('gulp-uglify'),
   browserSync = require('browser-sync'),
-  babel = require("gulp-babel");
+  babel = require("gulp-babel"),
+  php = require('gulp-connect-php');
 
 // tarefa padrao que executa todo o resto
-gulp.task('default', ['copy'], function(){
-  gulp.start('build-img', 'build-js', 'build-html');
-});
+// gulp.task('default', ['copy'], function(){
+//   gulp.start('build-img', 'build-js', 'build-html');
+// });
 
 
 // tarefa copy que duplica a pasta dist
@@ -60,13 +61,55 @@ gulp.task('build-html', function() {
 });
 
 
-// tarefa que ouve alteracoes nos arquivos e reflete na pagina automaticamente
-gulp.task('server', function() {
-    browserSync.init({
-        server: {
-            baseDir: 'public'
-        }
-    });
+// gulp.task('php', function(){
+//     php.server({base:'./', port:80, keepalive:true});
+// });
+//
+//
+// // tarefa que ouve alteracoes nos arquivos e reflete na pagina automaticamente
+// gulp.task('browserSync',['php'], function() {
+//     browserSync.init({
+//         proxy:"http://nutricionista.com.br:80",
+//         baseDir: "./",
+//         open:true,
+//         notify:false
+//
+//     });
+//   });
+//
+//
+// gulp.task('dev', [ 'browserSync'], function() {
+//      gulp.watch('./*.php', browserSync.reload);
+// });
 
-    gulp.watch('public/**/*').on('change', browserSync.reload);
-  });
+
+var reload  = browserSync.reload;
+
+// gulp.task('php', function() {
+//     php.server({ base: './', port: 80, keepalive: true});
+// });
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: {
+          target:'http://nutricionista.com.br',
+          proxyReq: [
+            function(proxyReq) {
+              proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
+            }
+          ],
+          proxyRes: [
+            function(proxyRes, req, res) {
+                console.log(proxyRes.headers);
+            }
+          ]
+        },
+        baseDir: "./",
+        open: true,
+        notify: true,
+        keepalive: true
+    });
+});
+gulp.task('default', ['browser-sync'], function () {
+    gulp.watch(['./*.php'], [reload]);
+});
