@@ -12,49 +12,46 @@ var gulp = require('gulp'),
 // tarefa padrao que executa todo o resto
 
 gulp.task('default', function() {
-  gulp.watch('dist/**/*').on('change', function() {
-    gulp.start('clone');
-  });
+
+    // gulp.watch('public/img/**/*').on('change', function() {
+    //   gulp.start('build-img');
+    // });
+
+    gulp.watch('dist/sass/*.scss').on('change', function() {
+      gulp.start('sass');
+      // gulp.start('sass');
+    });
+
+    gulp.watch('dist/js/*.js').on('change', function() {
+      gulp.start('build-js');
+      // gulp.start('build-js');
+    });
 });
 
-gulp.task('clone', ['copy'], function(){
-  gulp.start('build-img', 'build-js', 'sass');
-});
 
 // tarefa copy que duplica a pasta dist
-gulp.task('copy', ['clean'], function() {
-    return gulp.src('dist/**/*')
-        .pipe(gulp.dest('public'));
-});
-
-
-// tarefa clean que apaga a pasta clean
-gulp.task('clean', function() {
-    return gulp.src('public')
-        .pipe(clean());
-});
-
-// sass.compiler = require('node-sass');
-
-gulp.task('sass', function () {
+gulp.task('sass', ['copy-sass'], function () {
      gulp.src('public/sass/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('public/css'));
 });
 
-// tarefa build-img que otimiza as imagens
-gulp.task('build-img', function() {
+gulp.task('copy-sass', ['clean-sass'], function() {
+    return gulp.src('dist/sass/*.scss')
+        .pipe(gulp.dest('public/sass'));
+});
 
-  gulp.src('public/img/**/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('public/img'));
+// tarefa clean que apaga a pasta clean
+gulp.task('clean-sass', function() {
+    return gulp.src('public/sass')
+        .pipe(clean());
 });
 
 
 // tarefa build-js que minifica, concatena e transpila ES6 para ES5
-gulp.task('build-js', function() {
+gulp.task('build-js', ['copy-js'], function() {
 
-      gulp.src("public/**/*.js")
+      gulp.src("public/js/*.js")
       .pipe(babel({ presets: ["@babel/preset-env"] }))
       .pipe(concat('all.js'))
       .pipe(uglify())
@@ -62,6 +59,17 @@ gulp.task('build-js', function() {
               console.log(e);
         }))
       .pipe(gulp.dest('public/js'));
+});
+
+gulp.task('copy-js', ['clean-js'], function() {
+    return gulp.src('dist/js/*.js')
+        .pipe(gulp.dest('public/js'));
+});
+
+// tarefa clean que apaga a pasta clean
+gulp.task('clean-js', function() {
+    return gulp.src('public/js')
+        .pipe(clean());
 });
 
 

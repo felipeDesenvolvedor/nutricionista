@@ -7,7 +7,7 @@
     display:none;
 }
 
-.view-filtro {  
+.view-filtro {
     margin-left:20px;
 }
 
@@ -24,7 +24,7 @@
 .view-filtro-paciente {
     display: flex;
     max-height:0;
-    transition: all 800ms; 
+    transition: all 800ms;
 }
 
 .view-filtro-paciente.aberto {
@@ -99,5 +99,5 @@
 
 .lista-paciente-foto {
     border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;    
+    border-top-left-radius: 4px;
 }
