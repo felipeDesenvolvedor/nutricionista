@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function(){
     filtro();
     filtrarPaciente();
     // filtrarNome();
-    alert('teste222');
 });
 
 function filtro() {
