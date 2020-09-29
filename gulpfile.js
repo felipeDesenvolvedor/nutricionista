@@ -9,9 +9,9 @@ var gulp = require('gulp'),
   php = require('gulp-connect-php');
 
 // tarefa padrao que executa todo o resto
-// gulp.task('default', ['copy'], function(){
-//   gulp.start('build-img', 'build-js', 'build-html');
-// });
+gulp.task('default', ['copy'], function(){
+  gulp.start('build-img', 'build-js');
+});
 
 
 // tarefa copy que duplica a pasta dist
@@ -60,24 +60,10 @@ gulp.task('build-html', function() {
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('php', function() {
-    return php.server({ base: './', port: 80, keepalive: true});
-});
-
 gulp.task('browser-sync', function() {
-  return browserSync.init({
+    browserSync.init({
         proxy: {
-          target:'http://nutricionista.com.br:80',
-          proxyReq: [
-            function(proxyReq) {
-              proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
-            }
-          ],
-          proxyRes: [
-            function(proxyRes, req, res) {
-                console.log(proxyRes.headers);
-            }
-          ]
+          target:'http://nutricionista.com.br:80'
         },
         host:'nutricionista.com.br',
         open: 'external',
@@ -86,8 +72,7 @@ gulp.task('browser-sync', function() {
           'public/css/**.css',
           'public/js/**.js',
           'app/**/*.php',
-          'public/index.php',
-          '.htaccess'
+          'public/index.php'
         ]
     });
 });
