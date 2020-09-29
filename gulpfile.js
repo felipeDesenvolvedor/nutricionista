@@ -9,10 +9,16 @@ var gulp = require('gulp'),
   php = require('gulp-connect-php');
 
 // tarefa padrao que executa todo o resto
-gulp.task('default', ['copy'], function(){
-  gulp.start('build-img', 'build-js');
+
+gulp.task('default', function() {
+  gulp.watch('dist/**/*').on('change', function() {
+    gulp.start('clone');
+  });
 });
 
+gulp.task('clone', ['copy'], function(){
+  gulp.start('build-img', 'build-js');
+});
 
 // tarefa copy que duplica a pasta dist
 gulp.task('copy', ['clean'], function() {
@@ -69,10 +75,10 @@ gulp.task('browser-sync', function() {
         open: 'external',
         notify: true,
         files: [
-          'public/css/**.css',
-          'public/js/**.js',
+          'dist/css/**.css',
+          'dist/js/**.js',
           'app/**/*.php',
-          'public/index.php'
+          'dist/index.php'
         ]
     });
 });

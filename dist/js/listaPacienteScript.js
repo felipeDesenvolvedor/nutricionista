@@ -90,7 +90,6 @@ function filtrarPaciente() {
 
         });
       }
-      let nome = (nome) => {return 'Felipe'}
   }
 }
 
