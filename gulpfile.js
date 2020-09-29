@@ -6,7 +6,8 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   browserSync = require('browser-sync').create(),
   babel = require("gulp-babel"),
-  php = require('gulp-connect-php');
+  php = require('gulp-connect-php'),
+  sass = require('gulp-sass');
 
 // tarefa padrao que executa todo o resto
 
@@ -17,7 +18,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('clone', ['copy'], function(){
-  gulp.start('build-img', 'build-js');
+  gulp.start('build-img', 'build-js', 'sass');
 });
 
 // tarefa copy que duplica a pasta dist
@@ -33,6 +34,13 @@ gulp.task('clean', function() {
         .pipe(clean());
 });
 
+// sass.compiler = require('node-sass');
+
+gulp.task('sass', function () {
+     gulp.src('public/sass/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('public/css'));
+});
 
 // tarefa build-img que otimiza as imagens
 gulp.task('build-img', function() {
@@ -75,7 +83,7 @@ gulp.task('browser-sync', function() {
         open: 'external',
         notify: true,
         files: [
-          'dist/css/**.css',
+          'dist/sass/**.scss',
           'dist/js/**.js',
           'app/**/*.php',
           'dist/index.php'
