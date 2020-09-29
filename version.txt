@@ -1,5 +1,5 @@
 
-Compativel ate gulp-babel:^8.0.0
+Compativel ate "browser-sync": "^2.9.8",
 node: v12.16.1
 npm: 6.13.4
 CLI version 3.9.0
