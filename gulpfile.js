@@ -13,8 +13,8 @@ var gulp = require('gulp'),
 
 gulp.task('default', function() {
 
-    // gulp.watch('public/img/**/*').on('change', function() {
-    //   gulp.start('build-img');
+    // gulp.watch('public/img/*').on('change', function() {
+      gulp.start('build-img');
     // });
 
     gulp.watch('dist/sass/*.scss').on('change', function() {
@@ -71,6 +71,20 @@ gulp.task('clean-js', function() {
     return gulp.src('public/js')
         .pipe(clean());
 });
+
+
+
+gulp.task('clean-img', function() {
+    return gulp.src('public/img')
+        .pipe(clean());
+});
+
+gulp.task('build-img', ['clean-img'], function(){
+  gulp.src('dist/img/*')
+      .pipe(imagemin())
+      .pipe(gulp.dest('public/img'));
+});
+
 
 
 // tarefa build-html que faz replace dos js para all.js
