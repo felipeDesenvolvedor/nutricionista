@@ -1,15 +1,16 @@
-$branco:#fff;
+@import '_partial.scss';
 
 .painel-lado-esquerdo {
-    background: #222d32;
+    background: $corPrincipal;
     color:$branco;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,.6);
+    box-shadow: 0px 1px 8px rgba(0,0,0,0.36);
     border-top: solid 0px;
     margin: 6px;
     position: fixed;
     float: left;
     height: calc(100vh - 13px);
     width: calc(20% - 12px);
+    border-radius: 9px;
 }
 
 .foto-usuario {
