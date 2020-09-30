@@ -7,7 +7,10 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync').create(),
   babel = require("gulp-babel"),
   php = require('gulp-connect-php'),
-  sass = require('gulp-sass');
+  sass = require('gulp-sass'),
+  cssmin = require('gulp-cssmin'),
+  cache = require('gulp-cache');
+
 
 // tarefa padrao que executa todo o resto
 
@@ -19,12 +22,19 @@ gulp.task('default', function() {
 
     gulp.watch('dist/sass/*.scss').on('change', function() {
       gulp.start('sass');
+      gulp.start('clearCache');
       // gulp.start('sass');
     });
 
     gulp.watch('dist/js/*.js').on('change', function() {
       gulp.start('build-js');
+      gulp.start('clearCache');
       // gulp.start('build-js');
+    });
+
+    gulp.task('clearCache', function() {
+      // Or, just call this for everything
+      cache.clearAll();
     });
 });
 
@@ -33,6 +43,7 @@ gulp.task('default', function() {
 gulp.task('sass', ['copy-sass'], function () {
      gulp.src('public/sass/*.scss')
     .pipe(sass())
+    .pipe(cssmin())
     .pipe(gulp.dest('public/css'));
 });
 
@@ -108,7 +119,8 @@ gulp.task('browser-sync', function() {
           'dist/sass/**.scss',
           'dist/js/**.js',
           'app/**/*.php',
-          'dist/index.php'
+          'dist/index.php',
+          'dist/img/*'
         ]
     });
 });
