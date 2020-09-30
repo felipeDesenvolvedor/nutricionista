@@ -4,13 +4,6 @@
   margin: 6px;
   width: 80%; }
 
-.painel-cabecalho {
-  width: 100%;
-  background: #199c60;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; }
-
 .painel-titulo {
   padding: 10px 20px;
   font-size: 20px; }
