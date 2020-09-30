@@ -154,18 +154,16 @@ main {
 	text-decoration: none;
 }
 
-.painel-titulo {
-	text-align: left;
+body {
+	 background-image:url('/public/img/fundo.png');
+	 background-repeat: no-repeat;
+	 background-position: center center;
+	 background-size: cover;
+	 background-attachment: fixed;
 }
 
-body:before {
-	content:'';
-	background-image:url('/public/img/fundo.png');
-	width: 100%;
-  height: 100vh;
-  position: fixed;
-  display: inline-block;
-  top: 0;
-  background-repeat: no-repeat;
-	background-size: 100%;
+.limite {
+	width: 1400px;
+	display: flex;
+	margin:0 auto;
 }

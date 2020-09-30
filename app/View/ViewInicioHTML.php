@@ -19,9 +19,11 @@
     <script src="/public/js/listaPacienteScript.js"></script>
 </head>
 <body>
+  <div class="fundo"></div>
     <main class="main">
+      <div class="limite">
         <section class="painel-lado-esquerdo">
-            <div>
+            <div class="painel-lado-esquerdo-container">
                 <div class="usuario">
                     <div class="foto">
                         <img class="foto-usuario" src="/public/img/foto-user.png">
@@ -52,10 +54,13 @@
         </section>
 
         <section class="painel-lado-direito">
-      
+
             <div class="painel-corpo">
               <div class="acoes">
-                <h1 class="painel-titulo"><?php echo $this->titulo ?></h1>
+                <h1 class="painel-titulo">
+                  <?php echo $this->titulo ?>
+                  <span>sair</span>
+                </h1>
                 <?php
                   if($this->getLayout()) {
                       require_once($this->getLayout());
@@ -66,6 +71,7 @@
             </div>
 
         </section>
+      </div>
     </main>
     <script src="/public/js/formPaciente.js"></script>
 </body>

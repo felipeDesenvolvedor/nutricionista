@@ -1,21 +1,20 @@
+@import '_partial.scss';
+
 .painel-lado-direito {
-    position: absolute;
-    right: 0;
+    // position: absolute;
+    // right: 0;
     margin:6px;
-    width: 80%;
+    width: 90%;
 }
 
 .painel-titulo {
     padding:10px 20px;
     font-size: 20px;
-}
-
-.painel-titulo:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 1px;
-    background-color: #000;;
+    text-align: left;
+    background-color: $laranja;
+    color:$branco;
+    text-transform: uppercase;
+    border-radius: 9px;
 }
 
 .botao-editar-layput,
