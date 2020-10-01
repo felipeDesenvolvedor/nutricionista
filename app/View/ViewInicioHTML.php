@@ -17,40 +17,43 @@
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/Modal.css">
     <script src="/public/js/listaPacienteScript.js"></script>
+    <script src="/public/js/index.js"></script>
 </head>
 <body>
   <div class="fundo"></div>
     <main class="main">
       <div class="limite">
         <section class="painel-lado-esquerdo">
-            <div class="painel-lado-esquerdo-container">
-                <div class="usuario">
-                    <div class="foto">
+            <ul class="menu-painel">
+                <?php
+                echo '
+                  <li>
+                    <div class="usuario">
                         <img class="foto-usuario" src="/public/img/foto-user.png">
+                        <div>
+                          <div class="nome"> Felipe Da Silva Santos</div>
+                          <div class="plano">Plano Bronze</div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="nome"> Felipe Da Silva Santos</div>
-                        <div class="plano">Plano Bronze</div>
-                    </div>
-                </div>
-                <ul class="menu-painel">
-                    <?php
-                        foreach($menuPainel as $item):
-                            echo '<li>';
-                                echo '<a href='.$item['link'].'>';
-                                    echo '<i class="fa '.$item['class'].'"></i>';
-                                    echo '<span>'.$item['info'].'</span>';
-                                echo '</a>';
+                  </li>
+                ';
 
-                                if (isset($item['subitem'])) {
-                                    echo '<li>'.$item['subitem']['subItem2'].'</li>';
-                                    echo '<li>'.$item['subitem']['subItem3'].'</li>';
-                                }
-                            echo '</li>';
-                        endforeach;
-                    ?>
-                </ul>
-            </div>
+                    foreach($menuPainel as $item):
+                        echo '<li>';
+                            echo '<a href='.$item['link'].'>';
+                                echo '<i class="fa '.$item['class'].'"></i>';
+                                echo '<span>'.$item['info'].'</span>';
+                            echo '</a>';
+
+                            if (isset($item['subitem'])) {
+                                echo '<li>'.$item['subitem']['subItem2'].'</li>';
+                                echo '<li>'.$item['subitem']['subItem3'].'</li>';
+                            }
+                        echo '</li>';
+                    endforeach;
+                ?>
+            </ul>
+            <div class="painel-lado-esquerdo-hamburguer js-hamburguer"></div>
         </section>
 
         <section class="painel-lado-direito">
@@ -75,23 +78,4 @@
     </main>
     <script src="/public/js/formPaciente.js"></script>
 </body>
-
-    <?php
-
-    // require_once($GLOBALS['caminhoDosArquivos']['Modal']);
-
-    // use app\View\Modal;
-    // $modal = new Modal(
-    //     ['class'=>'anexos'],
-    //     ['titulo'=>'Anexos'],
-    //     [
-    //     'tipo'     => 'formulario',
-    //     'conteudo' => [['label'=>'tabela de alimentos', 'campo'=> 'text'], ['label'=>'Alimentos', 'campo'=> 'text']]
-    //     ],
-    //     ['botao'=>'novo']
-    // );
-
-    ?>
-
-
 </html>
