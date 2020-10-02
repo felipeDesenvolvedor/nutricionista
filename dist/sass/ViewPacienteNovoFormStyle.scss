@@ -1,8 +1,5 @@
 .paciente-novo-form {
-    display:flex;
-    flex-direction:column;
-    padding: 30px 0 0 20px;
-    position:relative;
+    display:flex; flex-direction:column; padding: 30px 0 0 20px; position:relative;
 }
 
 .paciente-novo-form div{
@@ -24,8 +21,7 @@
 .inativar-paciente,
 .novo-paciente-salvar-atender,
 .novo-paciente-salvar {
-    position: absolute;
-    bottom: 0;
+    position: absolute; bottom: 0;
 }
 
 .novo-paciente-salvar {
@@ -41,12 +37,7 @@
 }
 
 .foto-paciente {
-    position: absolute;
-    right: 30px;
-    top: 200px;
-    background-color: green;
-    padding: 30px;
-    color: white;
+    position: absolute; right: 30px; top: 200px; background-color: green; padding: 30px; color: white;
 }
 
 .paciente-novo-form span {
@@ -54,6 +45,5 @@
 }
 
 .paciente-novo-form .campo-obrigatorio:after {
-    content:'*';
-    color:red;
+    content:'*'; color:red;
 }

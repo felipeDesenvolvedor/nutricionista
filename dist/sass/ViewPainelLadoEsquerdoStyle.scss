@@ -2,21 +2,15 @@
 
 
 .usuario {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: flex; align-items: center; justify-content: space-around;
 
     &-foto {
-        width: 60px;
-        border-radius:100%;
+        width: 60px; border-radius:100%;
     }
 }
 
 .plataforma {
-    font-size:20px;
-    padding: 20px;
-    text-align: center;
-    background-color: #008d4c;
+    font-size:20px; padding: 20px; text-align: center; background-color: #008d4c;
 }
 
 .fa {
@@ -25,11 +19,7 @@
 
 
 .painel-lado-esquerdo {
-    color:$branco;
-
-    border-top: solid 0px;
-    position: relative;
-    border-radius: 9px;
+    color:$branco; border-top: solid 0px; position:relative; border-radius: 9px;
 
     &-container {
       position: fixed;
@@ -39,12 +29,7 @@
 
       @media (min-width:$tablete) {
         .menu-painel {
-          width:80px;
-          padding: 10px 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          box-shadow: 0px 1px 8px rgba(0,0,0,0.36);
+          width:80px; padding: 10px 0; display: flex; flex-direction: column; align-items: center; box-shadow: 0px 1px 8px rgba(0,0,0,0.36);
 
           li:not(:first-of-type) {
             padding: 10px 0
@@ -62,13 +47,10 @@
     }
 
     .menu-painel {
-        font-size:15px;
-        position: fixed;
-        transition:all 500ms;
+        font-size:15px; position: fixed; transition:all 500ms;
 
          li{
-            margin-bottom:10px;
-            border-radius:20px;
+            margin-bottom:10px; border-radius:20px;
 
             &:hover:not(:first-of-type) {
                 background-color:$verde;
@@ -84,62 +66,39 @@
         }
 
         @media (min-width: $tablete) {
-          font-size: 15px;
-          position: fixed;
-          width: calc(20% - 12px);
-          background: #f3902c;
-          border-radius: 9px;
+          font-size: 15px; position: fixed; width: calc(20% - 12px); background: #f3902c; border-radius: 9px;
         }
     }
 
     &-hamburguer {
-      width: 50px;
-      height: 30px;
-      top: 0;
-      position: absolute;
-      right: -52px;
-      border-top-right-radius: 9px;
-      border-bottom-right-radius:9px;
-      font-size: 30px;
+      width: 50px; height: 30px; top: 0; position: absolute; right: -52px; border-top-right-radius: 9px; border-bottom-right-radius:9px; font-size: 30px;
 
       @media (max-width:$tablete) {
-        right: -20px;
-        top:5px;
-        z-index: 1;
+        right: -20px; top:5px; z-index: 1;
         // font-size: 20px;
       }
     }
 
     @media (min-width:$tablete) {
-      width: calc(20% - 12px);
-      margin:6px 30px 6px 6px;
+      width: calc(20% - 12px); margin:6px 30px 6px 6px;
     }
 
     @media (max-width:$tablete) {
       left:-129px;
 
       &.aberto {
-        left: 0;
-        z-index: 2;
+        left: 0; z-index: 2;
       }
     }
 }
 
 @media (max-width:$tablete) {
   .painel-lado-esquerdo.aberto ~ .menu-painel-fundo {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.5);
-    left: 0;
-    bottom: 0;
+    position: fixed; z-index: 1; width: 100%; height: 100%; background-color: rgba(0,0,0,.5); left: 0; bottom: 0;
   }
 
   .usuario {
-      margin-left: 10px;
-      flex-direction: column;
-      align-items:flex-start;
+      margin-left: 10px; flex-direction: column; align-items:flex-start;
 
       &-foto {
         margin:10px;

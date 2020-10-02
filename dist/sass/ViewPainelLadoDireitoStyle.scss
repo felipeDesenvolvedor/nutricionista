@@ -1,25 +1,15 @@
 @import '_partial.scss';
 
 .painel-lado-direito {
-    // position: absolute;
-    // right: 0;
     width: 100%;
 
     @media (min-width:$tablete) {
-      margin:6px auto;
-      width: 74%;
+      margin:6px auto; width: 74%;
     }
 }
 
 .painel-titulo {
-    padding:10px 20px;
-    font-size: 20px;
-    text-align: left;
-    background-color: $laranja;
-    color:$branco;
-    text-transform: uppercase;
-    border-radius: 9px;
-    text-align: center;
+    padding:10px 20px; font-size: 20px; text-align: left; background-color: $laranja; color:$branco; text-transform: uppercase; border-radius: 9px; text-align: center;
 
     span {
       float: right;
@@ -32,14 +22,11 @@
 
 .botao-editar-layput,
 .botao-sair {
-    margin-right:14px;
-    color:#fff;
-    padding: 23px 0;
+    margin-right:14px; color:#fff; padding: 23px 0;
 }
 
 form {
-    display: flex;
-    justify-content: space-around;
+    display: flex; justify-content: space-around;
 }
 
 .input-busca-paciente {
