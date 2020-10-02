@@ -167,6 +167,7 @@ body {
 .limite {
 	display: flex;
 	margin:0 auto;
+	position: relative;
 
 	@media (min-width:$tablete) {
 		width: 1400px;

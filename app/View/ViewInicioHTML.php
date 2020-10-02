@@ -52,10 +52,10 @@
                         echo '</li>';
                     endforeach;
                 ?>
+                <div class="painel-lado-esquerdo-hamburguer js-hamburguer"><i class="fa fa-bars"></i></div>
             </ul>
-            <div class="painel-lado-esquerdo-hamburguer js-hamburguer"></div>
-        </section>
 
+        </section>
         <section class="painel-lado-direito">
 
             <div class="painel-corpo">
@@ -74,8 +74,10 @@
             </div>
 
         </section>
+        <div class="menu-painel-fundo"></div>
       </div>
     </main>
     <script src="/public/js/formPaciente.js"></script>
+
 </body>
 </html>
