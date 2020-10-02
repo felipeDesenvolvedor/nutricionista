@@ -1,6 +1,41 @@
-.lista-pacientes-filtro.esconder {
-    display:none;
+@import '_partial.scss';
+
+.lista-pacientes {
+  margin:20px 0;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+
+  &.esconder {
+      display:none;
+  }
+
+  a {
+     flex-basis:100%;
+ }
+
+ @media (min-width:620px) {
+   a {
+      flex-basis:50%;
+  }
+ }
+
+
+  @media (min-width:$tablete) {
+    a {
+       flex-basis:33.33%;
+   }
+  }
+
+
+  .btn-novo-paciente {
+      width: 110px;
+      height: 20px;
+      margin-top: 20px;
+  }
 }
+
+
 
 .esconder,
 .esconder + .separador {
@@ -43,18 +78,6 @@
     overflow: hidden;
 }
 
-.lista-pacientes {
-    margin:20px 0;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.lista-pacientes a {
-
-    flex-basis:33.33%;
-}
-
 .lista-paciente-box {
     height: 300px;
     margin-top: 20px;
@@ -67,12 +90,6 @@
 
 .separador {
     flex-basis:5%;
-}
-
-.lista-pacientes .btn-novo-paciente{
-    width: 110px;
-    height: 20px;
-    margin-top: 20px;
 }
 
 .lista-paciente-dados span {
