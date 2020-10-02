@@ -24,6 +24,10 @@
     span {
       float: right;
     }
+
+    @media (min-width:$tablete) {
+      font-size:25px;
+    }
 }
 
 .botao-editar-layput,
