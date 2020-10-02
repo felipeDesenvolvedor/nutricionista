@@ -95,7 +95,7 @@ function buscaEndereco() {
 
 function Modal() {
   function fechar() {
-    var botao = document.querySelector('.fechar');
+    var botao = document.querySelector('.modal-fechar');
     botao.addEventListener('click', function(){
       document.querySelector('.modal').classList.toggle('aberto');
 

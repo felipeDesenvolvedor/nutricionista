@@ -1,28 +1,29 @@
 @import '_partial.scss';
 
-.painel-lado-direito {
-    width: 100%;
+.painel {
+  &-lado-direito {
+      width: 100%;
 
-    @media (min-width:$tablete) {
-      margin:6px auto; width: 74%;
-    }
-}
+      @media (min-width:$tablete) {
+        margin:6px auto; width: 74%;
+      }
+  }
 
-.painel-titulo {
-    padding:10px 20px; font-size: 20px; text-align: left; background-color: $laranja; color:$branco; text-transform: uppercase; border-radius: 9px; text-align: center;
+  &-titulo {
+      position: relative; padding:10px 20px; font-size: 20px; text-align: left; background-color: $laranja; color:$branco; text-transform: uppercase; border-radius: 9px; text-align: center;
 
-    span {
-      float: right;
-    }
+      span {
+        float: right;
+      }
 
-    @media (min-width:$tablete) {
-      font-size:25px;
-    }
-}
+      @media (min-width:$tablete) {
+        font-size:25px;
+      }
+  }
 
-.botao-editar-layput,
-.botao-sair {
-    margin-right:14px; color:#fff; padding: 23px 0;
+  &-corpo {
+    height:calc(100% - 60px); position: relative;
+  }
 }
 
 form {
@@ -33,23 +34,18 @@ form {
     flex-basis:30%;
 }
 
-.btn-filtro-paciente,
-.btn-busca-paciente,
-.btn-novo-paciente {
-    flex-basis:10%;
+.btn {
+  &-filtro-paciente,
+  &-busca-paciente,
+  &-novo-paciente {
+      flex-basis:10%;
+  }
 }
 
-.acoes p {
+.acoes {
+  height:calc(100% - 60px);  position: relative;
+
+  p {
     font-size:30px;
-}
-
-.painel-corpo,
-.acoes {
-    height:calc(100% - 60px);
-}
-
-.painel-titulo,
-.painel-corpo,
-.acoes {
-    position: relative;
+  }
 }
