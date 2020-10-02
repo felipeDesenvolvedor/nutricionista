@@ -5,9 +5,7 @@
     color:$branco;
     box-shadow: 0px 1px 8px rgba(0,0,0,0.36);
     border-top: solid 0px;
-    margin:6px 30px 6px 6px;
     position: relative;
-    width: calc(20% - 12px);
     border-radius: 9px;
     transition:all 500ms;
 
@@ -38,6 +36,27 @@
       }
     }
 
+    .menu-painel {
+        font-size:15px;
+        position: fixed;
+
+         li{
+            margin-bottom:10px;
+            border-radius:20px;
+
+            &:hover:not(:first-of-type) {
+                background-color:$verde;
+            }
+            &:not(:first-of-type) {
+              padding: 10px;
+            }
+        }
+
+        @media (min-width:$tablete) {
+          z-index: 2;
+        }
+    }
+
     &-hamburguer {
       width: 30px;
       height: 10px;
@@ -47,6 +66,15 @@
       right: -42px;
       border-top-right-radius: 9px;
       border-bottom-right-radius:9px;
+    }
+
+    @media (min-width:$tablete) {
+      width: calc(20% - 12px);
+      margin:6px 30px 6px 6px;
+    }
+
+    @media (max-width:$tablete) {
+      left:-200px;
     }
 }
 
@@ -66,23 +94,6 @@
     padding: 20px;
     text-align: center;
     background-color: #008d4c;
-}
-
-.menu-painel {
-    font-size:15px;
-    position: fixed;
-
-     li{
-        margin-bottom:10px;
-        border-radius:20px;
-
-        &:hover:not(:first-of-type) {
-            background-color:$verde;
-        }
-        &:not(:first-of-type) {
-          padding: 10px;
-        }
-    }
 }
 
 .fa {

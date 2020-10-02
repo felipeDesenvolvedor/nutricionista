@@ -3,8 +3,12 @@
 .painel-lado-direito {
     // position: absolute;
     // right: 0;
-    margin:6px auto;
-    width: 74%;
+    width: 100%;
+
+    @media (min-width:$tablete) {
+      margin:6px auto;
+      width: 74%;
+    }
 }
 
 .painel-titulo {
