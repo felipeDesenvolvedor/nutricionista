@@ -14,6 +14,7 @@
     }
 
     &.fechado {
+
       @media (min-width:$tablete) {
         width:80px;
 
@@ -84,6 +85,10 @@
 
     @media (max-width:$tablete) {
       left:-129px;
+
+      &.aberto {
+        left: 0;
+      }
     }
 }
 

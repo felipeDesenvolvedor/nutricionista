@@ -10,5 +10,6 @@ function toggleMenu() {
 
   function toggle() {
     menu.classList.toggle('fechado');
+    menu.classList.toggle('aberto');
   }
 }
