@@ -14,25 +14,27 @@
     }
 
     &.fechado {
-      width:80px;
+      @media (min-width:$tablete) {
+        width:80px;
 
-      .menu-painel {
-        padding: 10px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        .menu-painel {
+          padding: 10px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
-        li:not(:first-of-type) {
-          padding: 10px 0
+          li:not(:first-of-type) {
+            padding: 10px 0
+          }
         }
-      }
 
-      span{
-        display:none;
-      }
+        span{
+          display:none;
+        }
 
-      .nome, .plano {
-        display: none;
+        .nome, .plano {
+          display: none;
+        }
       }
     }
 
@@ -52,20 +54,27 @@
             }
         }
 
-        @media (min-width:$tablete) {
-          z-index: 2;
+        @media (max-width:$tablete) {
+          position: absolute;
+          z-index: 1;
         }
     }
 
     &-hamburguer {
-      width: 30px;
-      height: 10px;
-      background-color: $laranja;
+      width: 50px;
+      height: 30px;
+      background-color: white;
       position: absolute;
       top: 0;
-      right: -42px;
+      right: -43px;
       border-top-right-radius: 9px;
       border-bottom-right-radius:9px;
+
+      @media (max-width:$tablete) {
+        right: -180px;
+        top:5px;
+        z-index: 1;
+      }
     }
 
     @media (min-width:$tablete) {
@@ -74,7 +83,7 @@
     }
 
     @media (max-width:$tablete) {
-      left:-200px;
+      left:-129px;
     }
 }
 

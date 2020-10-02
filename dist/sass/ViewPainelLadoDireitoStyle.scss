@@ -19,6 +19,11 @@
     color:$branco;
     text-transform: uppercase;
     border-radius: 9px;
+    text-align: center;
+
+    span {
+      float: right;
+    }
 }
 
 .botao-editar-layput,
