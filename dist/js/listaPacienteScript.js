@@ -20,7 +20,7 @@ function filtro() {
 }
 
 function filtrarPaciente() {
-  var $buscar = document.querySelector('.btn-busca-paciente');
+  var $buscar = document.querySelector('.view-filtro-paciente-btn-busca');
   var $campo = document.querySelector('.view-filtro-paciente-busca');
   var form = document.querySelector('.view-filtro-paciente-form');
 

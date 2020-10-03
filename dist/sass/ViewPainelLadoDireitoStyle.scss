@@ -30,15 +30,15 @@ form {
     display: flex; justify-content: space-around;
 }
 
-.view-filtro-paciente-busca {
-    flex-basis:30%;
-}
+.view-filtro-paciente{
+  &-busca {
+      flex-basis:30%;
+  }
 
-.btn {
-  &-filtro-paciente,
-  &-busca-paciente,
-  &-novo-paciente {
-      flex-basis:10%;
+  &-btn,
+  &-btn-busca,
+  &-btn-novo {
+    flex-basis:10%;
   }
 }
 

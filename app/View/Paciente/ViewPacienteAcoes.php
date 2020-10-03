@@ -5,8 +5,8 @@
                     <div>
                         <input class="view-filtro-paciente-busca" type="text" name="nome" placeholder="Pesquisar por nome"/>
                         <input class="view-filtro-paciente-btn" type="button" name="" value="Filtros"/>
-                        <input class="btn-busca-paciente" type="button" name="" value="Buscar"/>
-                        <a href=/pacientes/novo><input class="btn-novo-paciente" type="button" name="" value="Novo"/></a>
+                        <input class="view-filtro-paciente-btn-busca" type="button" name="" value="Buscar"/>
+                        <a href=/pacientes/novo><input class="view-filtro-paciente-btn-novo" type="button" name="" value="Novo"/></a>
                     </div>
                     <div class="view-filtro-paciente">
                         <div>
