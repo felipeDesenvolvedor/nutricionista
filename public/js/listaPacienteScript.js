@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function filtro() {
   $filtro = document.querySelector('.view-filtro-paciente');
-  $btnFiltros = document.querySelector('.btn-filtro-paciente');
+  $btnFiltros = document.querySelector('.view-filtro-paciente-btn');
 
   $btnFiltros.addEventListener('click', function(){
     $filtro.classList.toggle('aberto');
