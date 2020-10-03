@@ -21,7 +21,7 @@ function filtro() {
 
 function filtrarPaciente() {
   var $buscar = document.querySelector('.btn-busca-paciente');
-  var $campo = document.querySelector('.input-busca-paciente');
+  var $campo = document.querySelector('.view-filtro-paciente-busca');
   var form = document.querySelector('.view-filtro-paciente-form');
 
   $buscar.addEventListener('click', function(){
@@ -95,7 +95,7 @@ function filtrarPaciente() {
 
 
 function filtrarNome() {
-  var letra = document.querySelector('.input-busca-paciente');
+  var letra = document.querySelector('.view-filtro-paciente-busca');
   var letraNova = letra.value;
   var teste = [];
 
