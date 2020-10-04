@@ -11,40 +11,37 @@
                     <div class="view-filtro-paciente">
                         <div>
                             <label for="idCpf">
-                                <span> CPF:</span>
-                                <input type="text" name="cpf" id="idCpf">
+                                <input type="text" name="cpf" id="idCpf" placeholder="cpf">
                             </label>
 
                             <label for="idRG">
-                                <span>RG:</span>
-                                <input type="text" name="rg" id="idRG">
+                                <input type="text" name="rg" id="idRG" placeholder="rg">
                             </label>
 
                             <label for="idResponsavel">
-                                <span>Responsavel: </span>
-                                <input type="text" name="responsavel" id="idResponsavel">
+                                <input type="text" name="responsavel" id="idResponsavel" placeholder="responsavel">
                             </label>
                         </div>
 
                         <div>
                             <label for="idCpfResponsavel">
-                                <span>CPF Responsavel:</span>
-                                <input type="text" name="cpfResponsavel" id="idCpfResponsavel">
+                                <input type="text" name="cpfResponsavel" id="idCpfResponsavel" placeholder="cpf responsavel">
                             </label>
 
                             <label for="idMunicipio">
-                                <span>Municipio</span>
-                                <input type="text" name="municipio" id="idMunicipio">
+                                <input type="text" name="municipio" id="idMunicipio" placeholder="municipio">
                             </label>
+                        </div>
 
-                            <label for="idStatus">
-                                <span>Status</span>
-                                <select name="status" id="idStatus">
-                                    <option value="todos">Todos</option>
-                                    <option value="0">Inativo</option>
-                                    <option value="1">Ativo</option>
-                                </select>
-                            </label>
+                        <di>
+                          <label for="idStatus">
+                              <span>Status</span>
+                              <select name="status" id="idStatus">
+                                  <option value="todos">Todos</option>
+                                  <option value="0">Inativo</option>
+                                  <option value="1">Ativo</option>
+                              </select>
+                          </label>
                         </div>
                     </div>
                 </form>
