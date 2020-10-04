@@ -36,7 +36,7 @@
 }
 
 .view-filtro-paciente {
-    margin-left:20px; display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
+    display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
 
     &-form {
         display: flex; flex-direction: column;
@@ -57,7 +57,11 @@
     }
 
      div {
-        overflow: hidden;
+        overflow: hidden; display: flex; flex-direction: column;
+    }
+
+     input {
+       width: 314px;
     }
 }
 

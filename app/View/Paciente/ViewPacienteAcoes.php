@@ -27,21 +27,14 @@
                             <label for="idCpfResponsavel">
                                 <input type="text" name="cpfResponsavel" id="idCpfResponsavel" placeholder="cpf responsavel">
                             </label>
-
-                            <label for="idMunicipio">
-                                <input type="text" name="municipio" id="idMunicipio" placeholder="municipio">
+                            <label for="idStatus">
+                                <span>Status</span>
+                                <select name="status" id="idStatus">
+                                    <option value="todos">Todos</option>
+                                    <option value="0">Inativo</option>
+                                    <option value="1">Ativo</option>
+                                </select>
                             </label>
-                        </div>
-
-                        <di>
-                          <label for="idStatus">
-                              <span>Status</span>
-                              <select name="status" id="idStatus">
-                                  <option value="todos">Todos</option>
-                                  <option value="0">Inativo</option>
-                                  <option value="1">Ativo</option>
-                              </select>
-                          </label>
                         </div>
                     </div>
                 </form>
