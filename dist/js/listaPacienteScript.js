@@ -31,13 +31,12 @@ function filtrarPaciente() {
       var rg             = form.rg.value;
       var responsavel    = form.responsavel.value;
       var cpfResponsavel = form.cpfResponsavel.value;
-      var municipio      = form.municipio.value;
 
-      if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel && !municipio) {
+      if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel) {
         buscarPaciente({});
       }else {
 
-        buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
+        buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel});
       }
   });
 
@@ -48,13 +47,12 @@ function filtrarPaciente() {
     var rg             = form.rg.value;
     var responsavel    = form.responsavel.value;
     var cpfResponsavel = form.cpfResponsavel.value;
-    var municipio      = form.municipio.value;
 
-    if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel && !municipio) {
+    if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel) {
       buscarPaciente({});
     }else {
 
-      buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel, "municipio":municipio});
+      buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel});
     }
 
    });

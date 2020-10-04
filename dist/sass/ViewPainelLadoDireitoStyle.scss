@@ -37,21 +37,37 @@ form {
     margin:0 50px;
 
     &-form input{
-      font-size: inherit; text-transform:capitalize; border-radius: 4px; border: none; padding: 5px;
+      font-size: inherit; text-transform:capitalize; border-radius: 4px; border: none;
 
       &::placeholder {
           color:$preto;
       }
     }
 
+    &-campo {
+      padding: 5px;
+    }
+
     &-busca {
         width: 560px;
+    }
+
+    &-btn {
+      background: url('/public/img/filtro-btn.png') no-repeat center; margin-left: 26px;
+    }
+
+    &-btn-busca {
+      background: url('/public/img/filtro-btn-busca.png') no-repeat center;
+    }
+
+    &-btn-novo {
+      background: url('/public/img/btn-add.png') no-repeat center;
     }
 
     &-btn,
     &-btn-busca,
     &-btn-novo {
-      flex-basis:10%;
+      flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; margin-right: 26px;
     }
   }
 }

@@ -3,7 +3,7 @@
         '   <div class="view-filtro">
                 <form class="view-filtro-paciente-form">
                     <div>
-                        <input class="view-filtro-paciente-busca" type="text" name="nome" placeholder="Pesquisar por nome"/>
+                        <input class="view-filtro-paciente-busca view-filtro-paciente-campo" type="text" name="nome" placeholder="Pesquisar por nome"/>
                         <input class="view-filtro-paciente-btn" type="button" name="" value="Filtros"/>
                         <input class="view-filtro-paciente-btn-busca" type="button" name="" value="Buscar"/>
                         <a href=/pacientes/novo><input class="view-filtro-paciente-btn-novo" type="button" name="" value="Novo"/></a>
@@ -11,21 +11,21 @@
                     <div class="view-filtro-paciente">
                         <div>
                             <label for="idCpf">
-                                <input type="text" name="cpf" id="idCpf" placeholder="cpf">
+                                <input type="text" name="cpf" id="idCpf" placeholder="CPF" class="view-filtro-paciente-campo">
                             </label>
 
                             <label for="idRG">
-                                <input type="text" name="rg" id="idRG" placeholder="rg">
+                                <input type="text" name="rg" id="idRG" placeholder="RG" class="view-filtro-paciente-campo">
                             </label>
 
                             <label for="idResponsavel">
-                                <input type="text" name="responsavel" id="idResponsavel" placeholder="responsavel">
+                                <input type="text" name="responsavel" id="idResponsavel" placeholder="Responsavel" class="view-filtro-paciente-campo">
                             </label>
                         </div>
 
                         <div>
                             <label for="idCpfResponsavel">
-                                <input type="text" name="cpfResponsavel" id="idCpfResponsavel" placeholder="cpf responsavel">
+                                <input type="text" name="cpfResponsavel" id="idCpfResponsavel" placeholder="CPF Responsavel" class="view-filtro-paciente-campo">
                             </label>
                             <label for="idStatus">
                                 <span>Status</span>
