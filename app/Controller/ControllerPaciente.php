@@ -40,13 +40,27 @@
         $this->pacientes[0]['idPaciente'] = '/'.$this->pacientes[0]['idPaciente'];
 
         $this->action = "editar";
-        $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
+        // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
 
         $this->titulo = "Editar Paciente";
+
+        $renderizado = false;
+
+        $modal = new Modal(
+            ['class'=>''],
+            ['titulo'=>'Editar Paciente'],
+            [
+            'tipo'     => 'htmlCompleto',
+            'conteudo' => $GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm'],
+            'objeto' => $this
+            ],
+            ['botao'=>'']
+        );
+
+
         require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
         require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
 
-        $renderizado = false;
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
         $paciente = [
