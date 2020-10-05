@@ -1,6 +1,11 @@
 @import '_partial.scss';
 
 .painel {
+
+  &-sair {
+    position: absolute; right: 12px; top: 10px; font-size: 25px; color:$branco; text-transform: uppercase;
+  }
+
   &-lado-direito {
       width: 100%;
 
@@ -11,10 +16,6 @@
 
   &-titulo {
       position: relative; padding:10px 20px; font-size: 18px; text-align: left; background-color: $laranja; color:$branco; text-transform: uppercase; border-radius: 9px; text-align: center;
-
-      span {
-        float: right;
-      }
 
       @media (min-width:$tablete) {
         font-size:25px;

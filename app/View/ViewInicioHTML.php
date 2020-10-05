@@ -62,8 +62,8 @@
               <div class="acoes">
                 <h1 class="painel-titulo">
                   <?php echo $this->titulo ?>
-                  <span>sair</span>
                 </h1>
+                <span class="painel-sair">sair</span>
                 <?php
                   if($this->getLayout()) {
                       require_once($this->getLayout());
