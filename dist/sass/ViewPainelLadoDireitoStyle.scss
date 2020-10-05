@@ -36,10 +36,14 @@
   background-color: $laranja; margin:20px auto; width: 80%; padding: 10px; border-radius: 9px;
 
   &-paciente {
-    margin:0 50px; display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
+    display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
 
     @media (max-width: $tablete) {
       align-items: center; flex-direction:column;
+    }
+
+    @media (min-width: $tablete) {
+     justify-content:space-between;
     }
 
     &-container {
@@ -64,8 +68,20 @@
       display: flex; flex-direction: column;
     }
 
+    &-container &-container-campo{
+         margin:20px 20px 0 0;
+    }
+
+    @media (min-width: $tablete) {
+      &-container:last-of-type &-container-campo{
+           margin-right: 0;
+      }
+    }
+
     &-container-campo {
-       margin:20px 20px 0 0;
+       @media (min-width:1130px) and (max-width:1300px) {
+         width: 100%;
+       }
    }
 
     &-campo {
@@ -73,6 +89,10 @@
 
       @media (min-width: $tablete) {
           width: 314px;
+      }
+
+      @media (min-width:$tablete) and (max-width:1228px) {
+        width: 252px;
       }
     }
 
@@ -118,6 +138,10 @@
 
   #idStatus {
     padding: 5px; background-color: $branco; border-radius: 4px; width: 314px;
+
+    @media (min-width:$tablete) and (max-width:1228px) {
+      width: auto;
+    }
  }
 
   @media (max-width: $tablete) {
