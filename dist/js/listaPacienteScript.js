@@ -32,7 +32,7 @@ function filtrarPaciente() {
       var responsavel    = form.responsavel.value;
       var cpfResponsavel = form.cpfResponsavel.value;
 
-      if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel) {
+      if(!status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel) {
         buscarPaciente({});
       }else {
 

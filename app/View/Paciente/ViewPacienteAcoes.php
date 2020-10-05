@@ -28,9 +28,8 @@
                                 <input type="text" name="cpfResponsavel" id="idCpfResponsavel" placeholder="CPF Responsavel" class="view-filtro-paciente-campo">
                             </label>
                             <label for="idStatus">
-                                <span>Status</span>
                                 <select name="status" id="idStatus">
-                                    <option value="todos">Todos</option>
+                                    <option value="todos">Status</option>
                                     <option value="0">Inativo</option>
                                     <option value="1">Ativo</option>
                                 </select>
