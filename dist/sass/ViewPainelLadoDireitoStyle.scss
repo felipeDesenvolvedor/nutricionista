@@ -36,6 +36,14 @@ form {
   &-paciente {
     margin:0 50px; display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
 
+    @media (max-width: $tablete) {
+      align-items: center; flex-direction:column;
+    }
+
+    &-container {
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+
     &.aberto {
         max-height:400px;
         visibility: visible;
@@ -54,26 +62,34 @@ form {
       display: flex; flex-direction: column;
     }
 
+    &-container-campo {
+       margin:20px 20px 0 0;
+   }
+
     &-campo {
       padding: 5px;
+
+      @media (min-width: $tablete) {
+          width: 314px;
+      }
     }
 
     &-btn {
       background: url('/public/img/filtro-btn.png') no-repeat center; margin-left: 26px;
-    }
 
-    &-btn-busca {
-      background: url('/public/img/filtro-btn-busca.png') no-repeat center;
-    }
+      &,
+      &-busca,
+      &-novo {
+        flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; margin-right: 26px;
+      }
 
-    &-btn-novo {
-      background: url('/public/img/btn-add.png') no-repeat center;
-    }
+      &-busca {
+        background: url('/public/img/filtro-btn-busca.png') no-repeat center;
+      }
 
-    &-btn,
-    &-btn-busca,
-    &-btn-novo {
-      flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; margin-right: 26px;
+      &-novo {
+        background: url('/public/img/btn-add.png') no-repeat center;
+      }
     }
   }
 
@@ -93,31 +109,6 @@ form {
     }
   }
 }
-
-.view-filtro-paciente {
-     label {
-        margin:20px 20px 0 0;
-    }
-
-     span {
-        display:block;
-    }
-
-     div {
-        overflow: hidden; display: flex; flex-direction: column;
-    }
-
-    @media (max-width: $tablete) {
-      align-items: center; flex-direction:column;
-    }
-
-    @media (min-width: $tablete) {
-      input {
-        width: 314px;
-     }
-    }
-}
-
 
 .acoes {
   height:calc(100% - 60px);  position: relative;

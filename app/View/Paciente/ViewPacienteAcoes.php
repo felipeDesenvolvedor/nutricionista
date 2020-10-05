@@ -9,25 +9,25 @@
                         <a href=/pacientes/novo><input class="view-filtro-paciente-btn-novo" type="button" name="" value="Novo"/></a>
                     </div>
                     <div class="view-filtro-paciente">
-                        <div>
-                            <label for="idCpf">
+                        <div class="view-filtro-paciente-container">
+                            <label for="idCpf" class="view-filtro-paciente-container-campo">
                                 <input type="text" name="cpf" id="idCpf" placeholder="CPF" class="view-filtro-paciente-campo">
                             </label>
 
-                            <label for="idRG">
+                            <label for="idRG" class="view-filtro-paciente-container-campo">
                                 <input type="text" name="rg" id="idRG" placeholder="RG" class="view-filtro-paciente-campo">
                             </label>
 
-                            <label for="idResponsavel">
+                            <label for="idResponsavel" class="view-filtro-paciente-container-campo">
                                 <input type="text" name="responsavel" id="idResponsavel" placeholder="Responsavel" class="view-filtro-paciente-campo">
                             </label>
                         </div>
 
-                        <div>
-                            <label for="idCpfResponsavel">
+                        <div class="view-filtro-paciente-container">
+                            <label for="idCpfResponsavel" class="view-filtro-paciente-container-campo">
                                 <input type="text" name="cpfResponsavel" id="idCpfResponsavel" placeholder="CPF Responsavel" class="view-filtro-paciente-campo">
                             </label>
-                            <label for="idStatus">
+                            <label for="idStatus" class="view-filtro-paciente-container-campo">
                                 <select name="status" id="idStatus">
                                     <option value="todos">Status</option>
                                     <option value="0">Inativo</option>
