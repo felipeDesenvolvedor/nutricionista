@@ -39,7 +39,7 @@
                 ';
 
                     foreach($menuPainel as $item):
-                        echo '<li>';
+                        echo '<li class="menu-painel-item">';
                             echo '<a href='.$item['link'].'>';
                                 echo '<i class="fa '.$item['class'].'"></i>';
                                 echo '<span>'.$item['info'].'</span>';
