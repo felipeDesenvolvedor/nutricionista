@@ -49,6 +49,10 @@
     .menu-painel {
         font-size:15px; position: fixed; transition:all 500ms; background: $laranja;
 
+        a {
+        	color:#fff; text-decoration: none;
+        }
+
          li{
             margin-bottom:10px; border-radius:20px;
 

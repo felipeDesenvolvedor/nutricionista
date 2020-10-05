@@ -17,58 +17,12 @@
        flex-basis:33.33%;
    }
   }
-
-
-  .btn-novo-paciente {
-      width: 110px; height: 20px; margin-top: 20px;
-  }
 }
 
 .esconder,
 .esconder + .separador {
     display:none;
 }
-
-.view-filtro-paciente {
-    display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
-
-    &-form {
-        display: flex; flex-direction: column;
-    }
-
-    &.aberto {
-        max-height:400px;
-        visibility: visible;
-        overflow: visible;
-    }
-
-     label {
-        margin:20px 20px 0 0;
-    }
-
-     span {
-        display:block;
-    }
-
-     div {
-        overflow: hidden; display: flex; flex-direction: column;
-    }
-
-    @media (max-width: $tablete) {
-      align-items: center; flex-direction:column;
-    }
-
-    @media (min-width: $tablete) {
-      input {
-        width: 314px;
-     }
-    }
-}
-
-.separador {
-    flex-basis:5%;
-}
-
 
 
 .lista-paciente {
