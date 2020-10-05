@@ -23,7 +23,7 @@ main {
 }
 
 .limite {
-	display: flex; margin:0 auto; position: relative;
+	display: flex; margin:0 auto; position: relative; width: 100%;
 
 	@media (min-width:$tablete) {
 		width: 1400px;

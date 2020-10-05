@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Orange Nutri</title>
     <link rel="icon" href="/public/img/icon-frutas.ico">
     <script src="/public/js/jquery-3.4.1.min.js"></script>

@@ -10,7 +10,7 @@
   }
 
   &-titulo {
-      position: relative; padding:10px 20px; font-size: 20px; text-align: left; background-color: $laranja; color:$branco; text-transform: uppercase; border-radius: 9px; text-align: center;
+      position: relative; padding:10px 20px; font-size: 18px; text-align: left; background-color: $laranja; color:$branco; text-transform: uppercase; border-radius: 9px; text-align: center;
 
       span {
         float: right;
@@ -48,10 +48,6 @@ form {
       padding: 5px;
     }
 
-    &-busca {
-        width: 560px;
-    }
-
     &-btn {
       background: url('/public/img/filtro-btn.png') no-repeat center; margin-left: 26px;
     }
@@ -68,6 +64,12 @@ form {
     &-btn-busca,
     &-btn-novo {
       flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; margin-right: 26px;
+    }
+  }
+
+  @media (min-width: $tablete) {
+    &-busca {
+        width: 560px;
     }
   }
 }

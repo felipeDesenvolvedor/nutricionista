@@ -8,13 +8,7 @@
   }
 
   a {
-     flex-basis:100%;
- }
-
- @media (min-width:620px) {
-   a {
-      flex-basis:50%;
-  }
+     flex-basis:50%;
  }
 
 
@@ -60,8 +54,14 @@
         overflow: hidden; display: flex; flex-direction: column;
     }
 
-     input {
-       width: 314px;
+    @media (max-width: $tablete) {
+      align-items: center; flex-direction:column;
+    }
+
+    @media (min-width: $tablete) {
+      input {
+        width: 314px;
+     }
     }
 }
 
