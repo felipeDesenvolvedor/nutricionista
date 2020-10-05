@@ -67,6 +67,16 @@ form {
     }
   }
 
+  #idStatus {
+    padding: 5px; background-color: $branco; border-radius: 4px; width: 314px;
+ }
+
+  @media (max-width: $tablete) {
+    #idStatus {
+      width: 100%;
+   }
+  }
+
   @media (min-width: $tablete) {
     &-busca {
         width: 560px;
