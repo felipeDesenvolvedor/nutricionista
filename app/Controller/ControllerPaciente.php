@@ -40,7 +40,6 @@
         $this->pacientes[0]['idPaciente'] = '/'.$this->pacientes[0]['idPaciente'];
 
         $this->action = "editar";
-        // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
 
         $this->titulo = "Editar Paciente";
 
@@ -57,11 +56,8 @@
             ['botao'=>'']
         );
 
-
         require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
         require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
-
-
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
         $paciente = [
           "nome"           =>$_POST['nome'],
