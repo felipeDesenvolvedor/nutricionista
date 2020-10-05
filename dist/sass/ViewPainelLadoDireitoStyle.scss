@@ -3,7 +3,11 @@
 .painel {
 
   &-sair {
-    position: absolute; right: 12px; top: 10px; font-size: 25px; color:$branco; text-transform: uppercase;
+    position: absolute; right: 12px; top: 10px; font-size: 18px; color:$branco; text-transform: uppercase;
+
+    @media (min-width:$tablete) {
+      font-size:25px;
+    }
   }
 
   &-lado-direito {
@@ -27,9 +31,6 @@
   }
 }
 
-form {
-    display: flex; justify-content: space-around;
-}
 
 .view-filtro {
   background-color: $laranja; margin:20px auto; width: 80%; padding: 10px; border-radius: 9px;
@@ -75,13 +76,26 @@ form {
       }
     }
 
+    &-busca {
+      width:calc(100% - 156px);
+
+      @media (max-width: 500px) {
+        width:100%;
+      }
+    }
+
     &-btn {
-      background: url('/public/img/filtro-btn.png') no-repeat center; margin-left: 26px;
+      background: url('/public/img/filtro-btn.png') no-repeat center;
 
       &,
       &-busca,
       &-novo {
-        flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; margin-right: 26px;
+        flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; float:right;
+      }
+
+      &,
+      &-busca {
+        margin-right: 26px;
       }
 
       &-busca {
@@ -90,6 +104,14 @@ form {
 
       &-novo {
         background: url('/public/img/btn-add.png') no-repeat center;
+      }
+
+      @media (max-width: 500px) {
+        &,
+        &-busca,
+        &-novo {
+          margin-top:10px;
+        }
       }
     }
   }
@@ -103,18 +125,8 @@ form {
       width: 100%;
    }
   }
-
-  @media (min-width: $tablete) {
-    &-busca {
-        width: 560px;
-    }
-  }
 }
 
 .acoes {
-  height:calc(100% - 60px);  position: relative;
-
-  p {
-    font-size:30px;
-  }
+  position: relative;
 }

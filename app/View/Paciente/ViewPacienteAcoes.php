@@ -4,9 +4,9 @@
                 <form class="view-filtro-paciente-form">
                     <div>
                         <input class="view-filtro-paciente-busca view-filtro-paciente-campo" type="text" name="nome" placeholder="Pesquisar por nome"/>
-                        <input class="view-filtro-paciente-btn" type="button" name="" value="Filtros"/>
+                        <a href=/pacientes/novo class="view-filtro-paciente-btn-novo">Novo</a>
                         <input class="view-filtro-paciente-btn-busca" type="button" name="" value="Buscar"/>
-                        <a href=/pacientes/novo><input class="view-filtro-paciente-btn-novo" type="button" name="" value="Novo"/></a>
+                        <input class="view-filtro-paciente-btn" type="button" name="" value="Filtros"/>
                     </div>
                     <div class="view-filtro-paciente">
                         <div class="view-filtro-paciente-container">
