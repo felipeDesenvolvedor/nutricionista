@@ -7,15 +7,15 @@
     <link rel="icon" href="/public/img/icon-frutas.ico">
     <script src="/public/js/jquery-3.4.1.min.js"></script>
     <script src="/public/js/Ajax.js"></script>
-    <link rel="stylesheet" href="/public/css/reset.css">
-    <link rel="stylesheet" href="/public/css/font-awesome.css">
-    <link rel="stylesheet" href="/public/css/ViewPainelLadoEsquerdoStyle.css">
-    <link rel="stylesheet" href="/public/css/ViewPainelLadoDireitoStyle.css">
-    <link rel="stylesheet" href="/public/css/ViewPacienteNovoFormStyle.css">
-    <link rel="stylesheet" href="/public/css/listaPacienteStyle.css">
-    <link rel="stylesheet" href="/public/css/ErrorMesage.css">
-    <link rel="stylesheet" href="/public/css/index.css">
-    <link rel="stylesheet" href="/public/css/Modal.css">
+
+    <?php
+      $head = $this->headController->head;
+
+      foreach ($head as $arquivo) {
+          echo "<link rel='stylesheet' href=".$arquivo.">";
+      }
+    ?>
+
     <script src="/public/js/listaPacienteScript.js"></script>
     <script src="/public/js/index.js"></script>
 </head>
