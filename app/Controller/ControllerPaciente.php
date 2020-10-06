@@ -4,7 +4,6 @@
   use src\classes\ClassRoutes;
   use app\Model\ModelPaciente;
   use app\View\Modal\Modal;
-  use app\Controller\Head;
 
   class ControllerPaciente
   {
@@ -14,12 +13,9 @@
     public $layout;
     public $renderizado;
     public $action;
-    public $headController;
 
     public function __construct($method)
     {
-        $this->headController = new Head();
-
         if(!$method) {
           self::pacientes();
         }
@@ -40,9 +36,6 @@
       $this->pacientes = new ModelPaciente();
 
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $this->headController->head["ViewPacienteNovoFormStyle"] = "/public/css/ViewPacienteNovoFormStyle.css";
-        $this->headController->head["Modal"]                     = "/public/css/Modal.css";
-        
         $this->pacientes = $this->pacientes->buscarPaciente($valorParametro);
         $this->pacientes[0]['idPaciente'] = '/'.$this->pacientes[0]['idPaciente'];
 
@@ -110,8 +103,6 @@
     {
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-        $this->headController->head["listaPacienteStyle"] = "/public/css/listaPacienteStyle.css";
-
         $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
         $this->pacientes = new ModelPaciente();
         $this->pacientes = $this->pacientes->buscarPacientes([]);
@@ -140,11 +131,9 @@
 
     public function novo()
     {
-
-      $this->headController->head["ViewPacienteNovoFormStyle"] = "/public/css/ViewPacienteNovoFormStyle.css";
-      $this->headController->head["Modal"]                     = "/public/css/Modal.css";
-
       $this->action = "cadastrar";
+      // $this->titulo = "Cadastro de paciente";
+      // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
       $modal = new Modal(
           ['class'=>''],
           ['titulo'=>'Cadastro de paciente'],
@@ -155,6 +144,7 @@
           ],
           ['botao'=>'']
       );
+
 
       require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
       require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
