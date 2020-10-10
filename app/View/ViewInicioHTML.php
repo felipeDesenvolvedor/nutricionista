@@ -26,30 +26,27 @@
         <section class="painel-lado-esquerdo">
             <ul class="menu-painel">
                 <?php
-                echo '
+                echo "
                   <li>
-                    <div class="usuario">
-                        <img class="usuario-foto" src="/public/img/foto-user.png">
+                    <div class='usuario'>
+                        <img class='usuario-foto' src='/public/img/foto-user.png'>
                         <div>
-                          <div class="nome"> Felipe Da Silva Santos</div>
-                          <div class="plano">Plano Bronze</div>
+                          <div class='nome'> Felipe Da Silva Santos</div>
+                          <div class='plano'>Plano Bronze</div>
                         </div>
                     </div>
                   </li>
-                ';
+                ";
 
                     foreach($menuPainel as $item):
-                        echo '<li class="menu-painel-item">';
-                            echo '<a href='.$item['link'].'>';
-                                echo '<i class="fa '.$item['class'].'"></i>';
-                                echo '<span>'.$item['info'].'</span>';
-                            echo '</a>';
-
-                            if (isset($item['subitem'])) {
-                                echo '<li>'.$item['subitem']['subItem2'].'</li>';
-                                echo '<li>'.$item['subitem']['subItem3'].'</li>';
-                            }
-                        echo '</li>';
+                        echo"
+                        <li class='menu-painel-item'>
+                          <a href={$item['link']}>
+                            <i class='fa {$item['class']}'></i>
+                            <span>{$item['info']}</span>
+                          </a>
+                        </li>
+                        ";
                     endforeach;
                 ?>
                 <div class="painel-lado-esquerdo-hamburguer js-hamburguer"><i class="fa fa-bars"></i></div>
