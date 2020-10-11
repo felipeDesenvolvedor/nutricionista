@@ -48,7 +48,7 @@
 
               echo "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
                   echo "<div class=lista-paciente-box>";
-                      echo "<div class='lista-paciente-foto'></div>";
+                      echo "<img src='/public/img/paciente-foto.jpg' class='lista-paciente-foto'/>";
 
                       echo "<div class='lista-paciente-dados'>";
                           echo "<span class='js-lista-paciente-nome'>{$paciente['nome']}</span>";
@@ -58,6 +58,7 @@
                       echo "</div>";
                   echo "</div>";
               echo "</a>";
+              echo "<div class='separador'></div>";
           }
 
           echo "</div>";

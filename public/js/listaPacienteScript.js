@@ -68,7 +68,7 @@ function filtrarPaciente() {
             JSON.parse(pacientes).forEach(function(paciente) {
               var pacienteLinha = `
                 <div class=lista-paciente-box>
-                    <div class="lista-paciente-foto"></div>
+                    <img src='/public/img/paciente-foto.jpg' class='lista-paciente-foto'/>
 
                     <div class="lista-paciente-dados">
                         <span class="js-lista-paciente-nome">${paciente['nome']}</span>
@@ -79,12 +79,16 @@ function filtrarPaciente() {
                 </div>
               `;
 
+              var separador = document.createElement('div');
+                  separador.setAttribute('class', 'separador');
+
               var elementoPaciente = document.createElement('a');
                   elementoPaciente.setAttribute('href', `/pacientes/editar/${paciente['idPaciente']}`);
                   elementoPaciente.classList.add('paciente');
 
               elementoPaciente.innerHTML = pacienteLinha;
               listaPacientes.appendChild(elementoPaciente);
+              elementoPaciente.after(separador);
 
         });
       }

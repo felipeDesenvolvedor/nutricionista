@@ -1,32 +1,36 @@
 @import '_partial.scss';
 
-
+.separador {
+  width: 10px;
+  display: inline-block;
+ }
 
 .lista-pacientes {
 
   a {
-     flex-basis:100%;
+     display: inline-block;
   }
+ //
+ //
+ // @media (min-width:600px) {
+ //   a {
+ //      flex-basis:40%;
+ //  }
 
-
- @media (min-width:600px) {
-   a {
-      flex-basis:40%;
-  }
- }
-
-  @media (min-width:$tablete) {
-    a {
-       flex-basis:30%;
-   }
-  }
+ // }
+ //
+ //  @media (min-width:$tablete) {
+ //    a {
+ //       flex-basis:30%;
+ //   }
+ //  }
 }
 
 
 
 
 .lista-pacientes {
-  margin:20px 0; display:flex; flex-wrap:wrap; justify-content:space-around;
+  margin:20px 0;
 
   &.esconder {
       display:none;
@@ -54,14 +58,15 @@
   }
 
   &-foto {
-    border-bottom-left-radius: 4px; border-top-left-radius: 4px; padding: 20px; background-color: blue; width: 100%; height: 200px;
+    border-bottom-left-radius: 4px; border-top-left-radius: 4px; width: 100%; height: 200px;
+    // width: 100%;
   }
 
   &-dados{
     position:relative; padding:24px;
 
     span {
-        display:block;
+        display:block; width:161px;
     }
 
     .idade {
