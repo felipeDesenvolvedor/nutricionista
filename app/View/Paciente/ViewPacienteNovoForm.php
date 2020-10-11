@@ -4,7 +4,7 @@ $pacienteid = $this->pacienteid;
 $paciente   = $this->pacientes[0];
 ?>
 
-<form action=<?php echo "/pacientes/$action/$pacienteid"?> method="post" class="paciente-novo-form">
+<form action=<?php echo "/pacientes/$action/$pacienteid";?> method="post" class="paciente-novo-form">
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>
@@ -105,7 +105,7 @@ $paciente   = $this->pacientes[0];
 
     <?php
     if($this->action == 'editar') {
-        echo '<a href="/pacientes/inativar/'.$paciente['idPaciente'].'"'.'class=""><input type="button" id="inativar-paciente" value="Inativar Paciente" class="inativar-paciente"></a>';
+        echo "<a href=/pacientes/inativar/{$paciente['idPaciente']} class='teste'><input type='button' id='inativar-paciente' value='Inativar Paciente' class='inativar-paciente'></a>";
     }
     ?>
 </form>
