@@ -10,8 +10,8 @@
     public $rota;
     public $titulo;
     public $pacientes;
+    public $pacienteid;
     public $layout;
-    public $renderizado;
     public $action;
 
     public function __construct($method)
@@ -36,14 +36,10 @@
       $this->pacientes = new ModelPaciente();
 
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $this->pacientes = $this->pacientes->buscarPaciente($valorParametro);
-        $this->pacientes[0]['idPaciente'] = '/'.$this->pacientes[0]['idPaciente'];
-
+        $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro);
+        $this->pacienteid = $this->pacientes[0]['idPaciente'];
+        
         $this->action = "editar";
-
-        $this->titulo = "Editar Paciente";
-
-        $renderizado = false;
 
         $modal = new Modal(
             ['class'=>''],
@@ -132,8 +128,6 @@
     public function novo()
     {
       $this->action = "cadastrar";
-      // $this->titulo = "Cadastro de paciente";
-      // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm']);
       $modal = new Modal(
           ['class'=>''],
           ['titulo'=>'Cadastro de paciente'],

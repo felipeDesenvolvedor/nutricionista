@@ -9,6 +9,7 @@ class Modal {
     public $objeto;
     public $action;
     public $pacientes;
+    public $pacienteid;
 
     public function __construct($boxClass, $titulo, $tipoConteudo, $botao) {
         $this->boxClass     = $boxClass;
@@ -55,9 +56,10 @@ class Modal {
     }
 
     public function htmlCompleto($html) {
-      $this->objeto    = $this->tipoConteudo['objeto'];
-      $this->action    = $this->objeto->action;
-      $this->pacientes = $this->objeto->pacientes;
+      $this->objeto     = $this->tipoConteudo['objeto'];
+      $this->action     = $this->objeto->action;
+      $this->pacientes  = $this->objeto->pacientes;
+      $this->pacienteid = $this->objeto->pacienteid;
 
       echo '<div class="modal aberto">';
         echo '<div class="conteudo">';

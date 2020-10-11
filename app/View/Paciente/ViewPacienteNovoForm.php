@@ -1,42 +1,48 @@
-<form action=<?php echo "/pacientes/$this->action".$this->pacientes[0]['idPaciente']?> method="post" class="paciente-novo-form">
+<?php
+$action     = $this->action;
+$pacienteid = $this->pacienteid;
+$paciente   = $this->pacientes[0];
+?>
+
+<form action=<?php echo "/pacientes/$action/$pacienteid"?> method="post" class="paciente-novo-form">
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>
-            <input type="text" name="nome" id="idNome" value="<?php echo $this->pacientes[0]['nome'];?>">
+            <input type="text" name="nome" id="idNome" value="<?php echo $paciente['nome'];?>">
         </label>
 
         <label for="idCpf">
             <span> CPF:</span>
-            <input type="text" name="cpf" id="idCpf" value="<?php echo $this->pacientes[0]['cpf'];?>">
+            <input type="text" name="cpf" id="idCpf" value="<?php echo $paciente['cpf'];?>">
         </label>
 
         <label for="idRG">
             <span>RG:</span>
-            <input type="text" name="rg" id="idRG" value="<?php echo $this->pacientes[0]['rg'];?>">
+            <input type="text" name="rg" id="idRG" value="<?php echo $paciente['rg'];?>">
         </label>
     </div>
 
     <div>
         <label for="idSexo">
             <span class="campo-obrigatorio">Sexo:</span>
-            <input type="text" name="sexo" id="idSexo" value="<?php echo $this->pacientes[0]['sexo'];?>">
+            <input type="text" name="sexo" id="idSexo" value="<?php echo $paciente['sexo'];?>">
         </label>
     </div>
 
     <div>
         <label for="idDataNascimento">
             <span class="campo-obrigatorio">Data de Nascimento:</span>
-            <input type="text" name="dataNascimento" id="idDataNascimento" value="<?php echo $this->pacientes[0]['dataNascimento'];?>">
+            <input type="text" name="dataNascimento" id="idDataNascimento" value="<?php echo $paciente['dataNascimento'];?>">
         </label>
 
         <label for="idResponsavel">
             <span>Responsavel: </span>
-            <input type="text" name="responsavel" id="idResponsavel" value="<?php echo $this->pacientes[0]['responsavel'];?>">
+            <input type="text" name="responsavel" id="idResponsavel" value="<?php echo $paciente['responsavel'];?>">
         </label>
 
         <label for="idCpfResponsavel">
             <span>CPF Responsavel:</span>
-            <input type="text" name="cpfResponsavel" id="idCpfResponsavel" value="<?php echo $this->pacientes[0]['cpfResponsavel'];?>">
+            <input type="text" name="cpfResponsavel" id="idCpfResponsavel" value="<?php echo $paciente['cpfResponsavel'];?>">
         </label>
     </div>
 
@@ -78,17 +84,17 @@
     <div>
         <label for="idTelefone1">
             <span>Telefone 1</span>
-            <input type="text" name="telefone1" id="idTelefone1" value="<?php echo $this->pacientes[0]['telefone1'];?>">
+            <input type="text" name="telefone1" id="idTelefone1" value="<?php echo $paciente['telefone1'];?>">
         </label>
 
         <label for="idTelefone2">
             <span>Telefone 2</span>
-            <input type="text" name="telefone2" id="idTelefone2" value="<?php echo $this->pacientes[0]['telefone2'];?>">
+            <input type="text" name="telefone2" id="idTelefone2" value="<?php echo $paciente['telefone2'];?>">
         </label>
 
         <label for="idEmail">
             <span>Email</span>
-            <input type="text" name="email" id="idEmail" value="<?php echo $this->pacientes[0]['email'];?>">
+            <input type="text" name="email" id="idEmail" value="<?php echo $paciente['email'];?>">
         </label>
     </div>
 
@@ -99,7 +105,7 @@
 
     <?php
     if($this->action == 'editar') {
-        echo '<a href="/pacientes/inativar/'.$this->pacientes[0]['idPaciente'].'"'.'class=""><input type="button" id="inativar-paciente" value="Inativar Paciente" class="inativar-paciente"></a>';
+        echo '<a href="/pacientes/inativar/'.$paciente['idPaciente'].'"'.'class=""><input type="button" id="inativar-paciente" value="Inativar Paciente" class="inativar-paciente"></a>';
     }
     ?>
 </form>
