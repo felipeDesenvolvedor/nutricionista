@@ -38,7 +38,7 @@
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
         $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro);
         $this->pacienteid = $this->pacientes[0]['idPaciente'];
-        
+
         $this->action = "editar";
 
         $modal = new Modal(
@@ -102,7 +102,7 @@
         $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
         $this->pacientes = new ModelPaciente();
         $this->pacientes = $this->pacientes->buscarPacientes([]);
-        $this->titulo = "Consulta Paciente";
+        $this->titulo = "Consulta de Pacientes";
         require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
         require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
       }
