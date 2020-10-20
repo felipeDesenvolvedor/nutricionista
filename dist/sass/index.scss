@@ -5,7 +5,7 @@
  }
 
 body {
-	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-size: 14px; background:url('/public/img/fundo.png') no-repeat center center; background-size: cover; background-attachment: fixed;
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-size: 14px; background:url('/public/img/fundo-3.jpeg') no-repeat center center; background-size: cover; background-attachment: fixed;
 }
 
 .main {
@@ -24,4 +24,10 @@ main {
 	@media (min-width:$tablete) {
 		width: 1400px;
 	}
+}
+
+
+.painel-titulo,
+.painel-lado-esquerdo {
+	box-shadow: 0px 1px 8px rgba(0,0,0,0.36);
 }
