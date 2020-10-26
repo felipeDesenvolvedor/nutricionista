@@ -7,7 +7,7 @@ function editar() {
   var editarPaciente = $(".paciente");
   var idPaciente = 0;
 
-  editarPaciente.click(function(){
+  $(document).on('click', ".paciente", function(){
     idPaciente = $(this).attr("data-id").split('/');
     idPaciente = idPaciente[idPaciente.length - 1];
 

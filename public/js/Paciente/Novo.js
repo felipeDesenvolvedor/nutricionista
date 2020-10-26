@@ -4,9 +4,9 @@ $(document).ready(function(){
 
 
 function novo() {
-    var addPaciente = $(".view-filtro-paciente-btn-novo");
+    // var addPaciente = $(".view-filtro-paciente-btn-novo");
 
-  addPaciente.click(function(){
+  $(document).on('click', ".view-filtro-paciente-btn-novo", function(){
     window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes/novo");
 
     buscar("http://nutricionista.com.br/pacientes/novo", "get", "", "", exibirPagina);
