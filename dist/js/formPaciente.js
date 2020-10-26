@@ -99,9 +99,7 @@ function Modal() {
     botao.addEventListener('click', function(){
       document.querySelector('.modal').classList.toggle('aberto');
 
-      setTimeout(function(){
-        location.href='/pacientes';
-      },100);
+    window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes");
     });
   }
 
