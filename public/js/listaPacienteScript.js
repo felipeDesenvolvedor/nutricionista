@@ -79,8 +79,8 @@ function filtrarPaciente() {
                 </div>
               `;
 
-              // var separador = document.createElement('div');
-              //     separador.classList.add('separador');
+              var separador = document.createElement('div');
+                  separador.classList.add('separador');
 
               var elementoPaciente = document.createElement('div');
                   elementoPaciente.setAttribute('data-id', `/pacientes/editar/${paciente['idPaciente']}`);
@@ -89,8 +89,8 @@ function filtrarPaciente() {
               elementoPaciente.innerHTML = pacienteLinha;
               listaPacientes.appendChild(elementoPaciente);
 
-              // $('.separador').remove();
-              // $('.paciente').prepend(separador);
+              $('.separador').remove();
+              $('.paciente').prepend(separador);
         });
       }
   }
