@@ -76,6 +76,13 @@ function filtrarPaciente() {
                         ${paciente['dataNascimento']}
                         <span class="idade">${paciente['dataNascimento']}</span>
                     </div>
+
+                    <div class='lista-pacientes-acao-rapida'>
+                      <span>inativar</span>
+                      <span>editar</span>
+                      <span>blabla</span>
+                      <span>blabla</span>
+                    </div>
                 </div>
               `;
 
