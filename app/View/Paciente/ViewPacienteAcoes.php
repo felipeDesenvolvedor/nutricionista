@@ -2,7 +2,7 @@
   <form class='view-filtro-paciente-form'>
     <div>
       <input class='view-filtro-paciente-busca view-filtro-paciente-campo' type='text' name='nome' placeholder='Pesquisar por nome'/>
-      <a href=/pacientes/novo class='view-filtro-paciente-btn-novo'>Novo</a>
+      <a class='view-filtro-paciente-btn-novo'>Novo</a>
       <input class='view-filtro-paciente-btn-busca' type='button' name='' value='Buscar'/>
       <input class='view-filtro-paciente-btn' type='button' name='' value='Filtros'/>
     </div>

@@ -1,24 +1,27 @@
 document.addEventListener('DOMContentLoaded', function(){
-
-    $formPaciente = document.querySelector('.paciente-novo-form');
-
-    if (!$formPaciente) {
-        return;
-    }
-
-    var idCpf            = document.querySelector("#idCpf");
-    var idRG             = document.querySelector("#idRG");
-    var idSexo           = document.querySelector("#idSexo");
-    var idDataNascimento = document.querySelector("#idDataNascimento");
-    var idCpfResponsavel = document.querySelector("#idCpfResponsavel");
-    var idCEP            = document.querySelector("#idCEP");
-    var idEmail          = document.querySelector("#idEmail");
-    var fotoPaciente     = document.querySelector("#foto-paciente");
-
-    formPaciente();
-    buscaEndereco();
-    Modal();
+  acoes();
 });
+
+function acoes() {
+  $formPaciente = document.querySelector('.paciente-novo-form');
+
+  if (!$formPaciente) {
+      return;
+  }
+
+  var idCpf            = document.querySelector("#idCpf");
+  var idRG             = document.querySelector("#idRG");
+  var idSexo           = document.querySelector("#idSexo");
+  var idDataNascimento = document.querySelector("#idDataNascimento");
+  var idCpfResponsavel = document.querySelector("#idCpfResponsavel");
+  var idCEP            = document.querySelector("#idCEP");
+  var idEmail          = document.querySelector("#idEmail");
+  var fotoPaciente     = document.querySelector("#foto-paciente");
+
+  formPaciente();
+  buscaEndereco();
+  Modal();
+}
 
 function formPaciente() {
     var mostrarErro;
@@ -98,10 +101,7 @@ function Modal() {
     var botao = document.querySelector('.modal-fechar');
     botao.addEventListener('click', function(){
       document.querySelector('.modal').classList.toggle('aberto');
-
-      setTimeout(function(){
-        location.href='/pacientes';
-      },100);
+      window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes");
     });
   }
 

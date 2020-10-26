@@ -75,6 +75,7 @@
       </div>
     </main>
     <script src="/public/js/formPaciente.js"></script>
+    <script src="/public/js/Paciente/Novo.js"></script>
 
 </body>
 </html>

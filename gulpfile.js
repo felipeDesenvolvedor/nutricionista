@@ -26,7 +26,7 @@ gulp.task('default', function() {
       // gulp.start('sass');
     });
 
-    gulp.watch('dist/js/*.js').on('change', function() {
+    gulp.watch('dist/js/**/*.js').on('change', function() {
       gulp.start('build-js');
       gulp.start('clearCache');
       // gulp.start('build-js');
@@ -62,7 +62,7 @@ gulp.task('clean-sass', function() {
 // tarefa build-js que minifica, concatena e transpila ES6 para ES5
 gulp.task('build-js', ['copy-js'], function() {
 
-      gulp.src("public/js/*.js")
+      gulp.src("public/js/**/*.js")
       .pipe(babel({ presets: ["@babel/preset-env"] }))
       .pipe(concat('all.js'))
       .pipe(uglify())
@@ -73,7 +73,7 @@ gulp.task('build-js', ['copy-js'], function() {
 });
 
 gulp.task('copy-js', ['clean-js'], function() {
-    return gulp.src('dist/js/*.js')
+    return gulp.src('dist/js/**/*.js')
         .pipe(gulp.dest('public/js'));
 });
 
