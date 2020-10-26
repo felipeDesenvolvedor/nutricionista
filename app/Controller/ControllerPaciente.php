@@ -35,7 +35,10 @@
     {
       $this->pacientes = new ModelPaciente();
 
-      if($_SERVER['REQUEST_METHOD'] === 'GET') {
+      if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['idPaciente']) {
+
+        $valorParametro = $_POST['idPaciente'];
+
         $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro);
         $this->pacienteid = $this->pacientes[0]['idPaciente'];
 
@@ -52,8 +55,6 @@
             ['botao'=>'']
         );
 
-        require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-        require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
         $paciente = [
           "nome"           =>$_POST['nome'],

@@ -3,11 +3,11 @@ namespace app;
 
 use src\classes\ClassRoutes;
 
-class Dispatch extends ClassRoutes{    
+class Dispatch extends ClassRoutes{
     private $metodo;
     private $parametro = [];
     private $objeto;
-    
+
     # metodo construtor
     public function __construct() {
         self::addController();
@@ -40,7 +40,7 @@ class Dispatch extends ClassRoutes{
     #metodo de adição de controlle
     private function addController() {
         $rotaController = $this->getRota();
-        $nameSpace = "app\\Controller\\{$rotaController}"; 
+        $nameSpace = "app\\Controller\\{$rotaController}";
 
         if(!isset($this->parseUrl()[1])) {
             $this->setObjeto(new $nameSpace(false));
@@ -61,9 +61,9 @@ class Dispatch extends ClassRoutes{
     }
     #metodo de adição de parametro de controlle
     private function addParametro() {
+        
         if(isset($this->parseUrl()[2])) {
-
-            $this->setParametro(["parametro"=>$this->parseUrl()[2]]);
+            $this->setParametro([$this->parseUrl()[2]]);
         }
     }
 }

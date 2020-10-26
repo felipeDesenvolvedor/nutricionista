@@ -12,10 +12,3 @@ function novo() {
     buscar("http://nutricionista.com.br/pacientes/novo", "get", "", "", exibirPagina);
   })
 }
-
-function exibirPagina(conteudo) {
-  var body = $("body");
-      body.prepend(conteudo);
-
-  acoes();
-}

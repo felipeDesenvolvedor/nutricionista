@@ -7,7 +7,7 @@
 
 .lista-pacientes {
 
-  a {
+  .paciente {
      display: inline-block;
   }
 }
@@ -21,10 +21,6 @@
   &.esconder {
       display:none;
   }
-
-  a {
-    text-decoration:none;
- }
 
   @media (min-width:$tablete) {
     justify-content:space-between;

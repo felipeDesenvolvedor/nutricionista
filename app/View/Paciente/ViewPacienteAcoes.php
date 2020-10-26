@@ -46,7 +46,7 @@
           {
               $inativo = $paciente['status'] ? '' : 'esconder';
 
-              echo "<a href=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
+              echo "<div data-id=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
                   echo "<div class=lista-paciente-box>";
                       echo "<img src='/public/img/paciente-foto.jpg' class='lista-paciente-foto'/>";
 
@@ -65,7 +65,7 @@
                             </div>";
                   echo "</div>";
 
-              echo "</a>";
+              echo "</div>";
               echo "<div class='separador'></div>";
           }
 
