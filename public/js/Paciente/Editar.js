@@ -4,11 +4,12 @@ $(document).ready(function(){
 
 
 function editar() {
-  var editarPaciente = $(".paciente");
+  var editarPaciente = "";
   var idPaciente = 0;
 
-  $(document).on('click', ".paciente", function(){
-    idPaciente = $(this).attr("data-id").split('/');
+  $(document).on('click', ".lista-paciente-acao-rapida-editar", function(){
+    editarPaciente = $(this).parents('.paciente');
+    idPaciente = editarPaciente.attr("data-id").split('/');
     idPaciente = idPaciente[idPaciente.length - 1];
 
     window.history.pushState('Object', "Orange Nutri", `http://nutricionista.com.br/pacientes/editar/${idPaciente}`);
