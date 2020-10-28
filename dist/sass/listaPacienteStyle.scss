@@ -1,33 +1,22 @@
 @import '_partial.scss';
 
 .separador {
-  width: 10px;
-  display: inline-block;
+  width: 14px; display: inline-block;
  }
 
 .lista-pacientes {
-
-  .paciente {
-     display: inline-block;
-  }
-}
-
-
-
-
-.lista-pacientes {
-  margin:20px 0;
+  display: flex; margin:20px 0;
 
   &.esconder {
       display:none;
   }
 
   @media (min-width:$tablete) {
-    justify-content:space-between;
+    flex-wrap: wrap;
   }
 
   &-acao-rapida {
-    right:0; height: 100px; width: 50px; background-color: green; position: absolute; top: 50%; transform: translateY(-50%);
+    margin-left: 14px; display:flex; flex-direction: column;
   }
 }
 
@@ -59,4 +48,73 @@
         position:absolute; right:0; top:4px;
     }
   }
+
+  &-acao-rapida {
+      &-editar,
+      &-inativar,
+      &-atendimento,
+      &-agenda {
+        height:50px;
+        width: 50px;
+        background-color: green;
+        border-radius: 100%;
+      }
+
+      &-item {
+        position: relative;
+
+        &::before {
+          content:'';
+          width: 20px;
+          height:20px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform:translate(-50%, -50%);
+          background-repeat: no-repeat;
+        }
+
+        &:not(:last-child) {
+          margin-bottom:16px;
+        }
+      }
+
+      &-editar{
+        background-color: #85ab3e;
+
+        &::before {
+          background-image: url("/public/img/Editar.svg");
+        }
+      }
+
+      &-inativar {
+        background-color: #f00;
+
+        &::before {
+          background-image: url("/public/img/Inativar.svg");
+        }
+      }
+
+      &-atendimento {
+        background-color: #5470a6;
+
+        &::before {
+            background-image: url("/public/img/Telefone.svg");
+        }
+      }
+
+      &-agenda {
+        background-color: #f3902c;
+
+        &::before {
+          background-image: url("/public/img/Agenda.svg");
+        }
+      }
+  }
+}
+
+
+.paciente {
+  display: flex;
+  align-items: center;
 }

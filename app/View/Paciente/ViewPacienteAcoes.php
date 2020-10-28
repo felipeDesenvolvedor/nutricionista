@@ -56,15 +56,14 @@
                           echo $paciente['dataNascimento'];
                           echo "<span class='idade'>{$paciente['dataNascimento']}</span>";
                       echo "</div>";
-
-                      echo "<div class='lista-pacientes-acao-rapida'>
-                              <span>inativar</span>
-                              <span>editar</span>
-                              <span>blabla</span>
-                              <span>blabla</span>
-                            </div>";
                   echo "</div>";
 
+                  echo "<div class='lista-pacientes-acao-rapida'>
+                          <span class='lista-paciente-acao-rapida-inativar lista-paciente-acao-rapida-item'></span>
+                          <span class='lista-paciente-acao-rapida-editar lista-paciente-acao-rapida-item'></span>
+                          <span class='lista-paciente-acao-rapida-atendimento lista-paciente-acao-rapida-item'></span>
+                          <span class='lista-paciente-acao-rapida-agenda lista-paciente-acao-rapida-item'></span>
+                        </div>";
               echo "</div>";
               echo "<div class='separador'></div>";
           }
