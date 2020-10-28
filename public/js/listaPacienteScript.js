@@ -76,13 +76,13 @@ function filtrarPaciente() {
                         ${paciente['dataNascimento']}
                         <span class="idade">${paciente['dataNascimento']}</span>
                     </div>
+                </div>
 
-                    <div class='lista-pacientes-acao-rapida'>
-                      <span class='lista-paciente-acao-rapida-inativar lista-paciente-acao-rapida-item'></span>
-                      <span class='lista-paciente-acao-rapida-editar lista-paciente-acao-rapida-item'></span>
-                      <span class='lista-paciente-acao-rapida-atendimento lista-paciente-acao-rapida-item'></span>
-                      <span class='lista-paciente-acao-rapida-agenda lista-paciente-acao-rapida-item'></span>
-                    </div>
+                <div class='lista-pacientes-acao-rapida'>
+                  <span class='lista-paciente-acao-rapida-inativar lista-paciente-acao-rapida-item'></span>
+                  <span class='lista-paciente-acao-rapida-editar lista-paciente-acao-rapida-item'></span>
+                  <span class='lista-paciente-acao-rapida-atendimento lista-paciente-acao-rapida-item'></span>
+                  <span class='lista-paciente-acao-rapida-agenda lista-paciente-acao-rapida-item'></span>
                 </div>
               `;
 
