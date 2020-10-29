@@ -105,7 +105,15 @@ $paciente   = $this->pacientes[0];
 
     <?php
     if($this->action == 'editar') {
-        echo "<a href=/pacientes/inativar/{$paciente['idPaciente']} class='teste'><input type='button' id='inativar-paciente' value='Inativar Paciente' class='inativar-paciente'></a>";
+       $btnTexto = "";
+
+       if($paciente['status'] == '1') {
+         $btnTexto = "Inativar Paciente";
+       }else{
+         $btnTexto = "Ativar Paciente";
+       }
+
+        echo "<a href=/pacientes/inativar/{$paciente['idPaciente']} class='teste'><input type='button' id='inativar-paciente' value='{$btnTexto}' class='inativar-paciente'></a>";
     }
     ?>
 </form>
