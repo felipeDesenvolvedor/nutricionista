@@ -7,7 +7,6 @@
     <link rel="icon" href="/public/img/icon-frutas.ico">
     <script src="/public/js/jquery-3.4.1.min.js"></script>
     <script src="/public/js/Ajax.js"></script>
-    <script src="/public/js/functions.js"></script>
     <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href="/public/css/font-awesome.css">
     <link rel="stylesheet" href="/public/css/ViewPainelLadoEsquerdoStyle.css">
@@ -18,8 +17,6 @@
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/Modal.css">
     <link rel="stylesheet" href="/public/css/Abas.css">
-    <script src="/public/js/listaPacienteScript.js"></script>
-    <script src="/public/js/index.js"></script>
 </head>
 <body>
   <div class="fundo"></div>
@@ -76,7 +73,11 @@
         <div class="menu-painel-fundo"></div>
       </div>
     </main>
+
+    <script src="/public/js/functions.js"></script>
+    <script src="/public/js/index.js"></script>
     <script src="/public/js/formPaciente.js"></script>
+    <script src="/public/js/Paciente/Listar.js"></script>
     <script src="/public/js/Paciente/Novo.js"></script>
     <script src="/public/js/Paciente/Editar.js"></script>
 
