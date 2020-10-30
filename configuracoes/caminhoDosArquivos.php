@@ -34,7 +34,6 @@ $caminhoDosArquivos = [
     "ViewPacienteNovoFormStyle"   => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."ViewPacienteNovoFormStyle.css",
     "listaPacienteStyle"          => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."listaPacienteStyle.css",
     "ModalStyle"                  => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."Modal.css",
-    "listaPacienteScript"         => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."listaPacienteScript.js",
     "formPaciente"                => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."formPaciente.js",
     "Ajax"                        => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR."Ajax.js",
     "iconFrutas"                  => DIRPAGE_teste."public".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."icon-frutas.ico",
