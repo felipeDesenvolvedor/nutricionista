@@ -117,12 +117,12 @@
 
           $this->pacientes = new ModelPaciente();
           $this->pacientes = $this->pacientes->buscarPacientes($array);
-          echo json_encode($this->pacientes, true);
+          require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteLista']);
       }else {
 
         $this->pacientes = new ModelPaciente();
         $this->pacientes = $this->pacientes->buscarPacientes([]);
-        echo json_encode($this->pacientes, true);
+        require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteLista']);
       }
     }
 
