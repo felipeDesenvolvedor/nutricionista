@@ -98,20 +98,22 @@ $paciente   = $this->pacientes[0];
         </label>
     </div>
 
-    <input type="submit" id="id-salvar" value="Salvar" class="novo-paciente-salvar">
-    <input type="submit" id="novo-paciente-salvar-atender" value="Salvar e Iniciar Atendimento" class="novo-paciente-salvar-atender">
+    <div>
+      <input type="submit" id="id-salvar" value="Salvar" class="novo-paciente-salvar">
+      <input type="submit" id="novo-paciente-salvar-atender" value="Salvar e Iniciar Atendimento" class="novo-paciente-salvar-atender">
 
-    <?php
-    if($this->action == 'editar') {
-       $btnTexto = "";
+      <?php
+      if($this->action == 'editar') {
+         $btnTexto = "";
 
-       if($paciente['status'] == '1') {
-         $btnTexto = "Inativar Paciente";
-       }else{
-         $btnTexto = "Ativar Paciente";
-       }
+         if($paciente['status'] == '1') {
+           $btnTexto = "Inativar Paciente";
+         }else{
+           $btnTexto = "Ativar Paciente";
+         }
 
-        echo "<a href=/pacientes/inativar/{$paciente['idPaciente']} class='teste'><input type='button' id='inativar-paciente' value='{$btnTexto}' class='inativar-paciente'></a>";
-    }
-    ?>
+          echo "<a href=/pacientes/inativar/{$paciente['idPaciente']} class='teste'><input type='button' id='inativar-paciente' value='{$btnTexto}' class='inativar-paciente'></a>";
+      }
+      ?>
+    </div>
 </form>
