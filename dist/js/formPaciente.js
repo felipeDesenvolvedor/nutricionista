@@ -16,7 +16,7 @@ function acoes() {
   var idCpfResponsavel = document.querySelector("#idCpfResponsavel");
   var idCEP            = document.querySelector("#idCEP");
   var idEmail          = document.querySelector("#idEmail");
-  var fotoPaciente     = document.querySelector("#foto-paciente");
+  var fotoPaciente     = document.querySelector("#js-abas-item-foto-paciente");
 
   formPaciente();
   buscaEndereco();

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/public/css/ErrorMesage.css">
     <link rel="stylesheet" href="/public/css/index.css">
     <link rel="stylesheet" href="/public/css/Modal.css">
+    <link rel="stylesheet" href="/public/css/Abas.css">
     <script src="/public/js/listaPacienteScript.js"></script>
     <script src="/public/js/index.js"></script>
 </head>
