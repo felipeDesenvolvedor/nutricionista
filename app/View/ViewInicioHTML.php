@@ -76,7 +76,7 @@
 
     <script src="/public/js/functions.js"></script>
     <script src="/public/js/index.js"></script>
-    <script src="/public/js/formPaciente.js"></script>
+    <script src="/public/js/Paciente/FormPaciente.js"></script>
     <script src="/public/js/Paciente/Listar.js"></script>
     <script src="/public/js/Paciente/Novo.js"></script>
     <script src="/public/js/Paciente/Editar.js"></script>
