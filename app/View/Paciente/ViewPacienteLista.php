@@ -31,7 +31,7 @@ if(count($this->pacientes)) {
 
     echo "</div>";
 }
-else{
-    echo "<p>Voçê ainda não possui pacientes cadastrados, para cadastrar clique no botão abaixo</p>";
-    echo "<a href=/pacientes/novo><input class='btn-novo-paciente' type='button' name='' value='Novo'/></a>";
-}
+// else{
+//     echo "<p>Voçê ainda não possui pacientes cadastrados, para cadastrar clique no botão abaixo</p>";
+//     echo "<a href=/pacientes/novo><input class='btn-novo-paciente' type='button' name='' value='Novo'/></a>";
+// }
