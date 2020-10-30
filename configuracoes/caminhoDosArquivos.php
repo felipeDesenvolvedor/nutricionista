@@ -6,7 +6,7 @@ define("DIRPAGE_teste", "http://{$_SERVER['HTTP_HOST']}/");
 $caminhoDosArquivos = [
     "IndexModel"                  => $path."app".DIRECTORY_SEPARATOR."Model".DIRECTORY_SEPARATOR."IndexModel.php",
     "autoload"                    => $path."src".DIRECTORY_SEPARATOR."autoload.php",
-    "ViewListaPaciente"           => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewListaPaciente.php",
+    "ViewPacienteLista"           => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."Paciente".DIRECTORY_SEPARATOR."ViewPacienteLista.php",
     "ViewMenuPainel"              => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewMenuPainel.php",
     "ViewMenuPainelCabecalho"     => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."ViewMenuPainelCabecalho.php",
     "ViewPacienteAcoes"           => $path."app".DIRECTORY_SEPARATOR."View".DIRECTORY_SEPARATOR."Paciente".DIRECTORY_SEPARATOR."ViewPacienteAcoes.php",
