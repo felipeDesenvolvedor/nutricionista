@@ -39,5 +39,7 @@
 </div>
 
 <?php
-  require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteLista']);
+  echo "<div class='lista-pacientes'>";
+    require_once($GLOBALS['caminhoDosArquivos']['ViewPacienteLista']);
+  echo "</div>";
 ?>
