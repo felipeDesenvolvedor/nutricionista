@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function acoes() {
+  formPaciente();
+  buscaEndereco();
+  Modal();
+}
+
+function formPaciente() {
+
   $formPaciente = document.querySelector('.paciente-novo-form');
 
   if (!$formPaciente) {
@@ -18,12 +25,6 @@ function acoes() {
   var idEmail          = document.querySelector("#idEmail");
   var fotoPaciente     = document.querySelector("#js-abas-item-foto-paciente");
 
-  formPaciente();
-  buscaEndereco();
-  Modal();
-}
-
-function formPaciente() {
   $(document).on('submit', ".paciente-novo-form", function(){
 
     var mostrarErro;
@@ -77,6 +78,7 @@ function formPaciente() {
 }
 
 function buscaEndereco() {
+
     $(document).on('input', "#idCEP", function(){
       if(this.value.length == 8) {
           buscar("http://viacep.com.br/ws/"+this.value+"/json", "get", '', '', prencherCampos);
@@ -97,6 +99,11 @@ function buscaEndereco() {
 
 function Modal() {
   var botao = document.querySelector('.modal-fechar');
+
+  if (!botao) {
+      return;
+  }
+
       botao.addEventListener('click', function(){
           fechar();
       });
