@@ -10,21 +10,6 @@ function acoes() {
 
 function formPaciente() {
 
-  $formPaciente = document.querySelector('.paciente-novo-form');
-
-  if (!$formPaciente) {
-      return;
-  }
-
-  var idCpf            = document.querySelector("#idCpf");
-  var idRG             = document.querySelector("#idRG");
-  var idSexo           = document.querySelector("#idSexo");
-  var idDataNascimento = document.querySelector("#idDataNascimento");
-  var idCpfResponsavel = document.querySelector("#idCpfResponsavel");
-  var idCEP            = document.querySelector("#idCEP");
-  var idEmail          = document.querySelector("#idEmail");
-  var fotoPaciente     = document.querySelector("#js-abas-item-foto-paciente");
-
   $(document).on('submit', ".paciente-novo-form", function(){
 
     var mostrarErro;
@@ -98,28 +83,24 @@ function buscaEndereco() {
 }
 
 function Modal() {
-  var botao = document.querySelector('.modal-fechar');
 
-  if (!botao) {
-      return;
-  }
+  $(document).on('click', '.modal-fechar', function(){
+      fechar();
+  });
 
-      botao.addEventListener('click', function(){
-          fechar();
-      });
-
-      $(document).on('keydown', window, function(el){
-        var esc = el.keyCode;
-        if(esc == 27) {
-          fechar();
-        }
-      })
-      // window.addEventListener('keydown', function(el){
-      //
-      // });
+  $(document).on('keydown', window, function(el){
+    var esc = el.keyCode;
+    if(esc == 27) {
+      fechar();
+    }
+  })
 
   function fechar() {
     var modal = document.querySelector('.modal');
+
+    if (!modal) {
+        return;
+    }
 
     if(modal.classList.contains('aberto')) {
       modal.classList.remove('aberto')
