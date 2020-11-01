@@ -102,15 +102,22 @@ function Modal() {
           fechar();
       });
 
-      window.addEventListener('keydown', function(el){
+      $(document).on('keydown', window, function(el){
         var esc = el.keyCode;
         if(esc == 27) {
           fechar();
         }
-      });
+      })
+      // window.addEventListener('keydown', function(el){
+      //
+      // });
 
   function fechar() {
-    document.querySelector('.modal').classList.toggle('aberto');
-    window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes");
+    var modal = document.querySelector('.modal');
+
+    if(modal.classList.contains('aberto')) {
+      modal.classList.remove('aberto')
+      window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes");
+    };
   }
 }
