@@ -52,6 +52,7 @@ class Modal {
                     echo "<input type='button' value={$this->botao['botao']} >";
                 echo '</form>';
             echo '</div>';
+            echo "<div id='mensagem-erro'></div>";
         echo '</div>';
     }
 
@@ -67,6 +68,7 @@ class Modal {
           echo '<h2 class="modal-titulo">'.$this->titulo["titulo"].'<span class="modal-fechar">x</span>'.'</h1>';
           require_once($html);
         echo '</div>';
+        echo "<div id='mensagem-erro'></div>";
       echo '</div>';
     }
 }

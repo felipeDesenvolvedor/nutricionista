@@ -24,19 +24,19 @@ function acoes() {
 }
 
 function formPaciente() {
+  $(document).on('submit', ".paciente-novo-form", function(){
+
     var mostrarErro;
     var mensagem = {
         "campoVazio":"Por favor prencha todos os campos obrigatórios.",
         "emailInvalido":"email invalido"
     };
 
-    var form = document.querySelector(".paciente-novo-form");
-        form.addEventListener('submit', function() {
-            validaCampoVazio(this.nome);
-            validaCampoVazio(this.dataNascimento);
-            validaCampoVazio(this.sexo);
-            mensagemErro(mensagem.campoVazio);
-        });
+    validaCampoVazio(this.nome);
+    validaCampoVazio(this.dataNascimento);
+    validaCampoVazio(this.sexo);
+    mensagemErro(mensagem.campoVazio);
+
 
     function validaCampoVazio(campo) {
         var elementoPai   = campo.parentNode;
@@ -73,18 +73,17 @@ function formPaciente() {
             popupMensagem.classList.remove('exibir');
         }, 2000);
     }
+  });
 }
 
 function buscaEndereco() {
-    var campoCep = document.querySelector("#idCEP");
-
-    campoCep.addEventListener('input', function(){
-        if(this.value.length == 8) {
-            buscar("http://viacep.com.br/ws/"+this.value+"/json", "get", '', '', prencherCampos);
-        }
-        else if(this.value.length < 8) {
-            prencherCampos({logradouro:'', uf:'', bairro:'', complemento:''});
-        }
+    $(document).on('input', "#idCEP", function(){
+      if(this.value.length == 8) {
+          buscar("http://viacep.com.br/ws/"+this.value+"/json", "get", '', '', prencherCampos);
+      }
+      else if(this.value.length < 8) {
+          prencherCampos('{"logradouro":"", "uf":"", "bairro":"", "complemento":""}');
+      }
     });
 
     function prencherCampos(dados) {
