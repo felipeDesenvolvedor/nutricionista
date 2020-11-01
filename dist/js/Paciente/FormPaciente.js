@@ -97,14 +97,20 @@ function buscaEndereco() {
 }
 
 function Modal() {
+  var botao = document.querySelector('.modal-fechar');
+      botao.addEventListener('click', function(){
+          fechar();
+      });
+
+      window.addEventListener('keydown', function(el){
+        var esc = el.keyCode;
+        if(esc == 27) {
+          fechar();
+        }
+      });
+
   function fechar() {
-    var botao = document.querySelector('.modal-fechar');
-    botao.addEventListener('click', function(){
-      document.querySelector('.modal').classList.toggle('aberto');
-
+    document.querySelector('.modal').classList.toggle('aberto');
     window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes");
-    });
   }
-
-  fechar();
 }

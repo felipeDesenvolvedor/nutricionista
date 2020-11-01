@@ -1,8 +1,8 @@
-function buscar(url, method, parametros, dados, funcao) {
-   request(url, method, parametros, dados, funcao);
+function buscar(url, method, parametros, dados, funcao, classPagina) {
+   request(url, method, parametros, dados, funcao, classPagina);
 }
 
-function request(url, method, parametros, dados, funcao) {
+function request(url, method, parametros, dados, funcao, classPagina) {
     var xhr = new XMLHttpRequest();
     var url = url ;
 
@@ -20,7 +20,7 @@ function request(url, method, parametros, dados, funcao) {
         if(xhr.readyState == 4) {
                 // requisicao bem sucedida
             if(xhr.status == 200) {
-                funcao(xhr.responseText);
+                funcao(xhr.responseText, classPagina);
                 // console.log(xhr.responseText);
             }
         }

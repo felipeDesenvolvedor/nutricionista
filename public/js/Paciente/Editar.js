@@ -14,6 +14,6 @@ function editar() {
 
     window.history.pushState('Object', "Orange Nutri", `http://nutricionista.com.br/pacientes/editar/${idPaciente}`);
 
-    buscar("http://nutricionista.com.br/pacientes/editar/", "post", "idPaciente", idPaciente, exibirPagina);
+    buscar("http://nutricionista.com.br/pacientes/editar/", "post", "idPaciente", idPaciente, exibirPagina, "modal");
   })
 }

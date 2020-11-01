@@ -9,6 +9,6 @@ function novo() {
   $(document).on('click', ".view-filtro-paciente-btn-novo", function(){
     window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes/novo");
 
-    buscar("http://nutricionista.com.br/pacientes/novo", "get", "", "", exibirPagina);
+    buscar("http://nutricionista.com.br/pacientes/novo", "get", "", "", exibirPagina, "modal");
   })
 }
