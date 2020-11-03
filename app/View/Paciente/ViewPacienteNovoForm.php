@@ -4,7 +4,7 @@ $pacienteid = $this->pacienteid;
 $paciente   = $this->pacientes[0];
 ?>
 
-<form action=<?php echo "/pacientes/$action/$pacienteid";?> method="post" class="paciente-novo-form">
+<form action=<?php echo "/pacientes/$action/$pacienteid";?> method="post" class="paciente-novo-form" enctype="multipart/form-data">
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>
@@ -96,6 +96,8 @@ $paciente   = $this->pacientes[0];
             <span>Email</span>
             <input type="text" name="email" id="idEmail" value="<?php echo $paciente['email'];?>">
         </label>
+
+        <input type="file" name="file" class='abas-item abas-item-foto-paciente'/>
     </div>
 
     <div>

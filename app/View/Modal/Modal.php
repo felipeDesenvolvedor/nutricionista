@@ -1,6 +1,8 @@
 <?php
 namespace app\View\Modal;
 
+use app\View\Abas\Abas;
+
 class Modal {
     public $boxClass = [];
     public $titulo = [];
@@ -64,7 +66,11 @@ class Modal {
 
       echo '<div class="modal aberto">';
         echo '<div class="conteudo">';
-        require_once($_SERVER['DOCUMENT_ROOT'].'/app/View/Abas/EstruturaDeAba.php');
+
+          // require_once($_SERVER['DOCUMENT_ROOT'].'/app/View/Abas/EstruturaDeAba.php');
+          $abas = new Abas($this->tipoConteudo['abas']);
+          echo $abas->construirAbas();
+
           echo '<h2 class="modal-titulo">'.$this->titulo["titulo"].'<span class="modal-fechar">x</span>'.'</h1>';
           require_once($html);
         echo '</div>';

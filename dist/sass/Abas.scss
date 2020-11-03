@@ -21,7 +21,12 @@
     display:inline-block;
 
     &-foto-paciente {
-      float: right;
+      position: absolute;
+      top: -81px;
+      right: 0;
+      font-size: 0;
+      width: 50px !important;
+      width: 50px !important;
     }
   }
 }
