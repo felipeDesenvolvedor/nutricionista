@@ -17,6 +17,9 @@ define("DIRIMG",    DIRPAGE."public/img/");
 define("DIRJS",     DIRPAGE."public/js/");
 define("DIRVIDEO",  DIRPAGE."public/video/");
 
+#Foto dos Pacientes
+define("FOTOSPACIENTES", $_SERVER['DOCUMENT_ROOT']."/public/img/fotos/pacientes/");
+
 # Acesso ao banco de dados
 define("HOST", "localhost");
 define("USER", "nutricionista");

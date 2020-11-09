@@ -4,6 +4,7 @@
   use src\classes\ClassRoutes;
   use app\Model\ModelPaciente;
   use app\View\Modal\Modal;
+  use app\Controller\ControllerUploads;
 
   class ControllerPaciente
   {
@@ -132,51 +133,53 @@
 
     public function novo()
     {
-      $this->action = "cadastrar";
 
-      $modal = new Modal(
-          ['class'=>''],
-          ['titulo'=>'Cadastro de paciente'],
+      if($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+        $this->action = "novo";
+
+        $modal = new Modal(
+            ['class'=>''],
+            ['titulo'=>'Cadastro de paciente'],
+            [
+            'tipo'     => 'htmlCompleto',
+            'conteudo' => $GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm'],
+            'objeto'   => $this,
+            'abas'     => $this->abas
+            ],
+            ['botao'=>'']
+        );
+
+      }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // $controllerUploads = new ControllerUploads();
+        // $controllerUploads->enviar(FOTOSPACIENTES);
+
+        $paciente = new ModelPaciente();
+
+        $paciente->salvarPaciente(
           [
-          'tipo'     => 'htmlCompleto',
-          'conteudo' => $GLOBALS['caminhoDosArquivos']['ViewPacienteNovoForm'],
-          'objeto'   => $this,
-          'abas'     => $this->abas
+            "nome"           => ucwords(filter_input(INPUT_POST, 'nome',      FILTER_SANITIZE_STRING)),
+            "cpf"            => filter_input(INPUT_POST, 'cpf',               FILTER_SANITIZE_STRING),
+            "rg"             => filter_input(INPUT_POST, 'rg',                FILTER_SANITIZE_STRING),
+            "dataNascimento" => filter_input(INPUT_POST, 'dataNascimento',    FILTER_SANITIZE_STRING),
+            "sexo"           => filter_input(INPUT_POST, 'sexo',              FILTER_SANITIZE_STRING),
+            "CEP"            => filter_input(INPUT_POST, 'CEP',               FILTER_SANITIZE_STRING),
+            "endereco"       => ucwords(filter_input(INPUT_POST, 'endereco',  FILTER_SANITIZE_STRING)),
+            "numeroEndereco" => filter_input(INPUT_POST, 'numeroEndereco',    FILTER_SANITIZE_STRING),
+            "municipio"      => ucwords(filter_input(INPUT_POST, 'municipio', FILTER_SANITIZE_STRING)),
+            "bairro"         => ucwords(filter_input(INPUT_POST, 'bairro',    FILTER_SANITIZE_STRING)),
+            "complemento"    => filter_input(INPUT_POST, 'complemento',       FILTER_SANITIZE_STRING),
+            "telefone1"      => filter_input(INPUT_POST, 'telefone1',         FILTER_SANITIZE_STRING),
+            "telefone2"      => filter_input(INPUT_POST, 'telefone2',         FILTER_SANITIZE_STRING),
+            "email"          => filter_input(INPUT_POST, 'email',             FILTER_SANITIZE_STRING)
           ],
-          ['botao'=>'']
-      );
-    }
+          filter_input(INPUT_POST, 'responsavel',    FILTER_SANITIZE_STRING),
+          filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING),
+          '1'
+        );
 
-    public function cadastrar()
-    {
-
-      $foto = $_POST['foto'];
-
-      // $paciente = new ModelPaciente();
-      //
-      // $paciente->salvarPaciente(
-      //   [
-      //     "nome"           => ucwords(filter_input(INPUT_POST, 'nome',      FILTER_SANITIZE_STRING)),
-      //     "cpf"            => filter_input(INPUT_POST, 'cpf',               FILTER_SANITIZE_STRING),
-      //     "rg"             => filter_input(INPUT_POST, 'rg',                FILTER_SANITIZE_STRING),
-      //     "dataNascimento" => filter_input(INPUT_POST, 'dataNascimento',    FILTER_SANITIZE_STRING),
-      //     "sexo"           => filter_input(INPUT_POST, 'sexo',              FILTER_SANITIZE_STRING),
-      //     "CEP"            => filter_input(INPUT_POST, 'CEP',               FILTER_SANITIZE_STRING),
-      //     "endereco"       => ucwords(filter_input(INPUT_POST, 'endereco',  FILTER_SANITIZE_STRING)),
-      //     "numeroEndereco" => filter_input(INPUT_POST, 'numeroEndereco',    FILTER_SANITIZE_STRING),
-      //     "municipio"      => ucwords(filter_input(INPUT_POST, 'municipio', FILTER_SANITIZE_STRING)),
-      //     "bairro"         => ucwords(filter_input(INPUT_POST, 'bairro',    FILTER_SANITIZE_STRING)),
-      //     "complemento"    => filter_input(INPUT_POST, 'complemento',       FILTER_SANITIZE_STRING),
-      //     "telefone1"      => filter_input(INPUT_POST, 'telefone1',         FILTER_SANITIZE_STRING),
-      //     "telefone2"      => filter_input(INPUT_POST, 'telefone2',         FILTER_SANITIZE_STRING),
-      //     "email"          => filter_input(INPUT_POST, 'email',             FILTER_SANITIZE_STRING)
-      //   ],
-      //   filter_input(INPUT_POST, 'responsavel',    FILTER_SANITIZE_STRING),
-      //   filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING),
-      //   '1'
-      // );
-      //
-      // header('Location:/pacientes', true, 302);
+        header('Location:/pacientes', true, 302);
+      }
     }
   }
 ?>
