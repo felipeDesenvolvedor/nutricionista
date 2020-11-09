@@ -46,7 +46,7 @@
         $valorParametro = $_POST['idPaciente'];
         $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro);
         $this->pacienteid = $this->pacientes[0]['idPaciente'];
-        $this->action = "editar";
+        $this->action = "editar/";
 
         $modal = new Modal(
             ['class'=>''],
@@ -151,8 +151,11 @@
         );
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // $controllerUploads = new ControllerUploads();
-        // $controllerUploads->enviar(FOTOSPACIENTES);
+        $controllerUploads = new ControllerUploads();
+        if ($controllerUploads->enviar(FOTOSPACIENTES)) {
+            echo $controllerUploads->enviar(FOTOSPACIENTES);
+            die();
+        }
 
         $paciente = new ModelPaciente();
 
