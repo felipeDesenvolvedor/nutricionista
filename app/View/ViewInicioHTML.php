@@ -73,6 +73,7 @@
       </div>
     </main>
 
+    <script src="/public/js/ErrorMessage.js"></script>
     <script src="/public/js/functions.js"></script>
     <script src="/public/js/index.js"></script>
     <script src="/public/js/Paciente/FormPaciente.js"></script>
