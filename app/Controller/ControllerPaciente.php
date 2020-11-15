@@ -105,12 +105,14 @@
     {
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-        $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
+        // $this->setLayout($GLOBALS['caminhoDosArquivos']['ViewPacienteAcoes']);
         $this->pacientes = new ModelPaciente();
         $this->pacientes = $this->pacientes->buscarPacientes([]);
-        $this->titulo = "Consulta de Pacientes";
-        require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
-        require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
+        // $this->titulo = "Consulta de Pacientes";
+        // require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
+        // require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
+
+        echo json_encode($this->pacientes, true);
       }
     }
 

@@ -66,6 +66,46 @@ function filtrarPaciente() {
           listaPacientes.innerText = '';
           listaPacientes.innerHTML = pacientes;
     }
+
+    function exibir(pacientes) {
+        var listaPacientes = document.querySelector('.lista-pacientes');
+            listaPacientes.innerText = '';
+
+            JSON.parse(pacientes).forEach(function(paciente) {
+              var pacienteLinha = `
+                <div class=lista-paciente-box>
+                    <img src="/public/img/paciente-foto.jpg" class="lista-paciente-foto">
+
+                    <div class="lista-paciente-dados">
+                        <span class="js-lista-paciente-nome">${paciente['nome']}</span>
+                        <span>${paciente['sexo']}</span>
+                        ${paciente['dataNascimento']}
+                        <span class="idade">${paciente['dataNascimento']}</span>
+                    </div>
+                </div>
+
+                <div class='lista-pacientes-acao-rapida'>
+                  <span class='lista-paciente-acao-rapida-inativar lista-paciente-acao-rapida-item'></span>
+                  <span class='lista-paciente-acao-rapida-editar lista-paciente-acao-rapida-item'></span>
+                  <span class='lista-paciente-acao-rapida-atendimento lista-paciente-acao-rapida-item'></span>
+                  <span class='lista-paciente-acao-rapida-agenda lista-paciente-acao-rapida-item'></span>
+                </div>
+              `;
+
+              var separador = document.createElement('div');
+                  separador.classList.add('separador');
+
+              var elementoPaciente = document.createElement('div');
+                  elementoPaciente.setAttribute('data-id', `/pacientes/editar/${paciente['idPaciente']}`);
+                  elementoPaciente.classList.add('paciente');
+
+              elementoPaciente.innerHTML = pacienteLinha;
+              listaPacientes.appendChild(elementoPaciente);
+
+              $('.separador').remove();
+              $('.paciente').prepend(separador);
+        });
+      }
   }
 }
 

@@ -66,8 +66,6 @@ class Modal {
 
       echo '<div class="modal aberto">';
         echo '<div class="conteudo">';
-
-          // require_once($_SERVER['DOCUMENT_ROOT'].'/app/View/Abas/EstruturaDeAba.php');
           $abas = new Abas($this->tipoConteudo['abas']);
           echo $abas->construirAbas();
 
