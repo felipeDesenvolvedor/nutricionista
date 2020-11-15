@@ -151,11 +151,11 @@
         );
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $controllerUploads = new ControllerUploads();
-        if ($controllerUploads->enviar(FOTOSPACIENTES)) {
-            // echo $controllerUploads->enviar(FOTOSPACIENTES);
-            die();
-        }
+        // $controllerUploads = new ControllerUploads();
+        // if ($controllerUploads->enviar(FOTOSPACIENTES)) {
+        //     echo $controllerUploads->enviar(FOTOSPACIENTES);
+        //     die();
+        // }
 
         $paciente = new ModelPaciente();
 
@@ -177,8 +177,7 @@
             "email"          => filter_input(INPUT_POST, 'email',             FILTER_SANITIZE_STRING)
           ],
           filter_input(INPUT_POST, 'responsavel',    FILTER_SANITIZE_STRING),
-          filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING),
-          '1'
+          filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING)
         );
 
         header('Location:/pacientes', true, 302);

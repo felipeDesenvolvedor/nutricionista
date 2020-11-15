@@ -19,8 +19,10 @@ class ModelPaciente extends ModelPessoa {
         $this->mysql = $mysql;
     }
 
-    public function salvarPaciente(array $pessoa, string $responsavel, string $cpfResponsavel, string $status)
+    public function salvarPaciente(array $pessoa, $responsavel = "", $cpfResponsavel = "")
     {
+        $status = "1";
+
         $this->responsavel    = $responsavel;
         $this->cpfResponsavel = $cpfResponsavel;
 
