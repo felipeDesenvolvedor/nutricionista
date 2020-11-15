@@ -153,7 +153,7 @@
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
         $controllerUploads = new ControllerUploads();
         if ($controllerUploads->enviar(FOTOSPACIENTES)) {
-            echo $controllerUploads->enviar(FOTOSPACIENTES);
+            // echo $controllerUploads->enviar(FOTOSPACIENTES);
             die();
         }
 

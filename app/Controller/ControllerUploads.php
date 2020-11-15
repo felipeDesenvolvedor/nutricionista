@@ -9,7 +9,6 @@ class ControllerUploads
 
   function __construct()
   {
-    echo FOTOSPACIENTES;
   }
 
   public function enviar($destino):string {
@@ -40,6 +39,8 @@ class ControllerUploads
         if(!$_FILES && $getPost) {
             return "<p class='trigger warning'>Parece que o arquivo é muito grande !!</p>";
         }
+
+        return "";
     }
   }
 }
