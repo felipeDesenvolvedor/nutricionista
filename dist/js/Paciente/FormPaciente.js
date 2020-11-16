@@ -17,10 +17,17 @@ function formPaciente() {
         "emailInvalido":"email invalido"
     };
 
+    $('#mensagem-erro span').remove();
+
     validaCampoVazio(this.nome);
     validaCampoVazio(this.dataNascimento);
     validaCampoVazio(this.sexo);
     mensagemErro(mensagem.campoVazio);
+
+    // validaEmail(this.email);
+    // mensagemErro(mensagem.emailInvalido);
+
+    console.log(mostrarErro);
   });
 }
 

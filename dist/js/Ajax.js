@@ -2,6 +2,18 @@ function buscar(url, method, parametros, dados, funcao, classPagina) {
    request(url, method, parametros, dados, funcao, classPagina);
 }
 
+function salvar(url, method, parametros, dados, funcao, classPagina) {
+   request(url, method, parametros, dados, funcao, classPagina);
+}
+
+function editar(url, method, parametros, dados, funcao, classPagina) {
+   request(url, method, parametros, dados, funcao, classPagina);
+}
+
+function excluir(url, method, parametros, dados, funcao, classPagina) {
+   request(url, method, parametros, dados, funcao, classPagina);
+}
+
 function request(url, method, parametros, dados, funcao, classPagina) {
     var xhr = new XMLHttpRequest();
     var url = url ;

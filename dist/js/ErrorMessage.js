@@ -22,16 +22,47 @@ function validaCampoVazio(campo) {
     }
 }
 
+function validaEmail(campo) {
+  var elementoPai   = campo.parentNode;
+  var elementoFilho = elementoPai.querySelector('span');
+
+  if(!campo.value) {
+      addErro(elementoFilho);
+
+      mostrarErro = true;
+      event.preventDefault();
+  }else {
+      removeErro(elementoFilho);
+  }
+
+  function addErro(elemento) {
+      elemento.classList.add('campo-vazio');
+  }
+
+  function removeErro(elemento) {
+      elemento.classList.remove('campo-vazio');
+  }
+}
+
 function mensagemErro(erro) {
 
+
     if(mostrarErro) {
+
+        var boxErro = document.createElement("span");
+            boxErro.textContent = erro;
+
         var popupMensagem = document.querySelector('#mensagem-erro');
             popupMensagem.classList.add('exibir');
-            popupMensagem.textContent = erro;
-            mostrarErro = false;
+
+            popupMensagem.appendChild(boxErro);
+            // mostrarErro = false;
     }
 
-    setTimeout(function(){
+    myStopFunction(myVarTemp);
+
+    myVarTemp = setTimeout(function(){
         popupMensagem.classList.remove('exibir');
-    }, 2000);
+    }, 4000);
+
 }
