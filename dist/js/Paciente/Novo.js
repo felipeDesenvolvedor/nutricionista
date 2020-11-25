@@ -11,4 +11,8 @@ function novo() {
 
     buscar("http://nutricionista.com.br/pacientes/novo", "get", "", "", exibirPagina, "modal");
   })
+
+  // $(document).on('submit', ".paciente-novo-form", function(){
+  //
+  // });
 }

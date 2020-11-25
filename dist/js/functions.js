@@ -6,6 +6,10 @@ function exibirPagina(conteudo, classPagina) {
       body.prepend(conteudo);
 }
 
+function redirecionar(conteudo, classPagina) {
+  console.log(conteudo);
+}
+
 function myStopFunction(myVarTemp) {
   clearTimeout(myVarTemp);
 }

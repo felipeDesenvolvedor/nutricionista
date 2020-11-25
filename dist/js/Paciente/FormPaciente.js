@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
+
   acoes();
 });
 
@@ -10,8 +11,9 @@ function acoes() {
 
 function formPaciente() {
 
-  $(document).on('submit', ".paciente-novo-form", function(){
 
+  $(document).on('click', ".novo-paciente-salvar", function(){
+    var form = document.querySelector(".paciente-novo-form");
     var mensagem = {
         "campoVazio":"Por favor prencha todos os campos obrigatórios.",
         "emailInvalido":"email invalido"
@@ -19,15 +21,13 @@ function formPaciente() {
 
     $('#mensagem-erro span').remove();
 
-    validaCampoVazio(this.nome);
-    validaCampoVazio(this.dataNascimento);
-    validaCampoVazio(this.sexo);
+    validaCampoVazio(form.nome);
+    validaCampoVazio(form.dataNascimento);
+    validaCampoVazio(form.sexo);
     mensagemErro(mensagem.campoVazio);
 
     // validaEmail(this.email);
     // mensagemErro(mensagem.emailInvalido);
-
-    console.log(mostrarErro);
   });
 }
 

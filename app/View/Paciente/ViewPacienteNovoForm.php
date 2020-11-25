@@ -4,7 +4,7 @@ $pacienteid = $this->pacienteid;
 $paciente   = $this->pacientes[0];
 ?>
 
-<form action=<?php echo "/pacientes/$action$pacienteid";?> method="post" name="post" class="paciente-novo-form" enctype="multipart/form-data">
+<form name="post" class="paciente-novo-form" enctype="multipart/form-data">
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>
@@ -101,7 +101,7 @@ $paciente   = $this->pacientes[0];
     </div>
 
     <div>
-      <input type="submit" id="id-salvar" value="Salvar" class="novo-paciente-salvar">
+      <input type="button" id="id-salvar" value="Salvar" class="novo-paciente-salvar">
       <input type="submit" id="novo-paciente-salvar-atender" value="Salvar e Iniciar Atendimento" class="novo-paciente-salvar-atender">
 
       <?php
