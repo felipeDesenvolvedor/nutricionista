@@ -1,16 +1,17 @@
 var mostrarErro;
 
 function campoVazio(campoVazio) {
+    var elementoFilho;
 
     if(!campoVazio.value) {
-        addErro(campoVazio);
+        elementoFilho = Pai(campoVazio).querySelector('span');
+        addErro(elementoFilho, 'campo-vazio');
 
         mostrarErro = true;
-        // return mostrarErro;
     }else {
       // var form = document.querySelector(".paciente-novo-form");
-
-      removeErro(campoVazio);
+      elementoFilho = Pai(campoVazio).querySelector('span');
+      removeErro(elementoFilho, 'campo-vazio');
 
       // var paciente = {
       //   "nome"           :form.nome.value,
@@ -32,8 +33,6 @@ function campoVazio(campoVazio) {
       // };
       // salvar("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', paciente, redirecionar, "");
 
-      // mostrarErro = false;
-      // return mostrarErro;
     }
 }
 
@@ -51,25 +50,7 @@ function validaEmail(campoVazio) {
   }
 }
 
-function addErro(elemento) {
-    let elementoFilho = campoAlvo(elemento);
-    elementoFilho.classList.add('campo-vazio');
-}
-
-function removeErro(elemento) {
-    let elementoFilho = campoAlvo(elemento);
-    elementoFilho.classList.remove('campo-vazio');
-}
-
-function campoAlvo(elemento) {
-  var elementoPai   = elemento.parentNode;
-  var elementoFilho = elementoPai.querySelector('span');
-
-  return elementoFilho;
-}
-
 function mensagemErro(erro) {
-
 
     if(mostrarErro) {
 

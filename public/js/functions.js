@@ -13,3 +13,16 @@ function redirecionar(conteudo, classPagina) {
 function myStopFunction(myVarTemp) {
   clearTimeout(myVarTemp);
 }
+
+function Pai(elemento) {
+  var elementoPai = elemento.parentNode;
+  return elementoPai;
+}
+
+function addErro(elemento, classe) {
+    elemento.classList.add(classe);
+}
+
+function removeErro(elemento, classe) {
+    elemento.classList.remove(classe);
+}
