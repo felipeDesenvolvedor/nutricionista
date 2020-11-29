@@ -11,7 +11,6 @@ function acoes() {
 
 function formPaciente() {
 
-
   $(document).on('click', ".novo-paciente-salvar", function(){
     var form = document.querySelector(".paciente-novo-form");
     var mensagem = {
@@ -21,9 +20,9 @@ function formPaciente() {
 
     $('#mensagem-erro span').remove();
 
-    validaCampoVazio(form.nome);
-    validaCampoVazio(form.dataNascimento);
-    validaCampoVazio(form.sexo);
+    console.log(campoVazio(form.nome));
+    console.log(campoVazio(form.dataNascimento));
+    console.log(campoVazio(form.sexo));
     mensagemErro(mensagem.campoVazio);
 
     // validaEmail(this.email);
