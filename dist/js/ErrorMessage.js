@@ -8,39 +8,20 @@ function campoVazio(campoVazio) {
     var elementoFilho;
 
     if(!campoVazio.value) {
-        event.preventDefault();
+      event.preventDefault();
 
-        elementoFilho = Pai(campoVazio).querySelector('span');
-        addClass(elementoFilho, 'campo-vazio');
+      elementoFilho = Pai(campoVazio).querySelector('span');
+      addClass(elementoFilho, 'campo-vazio');
 
-        mostrarErro = true;
+      mostrarErro = true;
+      mensagemErro(mensagem.campoVazio);
 
-        mensagemErro(mensagem.campoVazio);
+      return true;
     }else {
-      // var form = document.querySelector(".paciente-novo-form");
       elementoFilho = Pai(campoVazio).querySelector('span');
       removeClass(elementoFilho, 'campo-vazio');
 
-      // var paciente = {
-      //   "nome"           :form.nome.value,
-      //   "cpf"            :form.dataNascimento.value,
-      //   "rg"             :form.rg.value,
-      //   "sexo"           :form.sexo.value,
-      //   "dataNascimento" :form.dataNascimento.value,
-      //   "responsavel"    :form.responsavel.value,
-      //   "cpfResponsavel" :form.cpfResponsavel.value,
-      //   "CEP"            :form.CEP.value,
-      //   "endereco"       :form.endereco.value,
-      //   "numeroEndereco" :form.numeroEndereco.value,
-      //   "municipio"      :form.municipio.value,
-      //   "bairro"         :form.bairro.value,
-      //   "complemento"    :form.complemento.value,
-      //   "telefone1"      :form.telefone1.value,
-      //   "telefone2"      :form.telefone2.value,
-      //   "email"          :form.email.value
-      // };
-      // salvar("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', paciente, redirecionar, "");
-
+      return false;
     }
 }
 
@@ -63,7 +44,7 @@ function mensagemErro(erro) {
 
     if(mostrarErro) {
       addClass(popupMensagem, 'exibir');
-      // mostrarErro = false;
+      mostrarErro = false;
     }
 
     myStopFunction(myVarTemp);

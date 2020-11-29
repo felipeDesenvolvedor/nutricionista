@@ -20,6 +20,29 @@ function formPaciente() {
     console.log(campoVazio(form.dataNascimento));
     console.log(campoVazio(form.sexo));
 
+    if(!campoVazio(form.nome) && !campoVazio(form.dataNascimento) && !campoVazio(form.sexo)) {
+      var form = document.querySelector(".paciente-novo-form");
+      var paciente = {
+        "nome"           :form.nome.value,
+        "cpf"            :form.dataNascimento.value,
+        "rg"             :form.rg.value,
+        "sexo"           :form.sexo.value,
+        "dataNascimento" :form.dataNascimento.value,
+        "responsavel"    :form.responsavel.value,
+        "cpfResponsavel" :form.cpfResponsavel.value,
+        "CEP"            :form.CEP.value,
+        "endereco"       :form.endereco.value,
+        "numeroEndereco" :form.numeroEndereco.value,
+        "municipio"      :form.municipio.value,
+        "bairro"         :form.bairro.value,
+        "complemento"    :form.complemento.value,
+        "telefone1"      :form.telefone1.value,
+        "telefone2"      :form.telefone2.value,
+        "email"          :form.email.value
+      };
+      salvar("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', paciente, redirecionar, "");
+    }
+
     // validaEmail(this.email);
     // mensagemErro(mensagem.emailInvalido);
   });
