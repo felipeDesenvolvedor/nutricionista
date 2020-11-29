@@ -1,18 +1,16 @@
 var mostrarErro;
 
-function campoVazio(campo) {
-    var elementoPai   = campo.parentNode;
-    var elementoFilho = elementoPai.querySelector('span');
+function campoVazio(campoVazio) {
 
-    if(!campo.value) {
-        addErro(elementoFilho);
+    if(!campoVazio.value) {
+        addErro(campoVazio);
 
         mostrarErro = true;
-        return mostrarErro;
+        // return mostrarErro;
     }else {
-      var form = document.querySelector(".paciente-novo-form");
+      // var form = document.querySelector(".paciente-novo-form");
 
-      removeErro(elementoFilho);
+      removeErro(campoVazio);
 
       // var paciente = {
       //   "nome"           :form.nome.value,
@@ -34,24 +32,16 @@ function campoVazio(campo) {
       // };
       // salvar("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', paciente, redirecionar, "");
 
-      mostrarErro = false;
-      return mostrarErro;
-    }
-
-    function addErro(elemento) {
-        elemento.classList.add('campo-vazio');
-    }
-
-    function removeErro(elemento) {
-        elemento.classList.remove('campo-vazio');
+      // mostrarErro = false;
+      // return mostrarErro;
     }
 }
 
-function validaEmail(campo) {
-  var elementoPai   = campo.parentNode;
+function validaEmail(campoVazio) {
+  var elementoPai   = campoVazio.parentNode;
   var elementoFilho = elementoPai.querySelector('span');
 
-  if(!campo.value) {
+  if(!campoVazio.value) {
       addErro(elementoFilho);
 
       mostrarErro = true;
@@ -59,14 +49,23 @@ function validaEmail(campo) {
   }else {
       removeErro(elementoFilho);
   }
+}
 
-  function addErro(elemento) {
-      elemento.classList.add('campo-vazio');
-  }
+function addErro(elemento) {
+    let elementoFilho = campoAlvo(elemento);
+    elementoFilho.classList.add('campo-vazio');
+}
 
-  function removeErro(elemento) {
-      elemento.classList.remove('campo-vazio');
-  }
+function removeErro(elemento) {
+    let elementoFilho = campoAlvo(elemento);
+    elementoFilho.classList.remove('campo-vazio');
+}
+
+function campoAlvo(elemento) {
+  var elementoPai   = elemento.parentNode;
+  var elementoFilho = elementoPai.querySelector('span');
+
+  return elementoFilho;
 }
 
 function mensagemErro(erro) {
