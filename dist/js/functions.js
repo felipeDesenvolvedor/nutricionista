@@ -19,10 +19,10 @@ function Pai(elemento) {
   return elementoPai;
 }
 
-function addErro(elemento, classe) {
+function addClass(elemento, classe) {
     elemento.classList.add(classe);
 }
 
-function removeErro(elemento, classe) {
+function removeClass(elemento, classe) {
     elemento.classList.remove(classe);
 }

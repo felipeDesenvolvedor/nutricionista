@@ -13,17 +13,12 @@ function formPaciente() {
 
   $(document).on('click', ".novo-paciente-salvar", function(){
     var form = document.querySelector(".paciente-novo-form");
-    var mensagem = {
-        "campoVazio":"Por favor prencha todos os campos obrigatórios.",
-        "emailInvalido":"email invalido"
-    };
 
     $('#mensagem-erro span').remove();
 
     console.log(campoVazio(form.nome));
     console.log(campoVazio(form.dataNascimento));
     console.log(campoVazio(form.sexo));
-    mensagemErro(mensagem.campoVazio);
 
     // validaEmail(this.email);
     // mensagemErro(mensagem.emailInvalido);
