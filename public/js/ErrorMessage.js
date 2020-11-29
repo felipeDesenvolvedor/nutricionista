@@ -51,17 +51,10 @@ function validaEmail(campoVazio) {
 }
 
 function mensagemErro(erro) {
+    var popupMensagem;
 
     if(mostrarErro) {
-
-        var boxErro = document.createElement("span");
-            boxErro.textContent = erro;
-
-        var popupMensagem = document.querySelector('#mensagem-erro');
-            popupMensagem.classList.add('exibir');
-
-            popupMensagem.appendChild(boxErro);
-            mostrarErro = false;
+      popupMensagem = estruturaDaMensagem(erro);
     }
 
     myStopFunction(myVarTemp);
@@ -70,4 +63,15 @@ function mensagemErro(erro) {
         popupMensagem.classList.remove('exibir');
     }, 4000);
 
+}
+
+function estruturaDaMensagem(erro) {
+  var boxErro = document.createElement("span");
+      boxErro.textContent = erro;
+
+  var popupMensagem = document.querySelector('#mensagem-erro');
+      popupMensagem.classList.add('exibir');
+
+      popupMensagem.appendChild(boxErro);
+      mostrarErro = false;
 }
