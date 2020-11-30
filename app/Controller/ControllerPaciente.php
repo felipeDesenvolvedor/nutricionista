@@ -151,7 +151,10 @@
         );
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // $controllerUploads = new ControllerUploads();
+        $controllerUploads = new ControllerUploads();
+
+        echo $controllerUploads->enviar(FOTOSPACIENTES);
+
         // if ($controllerUploads->enviar(FOTOSPACIENTES)) {
         //     echo $controllerUploads->enviar(FOTOSPACIENTES);
         //     die();
@@ -181,9 +184,6 @@
         // );
         //
         // header('Location:/pacientes', true, 302);
-
-        echo $_POST['paciente'];
-
       }
     }
   }

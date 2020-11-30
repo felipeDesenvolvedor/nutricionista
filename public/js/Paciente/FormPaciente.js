@@ -11,14 +11,20 @@ function acoes() {
 
 function formPaciente() {
 
+  var arquivo = "";
+
+  $(document).on('change', '.abas-item-foto-paciente', function(event) {
+      arquivo = {
+        "nomeArquivo":event.target.files[0].name,
+        "tipoArquivo":event.target.files[0].type
+      }
+      arquivo = JSON.stringify(arquivo);
+  });
+
   $(document).on('click', ".novo-paciente-salvar", function(){
     var form = document.querySelector(".paciente-novo-form");
 
     $('#mensagem-erro span').remove();
-
-    console.log(campoVazio(form.nome));
-    console.log(campoVazio(form.dataNascimento));
-    console.log(campoVazio(form.sexo));
 
     if(!campoVazio(form.nome) && !campoVazio(form.dataNascimento) && !campoVazio(form.sexo)) {
       var form = document.querySelector(".paciente-novo-form");
@@ -38,11 +44,12 @@ function formPaciente() {
         "complemento"    :form.complemento.value,
         "telefone1"      :form.telefone1.value,
         "telefone2"      :form.telefone2.value,
-        "email"          :form.email.value
+        "email"          :form.email.value,
+        "file"           :arquivo
       };
+
       salvar("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', paciente, redirecionar, "");
     }
-
     // validaEmail(this.email);
     // mensagemErro(mensagem.emailInvalido);
   });
