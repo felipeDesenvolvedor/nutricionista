@@ -19,12 +19,14 @@ function request(url, method, parametros, dados, funcao, classPagina) {
     var url = url ;
 
     xhr.open(method, url, true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-type", "multipart/form-data");
 
     if(!parametros) {
         xhr.send();
     }else {
-        xhr.send(`${parametros}=${JSON.stringify(dados)}`);
+        // xhr.send(`${parametros}=${JSON.stringify(dados)}`);
+        xhr.send(dados);
     }
 
     xhr.onreadystatechange = function() {
@@ -38,3 +40,9 @@ function request(url, method, parametros, dados, funcao, classPagina) {
         }
     }
 }
+
+// function sendArquivo(xhr, formData) {
+//   var formData = new FormData($formUpload);
+//   formData.append("i", i++);
+//   xhr.send(formData);
+// }

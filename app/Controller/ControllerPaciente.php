@@ -151,9 +151,15 @@
         );
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $controllerUploads = new ControllerUploads();
 
-        echo $controllerUploads->enviar(FOTOSPACIENTES);
+        $paciente = json_decode($_POST['nome'], true);
+        // $file = $paciente['file'];
+
+        echo json_encode($paciente, true);
+
+        // $controllerUploads = new ControllerUploads();
+        //
+        // echo $controllerUploads->enviar(FOTOSPACIENTES);
 
         // if ($controllerUploads->enviar(FOTOSPACIENTES)) {
         //     echo $controllerUploads->enviar(FOTOSPACIENTES);

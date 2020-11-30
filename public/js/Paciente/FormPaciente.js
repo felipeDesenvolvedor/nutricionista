@@ -21,34 +21,36 @@ function formPaciente() {
       arquivo = JSON.stringify(arquivo);
   });
 
-  $(document).on('click', ".novo-paciente-salvar", function(){
+  $(document).on('submit', ".paciente-novo-form", function(event){
+    event.preventDefault();
+
     var form = document.querySelector(".paciente-novo-form");
 
     $('#mensagem-erro span').remove();
 
     if(!campoVazio(form.nome) && !campoVazio(form.dataNascimento) && !campoVazio(form.sexo)) {
-      var form = document.querySelector(".paciente-novo-form");
-      var paciente = {
-        "nome"           :form.nome.value,
-        "cpf"            :form.dataNascimento.value,
-        "rg"             :form.rg.value,
-        "sexo"           :form.sexo.value,
-        "dataNascimento" :form.dataNascimento.value,
-        "responsavel"    :form.responsavel.value,
-        "cpfResponsavel" :form.cpfResponsavel.value,
-        "CEP"            :form.CEP.value,
-        "endereco"       :form.endereco.value,
-        "numeroEndereco" :form.numeroEndereco.value,
-        "municipio"      :form.municipio.value,
-        "bairro"         :form.bairro.value,
-        "complemento"    :form.complemento.value,
-        "telefone1"      :form.telefone1.value,
-        "telefone2"      :form.telefone2.value,
-        "email"          :form.email.value,
-        "file"           :arquivo
-      };
-
-      salvar("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', paciente, redirecionar, "");
+      // var paciente = {
+      //   "nome"           :form.nome.value,
+      //   "cpf"            :form.dataNascimento.value,
+      //   "rg"             :form.rg.value,
+      //   "sexo"           :form.sexo.value,
+      //   "dataNascimento" :form.dataNascimento.value,
+      //   "responsavel"    :form.responsavel.value,
+      //   "cpfResponsavel" :form.cpfResponsavel.value,
+      //   "CEP"            :form.CEP.value,
+      //   "endereco"       :form.endereco.value,
+      //   "numeroEndereco" :form.numeroEndereco.value,
+      //   "municipio"      :form.municipio.value,
+      //   "bairro"         :form.bairro.value,
+      //   "complemento"    :form.complemento.value,
+      //   "telefone1"      :form.telefone1.value,
+      //   "telefone2"      :form.telefone2.value,
+      //   "email"          :form.email.value,
+      //   "file"           :arquivo
+      // };
+      //
+      var $formData = new FormData(this);
+      salvar("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', $formData, redirecionar, "");
     }
     // validaEmail(this.email);
     // mensagemErro(mensagem.emailInvalido);
