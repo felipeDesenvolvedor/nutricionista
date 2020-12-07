@@ -7,7 +7,7 @@ function exibirPagina(conteudo, classPagina) {
 }
 
 function redirecionar(conteudo, classPagina) {
-  console.log(conteudo);
+  window.location = "/";
 }
 
 function myStopFunction(myVarTemp) {
