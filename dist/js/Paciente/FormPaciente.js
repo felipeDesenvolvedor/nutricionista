@@ -50,7 +50,17 @@ function formPaciente() {
 
 
       var $formData = new FormData(this);
-      requestPost("http://nutricionista.com.br/pacientes/novo", "POST", 'paciente', $formData, redirecionar, "");
+      requestPost("http://nutricionista.com.br/pacientes/novo", "POST", 'paciente', $formData, response, "");
+
+      function response(responseText, classPagina) {
+        if(responseText) {
+          alert(responseText);
+          return;
+        }
+
+        redirecionar("", "");
+        return;
+      }
     }
     // validaEmail(this.email);
     // mensagemErro(mensagem.emailInvalido);

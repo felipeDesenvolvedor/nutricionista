@@ -91,7 +91,7 @@ gulp.task('clean-img', function() {
 });
 
 gulp.task('build-img', ['clean-img'], function(){
-  gulp.src('dist/img/*')
+  gulp.src('dist/img/**/*')
       .pipe(imagemin())
       .pipe(gulp.dest('public/img'));
 });

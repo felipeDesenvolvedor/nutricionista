@@ -152,14 +152,13 @@
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        // $controllerUploads = new ControllerUploads();
-        //
-        // echo $controllerUploads->enviar(FOTOSPACIENTES);
+        $controllerUploads = new ControllerUploads();
+        $upload            = $controllerUploads->enviar(FOTOSPACIENTES);
 
-        // if ($controllerUploads->enviar(FOTOSPACIENTES)) {
-        //     echo $controllerUploads->enviar(FOTOSPACIENTES);
-        //     die();
-        // }
+        if ($upload != "0") {
+            echo $upload;
+            die();
+        }
 
         $paciente = new ModelPaciente();
 
