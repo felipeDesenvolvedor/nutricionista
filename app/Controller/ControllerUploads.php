@@ -31,14 +31,14 @@ class ControllerUploads
             if(move_uploaded_file($fileUploads['tmp_name'], "$destino{$newFilename}")) {
                 return "0";
             }else {
-                return "<p class='trigger warning'>Erro inesperado</p>";
+                return "Erro inesperado";
             }
         }else {
-            return "<p class='trigger error'>Tipo de arquivo não permitido</p>";
+            return "Tipo de arquivo não permitido";
         }
     }else {
         if(!$_FILES && $getPost) {
-            return "<p class='trigger warning'>Parece que o arquivo é muito grande !!</p>";
+            return "Parece que o arquivo é muito grande !!";
         }
 
         return "";

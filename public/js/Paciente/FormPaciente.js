@@ -54,7 +54,9 @@ function formPaciente() {
 
       function response(responseText, classPagina) {
         if(responseText) {
-          alert(responseText);
+
+          mostrarErro = true;
+          mensagemErro(responseText);
           return;
         }
 
