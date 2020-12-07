@@ -152,10 +152,7 @@
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $paciente = json_decode($_POST['nome'], true);
-        // $file = $paciente['file'];
-
-        echo json_encode($paciente, true);
+      echo $_POST['nome'];
 
         // $controllerUploads = new ControllerUploads();
         //

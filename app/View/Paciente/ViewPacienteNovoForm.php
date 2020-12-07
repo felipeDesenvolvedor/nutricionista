@@ -4,7 +4,7 @@ $pacienteid = $this->pacienteid;
 $paciente   = $this->pacientes[0];
 ?>
 
-<form name="post" class="paciente-novo-form" enctype="multipart/form-data">
+<form name="paciente" class="paciente-novo-form" method="post">
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>
