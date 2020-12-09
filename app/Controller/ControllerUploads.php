@@ -11,19 +11,14 @@ class ControllerUploads
   {
   }
 
-  public function enviar($destino):string {
+  public function enviar($destino, $tipos):string {
 
     $getPost = filter_input(INPUT_GET, "post", FILTER_VALIDATE_BOOLEAN);
 
     if ($_FILES && !empty($_FILES['file']['name'])) {
         $fileUploads = $_FILES["file"];
 
-        $allowebTypes = [
-            "image/jpg",
-            "image/jpeg",
-            "image/png",
-            "application/pdf"
-        ];
+        $allowebTypes = $tipos;
 
         $newFilename = $fileUploads['name'];
 

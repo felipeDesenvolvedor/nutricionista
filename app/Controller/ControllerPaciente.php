@@ -1,13 +1,15 @@
 <?php
   namespace app\Controller;
 
+  use src\traits\TipoArquivos;
   use src\classes\ClassRoutes;
   use app\Model\ModelPaciente;
   use app\View\Modal\Modal;
   use app\Controller\ControllerUploads;
 
-  class ControllerPaciente
-  {
+  class ControllerPaciente {
+    use TipoArquivos;
+
     public $rota;
     public $titulo;
     public $pacientes;
@@ -153,7 +155,7 @@
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $controllerUploads = new ControllerUploads();
-        $upload            = $controllerUploads->enviar(FOTOSPACIENTES);
+        $upload            = $controllerUploads->enviar(FOTOSPACIENTES, $this->tipoFotoPaciente());
 
         if ($upload != "0") {
             echo $upload;
