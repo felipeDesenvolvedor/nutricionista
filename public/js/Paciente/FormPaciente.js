@@ -74,7 +74,7 @@ function buscaEndereco() {
 
     $(document).on('input', "#idCEP", function(){
       if(this.value.length == 8) {
-          buscar("http://viacep.com.br/ws/"+this.value+"/json", "get", '', '', prencherCampos);
+          buscar("http://viacep.com.br/ws/"+this.value+"/json", "get", '', '', prencherCampos, '');
       }
       else if(this.value.length < 8) {
           prencherCampos('{"logradouro":"", "uf":"", "bairro":"", "complemento":""}');
