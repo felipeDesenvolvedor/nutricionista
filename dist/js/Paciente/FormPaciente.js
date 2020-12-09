@@ -57,7 +57,6 @@ function formPaciente() {
 
           mostrarErro = true;
           mensagemErro(responseText);
-          // console.log(responseText);
           return;
         }
 
