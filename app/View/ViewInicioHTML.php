@@ -26,18 +26,10 @@
             <ul class="menu-painel">
                 <?php
                     echo "<li>";
-                      require_once(__DIR__."/Usuario/dados.php");
+                      require_once(__DIR__."/Usuario/Dados.php"); // Dados do Usuario
                     echo "</li>";
-                    foreach($menuPainel as $item):
-                        echo"
-                        <li class='menu-painel-item'>
-                          <a href={$item['link']}>
-                            <i class='fa {$item['class']}'></i>
-                            <span>{$item['info']}</span>
-                          </a>
-                        </li>
-                        ";
-                    endforeach;
+
+                    require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']); // Menu
                 ?>
                 <div class="painel-lado-esquerdo-hamburguer js-hamburguer"><i class="fa fa-bars"></i></div>
             </ul>

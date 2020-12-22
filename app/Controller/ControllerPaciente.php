@@ -111,7 +111,6 @@
         $this->pacientes = new ModelPaciente();
         $this->pacientes = $this->pacientes->buscarPacientes([]);
         $this->titulo = "Consulta de Pacientes";
-        require_once($GLOBALS['caminhoDosArquivos']['ViewMenuPainel']);
         require_once($GLOBALS['caminhoDosArquivos']['ViewInicioHTML']);
       }
     }

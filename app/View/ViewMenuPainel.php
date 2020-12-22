@@ -3,8 +3,8 @@
 $menuPainel = [
     "item0" => [
                 "info"=>"Operações",
-                "class"=>"",               
-                "link"=>"/"               
+                "class"=>"",
+                "link"=>"/"
                 ],
     "item1" => [
                 "info"=>"Pacientes",
@@ -12,12 +12,12 @@ $menuPainel = [
                 "link"=>"/pacientes"
                 ],
     "item2" => [
-                "info"=>"Alimentos", 
+                "info"=>"Alimentos",
                 "class"=>"fa-apple",
                 "link"=>"/alimentos"
                 ],
     "item3" => [
-                "info"=>"Modelos Alimentares", 
+                "info"=>"Modelos Alimentares",
                 "class"=>"fa-coffee",
                 "link"=>"/modelos"
                 ],
@@ -27,22 +27,22 @@ $menuPainel = [
                 "link"=>"/substituicoes"
                 ],
     "item5" => [
-                "info"=>"Receitas", 
+                "info"=>"Receitas",
                 "class"=>"fa-list",
                 "link"=>"/receitas"
                 ],
     "item6" => [
-                "info"=>"Agendas", 
+                "info"=>"Agendas",
                 "class"=>"fa-calendar",
                 "link"=>"/agenda"
                 ],
     "item7" => [
-                "info"=>"Financeiro", 
+                "info"=>"Financeiro",
                 "class"=>"fa-dollar",
                 "link"=>"/financeiro"
     ],
     "item8" => [
-                "info"=>"Secretárias", 
+                "info"=>"Secretárias",
                 "class"=>"fa-laptop",
                 "link"=>"/secretarias"
     ],
@@ -56,8 +56,19 @@ $menuPainel = [
         ]
     ],
     "item10" => [
-                "info"=>"Sobre", 
+                "info"=>"Sobre",
                 "class"=>"fa-info",
                 "link"=>""
                 ]
-];  
+];
+
+foreach($menuPainel as $item):
+    echo"
+    <li class='menu-painel-item'>
+      <a href={$item['link']}>
+        <i class='fa {$item['class']}'></i>
+        <span>{$item['info']}</span>
+      </a>
+    </li>
+    ";
+endforeach;
