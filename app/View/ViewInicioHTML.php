@@ -25,18 +25,9 @@
         <section class="painel-lado-esquerdo">
             <ul class="menu-painel">
                 <?php
-                echo "
-                  <li>
-                    <div class='usuario'>
-                        <img class='usuario-foto' src='/public/img/foto-user.png'>
-                        <div>
-                          <div class='nome'> Felipe Da Silva Santos</div>
-                          <div class='plano'>Plano Bronze</div>
-                        </div>
-                    </div>
-                  </li>
-                ";
-
+                    echo "<li>";
+                      require_once(__DIR__."/Usuario/dados.php");
+                    echo "</li>";
                     foreach($menuPainel as $item):
                         echo"
                         <li class='menu-painel-item'>
