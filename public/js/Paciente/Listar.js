@@ -23,15 +23,17 @@ const filtrarPaciente = () => {
   var $campo  = document.querySelector('.view-filtro-paciente-busca');
   var form    = document.querySelector('.view-filtro-paciente-form');
 
-  $buscar.addEventListener('click', function(){
-    pegarDadosEntrada();
-  });
+  const buscarPaciente = (paciente) => {
+    const listaPacientes = document.querySelector('.lista-pacientes');
+    const exibir = (pacientes, classPagina) => {
+      listaPacientes.innerText = '';
+      listaPacientes.innerHTML = pacientes;
+    }
 
-  $campo.addEventListener('keyup', function(){
-    pegarDadosEntrada();
-   });
+    buscar('http://nutricionista.com.br/pacientes/buscar/', 'post', 'paciente', paciente, exibir, '');
+  }
 
-  function pegarDadosEntrada() {
+  const pegarDadosEntrada = () => {
     var camposEmBrancos = inputEmpty(form.nome) && inputEmpty(form.cpf) && inputEmpty(form.rg) && inputEmpty(form.responsavel) && inputEmpty(form.cpfResponsavel);
 
     if(camposEmBrancos) {
@@ -41,14 +43,6 @@ const filtrarPaciente = () => {
     }
   }
 
-  function buscarPaciente(paciente) {
-    const listaPacientes = document.querySelector('.lista-pacientes');
-
-    buscar('http://nutricionista.com.br/pacientes/buscar/', 'post', 'paciente', paciente, exibir, 'teste');
-
-    function exibir(pacientes, classPagina) {
-          listaPacientes.innerText = '';
-          listaPacientes.innerHTML = pacientes;
-    }
-  }
+  $buscar.addEventListener('click', () => pegarDadosEntrada());
+  $campo.addEventListener('keyup', () => pegarDadosEntrada());
 }
