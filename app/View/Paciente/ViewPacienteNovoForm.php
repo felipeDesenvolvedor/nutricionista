@@ -1,4 +1,7 @@
 <?php
+
+use src\classes\Form;
+
 $action     = $this->action;
 $pacienteid = $this->pacienteid;
 $paciente   = $this->pacientes[0];

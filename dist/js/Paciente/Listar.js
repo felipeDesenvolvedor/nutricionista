@@ -59,9 +59,11 @@ function filtrarPaciente() {
 
   function buscarPaciente(paciente) {
 
-    buscar('http://nutricionista.com.br/pacientes/buscar/', 'post', 'paciente', paciente, exibir, '');
+    buscar('http://nutricionista.com.br/pacientes/buscar/', 'post', 'paciente', paciente, exibir, 'teste');
 
-    function exibir(pacientes) {
+    function exibir(pacientes, classPagina) {
+      console.log(classPagina);
+
       var listaPacientes = document.querySelector('.lista-pacientes');
           listaPacientes.innerText = '';
           listaPacientes.innerHTML = pacientes;
