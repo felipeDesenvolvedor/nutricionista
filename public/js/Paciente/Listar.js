@@ -21,40 +21,31 @@ function filtro() {
 
 function filtrarPaciente() {
   var $buscar = document.querySelector('.view-filtro-paciente-btn-busca');
-  var $campo = document.querySelector('.view-filtro-paciente-busca');
-  var form = document.querySelector('.view-filtro-paciente-form');
+  var $campo  = document.querySelector('.view-filtro-paciente-busca');
+  var form    = document.querySelector('.view-filtro-paciente-form');
 
   $buscar.addEventListener('click', function(){
-      var nome           = form.nome.value;
-      var status         = form.status.value;
-      var cpf            = form.cpf.value;
-      var rg             = form.rg.value;
-      var responsavel    = form.responsavel.value;
-      var cpfResponsavel = form.cpfResponsavel.value;
+      var camposPrenchidos = inputEmpty(
+          [form.nome, form.cpf, form.rg, form.responsavel, form.cpfResponsavel]
+        );
 
-      if(!status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel) {
+      if(camposPrenchidos) {
         buscarPaciente({});
       }else {
-
-        buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel});
+        buscarPaciente({"nome":form.nome.value, "status":form.status.value,"cpf":form.cpf.value, "rg":form.rg.value, "responsavel":form.responsavel.value, "cpfResponsavel":form.cpfResponsavel.value});
       }
   });
 
   $campo.addEventListener('keyup', function(){
-    var nome           = form.nome.value;
-    var status         = form.status.value;
-    var cpf            = form.cpf.value;
-    var rg             = form.rg.value;
-    var responsavel    = form.responsavel.value;
-    var cpfResponsavel = form.cpfResponsavel.value;
+      var camposPrenchidos = inputEmpty(
+        [form.nome, form.cpf, form.rg, form.responsavel, form.cpfResponsavel]
+      );
 
-    if(status && !nome && !cpf && !rg && !responsavel && !cpfResponsavel) {
-      buscarPaciente({});
-    }else {
-
-      buscarPaciente({"nome":nome, "status":status,"cpf":cpf, "rg":rg, "responsavel":responsavel, "cpfResponsavel":cpfResponsavel});
-    }
-
+      if(camposPrenchidos) {
+        buscarPaciente({});
+      }else {
+        buscarPaciente({"nome":form.nome.value, "status":form.status.value,"cpf":form.cpf.value, "rg":form.rg.value, "responsavel":form.responsavel.value, "cpfResponsavel":form.cpfResponsavel.value});
+      }
    });
 
   function buscarPaciente(paciente) {
@@ -62,8 +53,6 @@ function filtrarPaciente() {
     buscar('http://nutricionista.com.br/pacientes/buscar/', 'post', 'paciente', paciente, exibir, 'teste');
 
     function exibir(pacientes, classPagina) {
-      console.log(classPagina);
-
       var listaPacientes = document.querySelector('.lista-pacientes');
           listaPacientes.innerText = '';
           listaPacientes.innerHTML = pacientes;

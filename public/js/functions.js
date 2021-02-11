@@ -26,3 +26,18 @@ function addClass(elemento, classe) {
 function removeClass(elemento, classe) {
     elemento.classList.remove(classe);
 }
+
+
+function inputEmpty(inputs) {
+ 
+ const empty = inputs.map(input => {
+
+  if(!input.value) {
+    return true;
+  }else {
+    return false;
+  }
+ });
+
+ return empty.find(item => item == false || item == true);
+} 
