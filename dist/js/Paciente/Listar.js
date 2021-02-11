@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     filtro();
     filtrarPaciente();
-    // filtrarNome();
 });
 
 function filtro() {
@@ -25,28 +24,22 @@ function filtrarPaciente() {
   var form    = document.querySelector('.view-filtro-paciente-form');
 
   $buscar.addEventListener('click', function(){
-      var camposPrenchidos = inputEmpty(
-          [form.nome, form.cpf, form.rg, form.responsavel, form.cpfResponsavel]
-        );
-
-      if(camposPrenchidos) {
-        buscarPaciente({});
-      }else {
-        buscarPaciente({"nome":form.nome.value, "status":form.status.value,"cpf":form.cpf.value, "rg":form.rg.value, "responsavel":form.responsavel.value, "cpfResponsavel":form.cpfResponsavel.value});
-      }
+    pegarDadosEntrada();
   });
 
   $campo.addEventListener('keyup', function(){
-      var camposPrenchidos = inputEmpty(
-        [form.nome, form.cpf, form.rg, form.responsavel, form.cpfResponsavel]
-      );
+    pegarDadosEntrada();
+   });
 
-      if(camposPrenchidos) {
+   function pegarDadosEntrada() {
+      var camposEmBrancos = inputEmpty(form.nome) && inputEmpty(form.cpf) && inputEmpty(form.rg) && inputEmpty(form.responsavel) && inputEmpty(form.cpfResponsavel);
+
+      if(camposEmBrancos) {
         buscarPaciente({});
       }else {
-        buscarPaciente({"nome":form.nome.value, "status":form.status.value,"cpf":form.cpf.value, "rg":form.rg.value, "responsavel":form.responsavel.value, "cpfResponsavel":form.cpfResponsavel.value});
+        buscarPaciente({"nome":form.nome.value, "cpf":form.cpf.value, "rg":form.rg.value, "responsavel":form.responsavel.value, "cpfResponsavel":form.cpfResponsavel.value});
       }
-   });
+   }
 
   function buscarPaciente(paciente) {
 
@@ -57,25 +50,5 @@ function filtrarPaciente() {
           listaPacientes.innerText = '';
           listaPacientes.innerHTML = pacientes;
     }
-  }
-}
-
-function filtrarNome() {
-  var letra = document.querySelector('.view-filtro-paciente-busca');
-  var letraNova = letra.value;
-  var teste = [];
-
-  letra.addEventListener('input', function(){
-
-      var arrayLetras = this.value.split(' ');
-          toUpperCase(arrayLetras[arrayLetras.length - 1]);
-  });
-
-  function toUpperCase(palavraFinal) {
-    if(!palavraFinal) {
-      return;
-    }
-
-   letra.value = palavraFinal.charAt(0).toUpperCase() + palavraFinal.slice(1);
   }
 }

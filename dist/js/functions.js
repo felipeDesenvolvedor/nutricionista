@@ -28,16 +28,6 @@ function removeClass(elemento, classe) {
 }
 
 
-function inputEmpty(inputs) {
- 
- const empty = inputs.map(input => {
-
-  if(!input.value) {
-    return true;
-  }else {
-    return false;
-  }
- });
-
- return empty.find(item => item == false || item == true);
+function inputEmpty(input) {
+  return !input.value ? true : false;
 } 
