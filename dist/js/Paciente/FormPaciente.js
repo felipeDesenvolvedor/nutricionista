@@ -1,18 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-  acoes();
-});
-
-const acoes = () => {
-  formPaciente();
-  buscaEndereco();
-  Modal();
-}
-
 const formPaciente = () => {
 
   let arquivo = "";
 
-  $(document).on('change', '.abas-item-foto-paciente', (event) => {
+  $(document).on('change', '.abas-item-foto-paciente', event => {
       arquivo = {
         "nomeArquivo":event.target.files[0].name,
         "tipoArquivo":event.target.files[0].type
@@ -20,7 +10,7 @@ const formPaciente = () => {
       arquivo = arquivo;
   });
 
-  $(document).on('submit', ".paciente-novo-form", (event) => {
+  $(document).on('submit', ".paciente-novo-form", event => {
     event.preventDefault();
 
     let form = document.querySelector(".paciente-novo-form");
@@ -49,7 +39,7 @@ const formPaciente = () => {
 
 const buscaEndereco = () => {
 
-    $(document).on('input', "#idCEP", (event) => {
+    $(document).on('input', "#idCEP", event => {
       let cep = event.target.value.replace('-', '');
       let cepLength = cep.length; 
       
@@ -61,7 +51,7 @@ const buscaEndereco = () => {
       }
     });
 
-    const prencherCampos = (dados) => {
+    const prencherCampos = dados => {
         const {logradouro, uf, bairro, complemento} = JSON.parse(dados);
 
         document.querySelector("#idEndereco").value    = logradouro;
@@ -72,15 +62,6 @@ const buscaEndereco = () => {
 }
 
 const Modal = () => {
-
-  $(document).on('click', '.modal-fechar', () => fechar());
-
-  $(document).on('keydown', window, (el) => {
-    let esc = el.keyCode;
-    if(esc == 27) {
-      fechar();
-    }
-  })
 
   const fechar = () => {
     let modal = document.querySelector('.modal');
@@ -94,4 +75,21 @@ const Modal = () => {
       window.history.pushState('Object', "Orange Nutri", "http://nutricionista.com.br/pacientes");
     };
   }
+
+  $(document).on('click', '.modal-fechar', fechar);
+  
+  $(document).on('keydown', window, el => {
+    let esc = el.keyCode;
+    if(esc == 27) {
+      fechar();
+    }
+  })
 }
+
+const acoes = () => {
+  formPaciente();
+  buscaEndereco();
+  Modal();
+}
+
+document.addEventListener('DOMContentLoaded', acoes);

@@ -1,8 +1,3 @@
-$(document).ready(() => {
-  editarPaciente();
-});
-
-
 const editarPaciente = () => {
 
   $(document).on('click', ".lista-paciente-acao-rapida-editar", event => {
@@ -18,3 +13,5 @@ const editarPaciente = () => {
     buscar("http://nutricionista.com.br/pacientes/editar/", "post", "idPaciente", idPaciente, exibirPagina, "modal");
   });
 }
+
+$(document).ready(editarPaciente);
