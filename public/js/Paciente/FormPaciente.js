@@ -10,9 +10,9 @@ const acoes = () => {
 
 const formPaciente = () => {
 
-  var arquivo = "";
+  let arquivo = "";
 
-  $(document).on('change', '.abas-item-foto-paciente', function(event) {
+  $(document).on('change', '.abas-item-foto-paciente', (event) => {
       arquivo = {
         "nomeArquivo":event.target.files[0].name,
         "tipoArquivo":event.target.files[0].type
@@ -20,38 +20,19 @@ const formPaciente = () => {
       arquivo = arquivo;
   });
 
-  $(document).on('submit', ".paciente-novo-form", function(event){
+  $(document).on('submit', ".paciente-novo-form", (event) => {
     event.preventDefault();
 
-    var form = document.querySelector(".paciente-novo-form");
+    let form = document.querySelector(".paciente-novo-form");
 
     $('#mensagem-erro span').remove();
 
     if(!campoVazio(form.nome) && !campoVazio(form.dataNascimento) && !campoVazio(form.sexo)) {
-      var paciente = {
-        "nome"           :form.nome.value,
-        "cpf"            :form.dataNascimento.value,
-        "rg"             :form.rg.value,
-        "sexo"           :form.sexo.value,
-        "dataNascimento" :form.dataNascimento.value,
-        "responsavel"    :form.responsavel.value,
-        "cpfResponsavel" :form.cpfResponsavel.value,
-        "CEP"            :form.CEP.value,
-        "endereco"       :form.endereco.value,
-        "numeroEndereco" :form.numeroEndereco.value,
-        "municipio"      :form.municipio.value,
-        "bairro"         :form.bairro.value,
-        "complemento"    :form.complemento.value,
-        "telefone1"      :form.telefone1.value,
-        "telefone2"      :form.telefone2.value,
-        "email"          :form.email.value
-      };
-
-
-      var $formData = new FormData(event.target);
+     
+      let $formData = new FormData(event.target);
       requestPost("http://nutricionista.com.br/pacientes/novo", "POST", 'paciente', $formData, response, "");
 
-      function response(responseText, classPagina) {
+      const response = (responseText, classPagina) => {
         if(responseText) {
 
           mostrarErro = true;
@@ -68,7 +49,7 @@ const formPaciente = () => {
 
 const buscaEndereco = () => {
 
-    $(document).on('input', "#idCEP", function(event){
+    $(document).on('input', "#idCEP", (event) => {
       let cep = event.target.value.replace('-', '');
       let cepLength = cep.length; 
       
@@ -80,8 +61,8 @@ const buscaEndereco = () => {
       }
     });
 
-    function prencherCampos(dados) {
-        var dados = JSON.parse(dados);
+    const prencherCampos = (dados) => {
+        let dados = JSON.parse(dados);
         document.querySelector("#idEndereco").value    = dados.logradouro;
         document.querySelector("#idMunicipio").value   = dados.uf;
         document.querySelector("#idBairro").value      = dados.bairro;
@@ -91,19 +72,17 @@ const buscaEndereco = () => {
 
 const Modal = () => {
 
-  $(document).on('click', '.modal-fechar', function(){
-      fechar();
-  });
+  $(document).on('click', '.modal-fechar', () => fechar());
 
-  $(document).on('keydown', window, function(el){
-    var esc = el.keyCode;
+  $(document).on('keydown', window, (el) => {
+    let esc = el.keyCode;
     if(esc == 27) {
       fechar();
     }
   })
 
-  function fechar() {
-    var modal = document.querySelector('.modal');
+  const fechar = () => {
+    let modal = document.querySelector('.modal');
 
     if (!modal) {
         return;
