@@ -13,9 +13,7 @@ const filtro = () => {
   $filtro = document.querySelector('.view-filtro-paciente');
   $btnFiltros = document.querySelector('.view-filtro-paciente-btn');
 
-  $btnFiltros.addEventListener('click', function(){
-    $filtro.classList.toggle('aberto');
-  });
+  $btnFiltros.addEventListener('click', () => $filtro.classList.toggle('aberto'));
 }
 
 const filtrarPaciente = () => {

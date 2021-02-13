@@ -1,15 +1,14 @@
-document.addEventListener('DOMContentLoaded', function(){
-
+document.addEventListener('DOMContentLoaded', () => {
   acoes();
 });
 
-function acoes() {
+const acoes = () => {
   formPaciente();
   buscaEndereco();
   Modal();
 }
 
-function formPaciente() {
+const formPaciente = () => {
 
   var arquivo = "";
 
@@ -49,7 +48,7 @@ function formPaciente() {
       };
 
 
-      var $formData = new FormData(this);
+      var $formData = new FormData(event.target);
       requestPost("http://nutricionista.com.br/pacientes/novo", "POST", 'paciente', $formData, response, "");
 
       function response(responseText, classPagina) {
@@ -64,18 +63,19 @@ function formPaciente() {
         return;
       }
     }
-    // validaEmail(this.email);
-    // mensagemErro(mensagem.emailInvalido);
   });
 }
 
-function buscaEndereco() {
+const buscaEndereco = () => {
 
-    $(document).on('input', "#idCEP", function(){
-      if(this.value.length == 8) {
-          buscar("http://viacep.com.br/ws/"+this.value+"/json", "get", '', '', prencherCampos, '');
+    $(document).on('input', "#idCEP", function(event){
+      let cep = event.target.value.replace('-', '');
+      let cepLength = cep.length; 
+      
+      if(cepLength == 8) {
+          buscar("http://viacep.com.br/ws/"+cep+"/json", "get", '', '', prencherCampos, '');
       }
-      else if(this.value.length < 8) {
+      else if(cepLength < 8) {
           prencherCampos('{"logradouro":"", "uf":"", "bairro":"", "complemento":""}');
       }
     });
@@ -89,7 +89,7 @@ function buscaEndereco() {
     }
 }
 
-function Modal() {
+const Modal = () => {
 
   $(document).on('click', '.modal-fechar', function(){
       fechar();
