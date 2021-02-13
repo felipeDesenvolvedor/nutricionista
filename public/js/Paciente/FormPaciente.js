@@ -28,10 +28,7 @@ const formPaciente = () => {
     $('#mensagem-erro span').remove();
 
     if(!campoVazio(form.nome) && !campoVazio(form.dataNascimento) && !campoVazio(form.sexo)) {
-     
-      let $formData = new FormData(event.target);
-      requestPost("http://nutricionista.com.br/pacientes/novo", "POST", 'paciente', $formData, response, "");
-
+      
       const response = (responseText, classPagina) => {
         if(responseText) {
 
@@ -43,6 +40,9 @@ const formPaciente = () => {
         redirecionar("", "");
         return;
       }
+
+      let $formData = new FormData(event.target);
+      requestPost("http://nutricionista.com.br/pacientes/novo", "POST", 'paciente', $formData, response, "");
     }
   });
 }
@@ -62,11 +62,12 @@ const buscaEndereco = () => {
     });
 
     const prencherCampos = (dados) => {
-        let dados = JSON.parse(dados);
-        document.querySelector("#idEndereco").value    = dados.logradouro;
-        document.querySelector("#idMunicipio").value   = dados.uf;
-        document.querySelector("#idBairro").value      = dados.bairro;
-        document.querySelector("#idComplemento").value = dados.complemento;
+        const {logradouro, uf, bairro, complemento} = JSON.parse(dados);
+
+        document.querySelector("#idEndereco").value    = logradouro;
+        document.querySelector("#idMunicipio").value   = uf;
+        document.querySelector("#idBairro").value      = bairro;
+        document.querySelector("#idComplemento").value = complemento;
     }
 }
 
