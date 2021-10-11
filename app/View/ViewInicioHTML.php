@@ -7,6 +7,7 @@
     <link rel="icon" href="/public/img/icon-frutas.ico">
     <script src="/public/js/jquery-3.4.1.min.js"></script>
     <script src="/public/js/Ajax.js"></script>
+    <link rel="stylesheet" href="/public/css/_partial.css">
     <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href="/public/css/font-awesome.css">
     <link rel="stylesheet" href="/public/css/ViewPainelLadoEsquerdoStyle.css">

@@ -1,11 +1,8 @@
-.erro {
-  &-container {
-    background-color: red; display:inline-block; color:#fff;
-  }
-
-  &-show {
-      padding: 10px;
-  }
+.erro-container {
+  background-color: red; display:inline-block; color:#fff;
+}
+.erro-show {
+  padding: 10px;
 }
 
 .campo-vazio {

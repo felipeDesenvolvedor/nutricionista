@@ -1,153 +1,174 @@
 @import '_partial.scss';
 
-.painel {
+.painel-sair {
+  position: absolute; right: 12px; top: 10px; font-size: 18px; color:var(--branco); text-transform: uppercase;
+}
 
-  &-sair {
-    position: absolute; right: 12px; top: 10px; font-size: 18px; color:var(--branco); text-transform: uppercase;
-
-    @media (min-width:var(--tablete)) {
-      font-size:25px;
-    }
+@media (min-width:920px) {
+  .painel-sair {
+    font-size:25px;
   }
+}
 
-  &-lado-direito {
-      width: 100%;
+.painel-lado-direito {
+    width: 80%;
 
-      @media (min-width:var(--tablete)) {
-        margin:6px auto; width: 74%;
-      }
   }
-
-  &-titulo {
-      position: relative; padding:10px 20px; font-size: 18px; text-align: left; background-color: var(--laranja); color:var(--branco); text-transform: uppercase; border-radius: 9px; text-align: center;
-
-      @media (min-width:var(--tablete)) {
-        font-size:25px;
-      }
+  
+@media (min-width:920px) {
+  .painel-lado-direito {
+      margin:6px auto; width: 74%; 
   }
+}
 
-  &-corpo {
-    height:calc(100% - 60px); position: relative;
+
+
+.painel-titulo {
+    position: relative; padding:10px 20px; font-size: 18px; text-align: left; background-color: var(--laranja); color:var(--branco); text-transform: uppercase; border-radius: 9px; text-align: center;
+}
+
+@media (min-width:920px) {
+  .painel-titulo {
+    font-size:25px;
   }
+}
+
+.painel-titulo-corpo {
+  height:calc(100% - 60px); position: relative;
 }
 
 
 .view-filtro {
   background-color: var(--laranja); margin:20px auto; width: 80%; padding: 10px; border-radius: 9px;
+}
 
-  &-paciente {
-    display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
+@media (max-width: 920px) {
+  .view-filtro-paciente {
+    align-items: center; flex-direction:column;
+  }
+}
 
-    @media (max-width: var(--tablete)) {
-      align-items: center; flex-direction:column;
-    }
+@media (min-width: 920px) {
+  .view-filtro-paciente {
+    justify-content:space-between;
+  }
+}
 
-    @media (min-width: var(--tablete)) {
-     justify-content:space-between;
-    }
+.view-filtro-paciente-container {
+  overflow: hidden; display: flex; flex-direction: column;
+}
 
-    &-container {
-      overflow: hidden; display: flex; flex-direction: column;
-    }
+.view-filtro-paciente.aberto {
+  max-height:400px;
+  visibility: visible;
+  overflow: visible;
+}
 
-    &.aberto {
-        max-height:400px;
-        visibility: visible;
-        overflow: visible;
-    }
+.view-filtro-paciente-form input{
+  font-size: inherit; text-transform:capitalize; border-radius: 4px; border: none;
+}
 
-    &-form input{
-      font-size: inherit; text-transform:capitalize; border-radius: 4px; border: none;
+.view-filtro-paciente-form input::placeholder {
+  color:var(--preto);
+}
 
-      &::placeholder {
-          color:var(--preto);
-      }
-    }
+.view-filtro-paciente-form {
+  display: flex; flex-direction: column;
+}
 
-    &-form {
-      display: flex; flex-direction: column;
-    }
+.view-filtro-paciente-container .view-filtro-paciente-container-campo{
+     margin:20px 20px 0 0;
+}
 
-    &-container &-container-campo{
-         margin:20px 20px 0 0;
-    }
+@media (min-width: 920px) {
+  .view-filtro-paciente-container:last-of-type .view-filtro-paciente-container-campo{
+       margin-right: 0;
+  }
+}
 
-    @media (min-width: var(--tablete)) {
-      &-container:last-of-type &-container-campo{
-           margin-right: 0;
-      }
-    }
-
-    &-container-campo {
-       @media (min-width:1130px) and (max-width:1300px) {
-         width: 100%;
-       }
+@media (min-width:1130px) and (max-width:1300px) {
+.view-filtro-paciente-container-campo {
+     width: 100%;
    }
+}
 
-    &-campo {
-      padding: 5px;
+.view-filtro-paciente-campo {
+  padding: 5px;
 
-      @media (min-width: var(--tablete)) {
-          width: 314px;
-      }
+}
 
-      @media (min-width:var(--tablete)) and (max-width:1228px) {
-        width: 252px;
-      }
-    }
+@media (min-width: 920px) {
+  .view-filtro-paciente-campo { 
+    width: 314px;
+  }
+}
 
-    &-busca {
-      width:calc(100% - 156px);
+@media (min-width:920px) and (max-width:1228px) {
+  .view-filtro-paciente-campo { 
+    width: 252px;
+  }
+}
 
-      @media (max-width: 500px) {
-        width:100%;
-      }
-    }
 
-    &-btn {
-      background: url('/public/img/filtro-btn.png') no-repeat center;
+.view-filtro-paciente-busca {
+  width:calc(100% - 156px);
+}
 
-      &,
-      &-busca,
-      &-novo {
-        flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; float:right;
-      }
+@media (max-width: 500px) {
+  .view-filtro-paciente-busca {
+    width:100%;
+  }
+}
 
-      &,
-      &-busca {
-        margin-right: 26px;
-      }
 
-      &-busca {
-        background: url('/public/img/filtro-btn-busca.png') no-repeat center;
-      }
+.view-filtro-paciente-btn {
+  background: url('/public/img/filtro-btn.png') no-repeat center;
+}
 
-      &-novo {
-        background: url('/public/img/btn-add.png') no-repeat center;
-      }
+.view-filtro-paciente-btn {
+  flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; float:right; margin-right: 26px;
+}
 
-      @media (max-width: 500px) {
-        &,
-        &-busca,
-        &-novo {
-          margin-top:10px;
-        }
-      }
-    }
+.view-filtro-paciente-btn-busca {
+  flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; float:right; margin-right: 26px;
+  background: url('/public/img/filtro-btn-busca.png') no-repeat center;
+}
+
+.view-filtro-paciente-btn-novo {
+  flex-basis:10%; text-indent: -9999px; width: 26px; height: 26px; float:right;
+  background: url('/public/img/btn-add.png') no-repeat center;
+}
+
+
+
+@media (max-width: 500px) {
+  .view-filtro-paciente-btn,
+  .view-filtro-paciente-busca,
+  .view-filtro-paciente-novo {
+    margin-top:10px;
+  }
+}
+
+
+.view-filtro-paciente {
+    display: flex; max-height:0; transition: all 800ms; visibility: hidden; overflow: hidden;
   }
 
-  #idStatus {
-    padding: 5px; background-color: var(--branco); border-radius: 4px; width: 314px;
 
-    @media (min-width:var(--tablete)) and (max-width:1228px) {
-      width: auto;
-    }
- }
+.view-filtro  #idStatus {
+  padding: 5px; background-color: var(--branco); border-radius: 4px; width: 314px;
+}
 
-  @media (max-width: var(--tablete)) {
-    #idStatus {
-      width: 100%;
-   }
+@media (min-width:920px) and (max-width:1228px) {
+.view-filtro  #idStatus {
+
+    width: auto;
+  }
+}
+
+@media (max-width: 920px) {
+.view-filtro #idStatus {
+  width: 100%;
   }
 }
 
