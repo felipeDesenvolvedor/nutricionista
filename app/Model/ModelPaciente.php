@@ -34,7 +34,7 @@ class ModelPaciente extends ModelPessoa {
     public function buscarPaciente(string $valorParametro):array
     {
         $crud = new Crud($this->mysql);
-        return $crud->buscarRegistro('paciente', 'idPaciente', $valorParametro);
+        return $crud->buscarRegistro('paciente', 'id', $valorParametro);
     }
 
     public function buscarPacientes(array $paciente):array
@@ -78,13 +78,13 @@ class ModelPaciente extends ModelPessoa {
         return $crud->buscarRegistro('paciente', 'status', $valorParametro);
     }
 
-    public function editarPaciente(array $valores, string $idPaciente)
+    public function editarPaciente(array $valores, string $id)
     {
-        $query = $this->mysql->query("UPDATE paciente SET nome = '$valores[nome]', cpf = '$valores[cpf]', rg = '$valores[rg]', sexo = '$valores[sexo]', dataNascimento = '$valores[dataNascimento]', responsavel = '$valores[responsavel]', cpfResponsavel = '$valores[cpfResponsavel]', telefone1 = '$valores[telefone1]', telefone2 = '$valores[telefone2]', email = '$valores[email]' where idPaciente = '$idPaciente'");
+        $query = $this->mysql->query("UPDATE paciente SET nome = '$valores[nome]', cpf = '$valores[cpf]', rg = '$valores[rg]', sexo = '$valores[sexo]', dataNascimento = '$valores[dataNascimento]', responsavel = '$valores[responsavel]', cpfResponsavel = '$valores[cpfResponsavel]', telefone1 = '$valores[telefone1]', telefone2 = '$valores[telefone2]', email = '$valores[email]' where id = '$id'");
     }
 
-    public function inativarPaciente(string $idPaciente, string $status)
+    public function inativarPaciente(string $id, string $status)
     {
-        $query = $this->mysql->query('UPDATE paciente SET status = '.$status.' where idPaciente = '.$idPaciente);
+        $query = $this->mysql->query('UPDATE paciente SET status = '.$status.' where id = '.$id);
     }
 }

@@ -6,7 +6,7 @@ if(count($this->pacientes)) {
   {
       $inativo = $paciente['status'] ? '' : 'esconder';
 
-      echo "<div data-id=/pacientes/editar/{$paciente['idPaciente']} class='paciente'>";
+      echo "<div data-id=/pacientes/editar/{$paciente['id']} class='paciente'>";
           echo "<div class=lista-paciente-box>";
               echo "<img src='/public/img/paciente-foto.jpg' class='lista-paciente-foto'/>";
 

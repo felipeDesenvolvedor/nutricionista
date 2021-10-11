@@ -1,0 +1,16 @@
+:root{
+--branco:#fff;
+--preto:#000;
+--verde:#a2b34b;
+--vermelho:#ff0306;
+--azul:#5470a6;
+--laranja:#f3902c;
+--corPrincipal:--laranja;
+
+
+--iphone:320px;
+--tablete: 920px;
+--desktop: 1200px;
+--monitor: 1920px;
+
+}

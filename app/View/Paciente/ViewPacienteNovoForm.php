@@ -4,7 +4,13 @@ use src\classes\Form;
 
 $action     = $this->action;
 $pacienteid = $this->pacienteid;
-$paciente   = $this->pacientes[0];
+// $paciente = ["nome"=>"", "cpf"=>"", "rg"=>"", "sexo"=>"", "dataNascimento"=>"", "responsavel"=>"", "telefone1"=>"", "telefone2"=>"", "email"=>""];
+
+// if(isset($this->pacientes[0])) {
+    $paciente =  $this->pacientes[0];
+// }
+
+
 ?>
 
 <form name="paciente" class="paciente-novo-form" method="post">
@@ -33,20 +39,20 @@ $paciente   = $this->pacientes[0];
     </div>
 
     <div>
-        <label for="idDataNascimento">
+        <!-- <label for="idDataNascimento">
             <span class="campo-obrigatorio">Data de Nascimento:</span>
             <input type="text" name="dataNascimento" id="idDataNascimento" value="<?php echo $paciente['dataNascimento'];?>">
-        </label>
+        </label> -->
 
         <label for="idResponsavel">
             <span>Responsavel: </span>
             <input type="text" name="responsavel" id="idResponsavel" value="<?php echo $paciente['responsavel'];?>">
         </label>
 
-        <label for="idCpfResponsavel">
+        <!-- <label for="idCpfResponsavel">
             <span>CPF Responsavel:</span>
             <input type="text" name="cpfResponsavel" id="idCpfResponsavel" value="<?php echo $paciente['cpfResponsavel'];?>">
-        </label>
+        </label> -->
     </div>
 
     <div>
@@ -85,20 +91,20 @@ $paciente   = $this->pacientes[0];
     </div>
 
     <div>
-        <label for="idTelefone1">
+        <!-- <label for="idTelefone1">
             <span>Telefone 1</span>
             <input type="text" name="telefone1" id="idTelefone1" value="<?php echo $paciente['telefone1'];?>">
-        </label>
+        </label> -->
 
-        <label for="idTelefone2">
+        <!-- <label for="idTelefone2">
             <span>Telefone 2</span>
             <input type="text" name="telefone2" id="idTelefone2" value="<?php echo $paciente['telefone2'];?>">
-        </label>
+        </label> -->
 
-        <label for="idEmail">
+        <!-- <label for="idEmail">
             <span>Email</span>
             <input type="text" name="email" id="idEmail" value="<?php echo $paciente['email'];?>">
-        </label>
+        </label> -->
 
         <input type="file" name="file" class='abas-item abas-item-foto-paciente'/>
     </div>
@@ -117,7 +123,7 @@ $paciente   = $this->pacientes[0];
            $btnTexto = "Ativar Paciente";
          }
 
-          echo "<a href=/pacientes/inativar/{$paciente['idPaciente']} class='teste'><input type='button' id='inativar-paciente' value='{$btnTexto}' class='inativar-paciente'></a>";
+          echo "<a href=/pacientes/inativar/{$paciente['id']} class='teste'><input type='button' id='inativar-paciente' value='{$btnTexto}' class='inativar-paciente'></a>";
       }
       ?>
     </div>

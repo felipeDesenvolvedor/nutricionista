@@ -43,11 +43,11 @@
     {
       $this->pacientes = new ModelPaciente();
 
-      if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['idPaciente']) {
+      if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['id']) {
 
-        $valorParametro = $_POST['idPaciente'];
+        $valorParametro = $_POST['id'];
         $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro);
-        $this->pacienteid = $this->pacientes[0]['idPaciente'];
+        $this->pacienteid = $this->pacientes[0]['id'];
         $this->action = "editar/";
 
         $modal = new Modal(

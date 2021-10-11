@@ -22,7 +22,7 @@ define("FOTOSPACIENTES", $_SERVER['DOCUMENT_ROOT']."/public/img/fotos/pacientes/
 
 # Acesso ao banco de dados
 define("HOST", "localhost");
-define("USER", "nutricionista");
-define("PASS", "1234");
+define("USER", "root");
+define("PASS", "");
 define("DB",   "nutricionista");
 ?>

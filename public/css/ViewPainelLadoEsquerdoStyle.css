@@ -1,1 +1,112 @@
-.usuario{display:flex;align-items:center;justify-content:space-around}.usuario-foto{width:60px;border-radius:100%}.plataforma{font-size:20px;padding:20px;text-align:center;background-color:#008d4c}.fa{margin-right:10px}.painel-lado-esquerdo{color:#fff;border-top:solid 0;position:relative;border-radius:9px;transition:all .5s}.painel-lado-esquerdo-container{position:fixed}@media (min-width:921px){.painel-lado-esquerdo.fechado{width:80px}.painel-lado-esquerdo.fechado .menu-painel{width:80px;padding:10px 0;display:flex;flex-direction:column;align-items:center;box-shadow:0 1px 8px rgba(0,0,0,.36)}.painel-lado-esquerdo.fechado .menu-painel-item:not(:first-of-type){padding:10px 0}.painel-lado-esquerdo.fechado .nome,.painel-lado-esquerdo.fechado .plano,.painel-lado-esquerdo.fechado span{display:none}}.painel-lado-esquerdo .menu-painel{font-size:15px;position:fixed;transition:all .5s;background:#f3902c}.painel-lado-esquerdo .menu-painel a{color:#fff;text-decoration:none}.painel-lado-esquerdo .menu-painel-item{margin-bottom:10px;border-radius:20px}.painel-lado-esquerdo .menu-painel-item:hover:not(:first-of-type){background-color:#a2b34b}.painel-lado-esquerdo .menu-painel-item:not(:first-of-type){padding:10px}@media (min-width:920px){.painel-lado-esquerdo .menu-painel{font-size:15px;position:fixed;width:calc(20% - 12px);border-radius:9px}.painel-lado-esquerdo{width:calc(20% - 12px);margin:6px 30px 6px 6px}}.painel-lado-esquerdo-hamburguer{top:0;position:absolute;right:-52px;border-top-right-radius:9px;border-bottom-right-radius:9px;font-size:24px}@media (max-width:920px){.painel-lado-esquerdo .menu-painel{z-index:1}.painel-lado-esquerdo-hamburguer{right:-38px;top:5px;z-index:1}.painel-lado-esquerdo{left:-190px}.painel-lado-esquerdo.aberto{left:0;z-index:2}.painel-lado-esquerdo.aberto~.menu-painel-fundo{position:fixed;z-index:1;width:100%;height:100%;background-color:rgba(0,0,0,.5);left:0;bottom:0}.usuario{margin-left:10px;flex-direction:column;align-items:flex-start}.usuario-foto{margin:10px}}
+@import '_partial.scss';
+
+
+.usuario {
+    display: flex; align-items: center; justify-content: space-around;
+
+    &-foto {
+        width: 60px; border-radius:100%;
+    }
+}
+
+.plataforma {
+    font-size:20px; padding: 20px; text-align: center; background-color: #008d4c;
+}
+
+.fa {
+	margin-right: 10px;
+}
+
+
+.painel-lado-esquerdo {
+    color:var(--branco); border-top: solid 0px; position:relative; border-radius: 9px; transition:all 500ms;
+
+    &-container {
+      position: fixed;
+    }
+
+    &.fechado {
+      @media (min-width:921px) {
+        width:80px;
+
+        .menu-painel {
+          width:80px; padding: 10px 0; display: flex; flex-direction: column; align-items: center; box-shadow: 0px 1px 8px rgba(0,0,0,0.36);
+
+          &-item:not(:first-of-type) {
+            padding: 10px 0
+          }
+        }
+
+        span{
+          display:none;
+        }
+
+        .nome, .plano {
+          display: none;
+        }
+      }
+    }
+
+    .menu-painel {
+        font-size:15px; position: fixed; transition:all 500ms; background: var(--laranja);
+
+        a {
+        	color:#fff; text-decoration: none;
+        }
+
+         &-item {
+            margin-bottom:10px; border-radius:20px;
+
+            &:hover:not(:first-of-type) {
+                background-color:var(--verde);
+            }
+            &:not(:first-of-type) {
+              padding: 10px;
+            }
+        }
+
+        @media (max-width:var(--tablete)) {
+          // position: absolute;
+          z-index: 1;
+        }
+
+        @media (min-width: var(--tablete)) {
+          font-size: 15px; position: fixed; width: calc(20% - 12px); border-radius: 9px;
+        }
+    }
+
+    &-hamburguer {
+      top: 0; position: absolute; right: -52px; border-top-right-radius: 9px; border-bottom-right-radius:9px; font-size: 24px;
+
+      @media (max-width:var(--tablete)) {
+        right: -38px; top:5px; z-index: 1;
+        // font-size: 20px;
+      }
+    }
+
+    @media (min-width:var(--tablete)) {
+      width: calc(20% - 12px); margin:6px 30px 6px 6px;
+    }
+
+    @media (max-width:var(--tablete)) {
+      left:-190px;
+
+      &.aberto {
+        left: 0; z-index: 2;
+      }
+    }
+}
+
+@media (max-width:var(--tablete)) {
+  .painel-lado-esquerdo.aberto ~ .menu-painel-fundo {
+    position: fixed; z-index: 1; width: 100%; height: 100%; background-color: rgba(0,0,0,.5); left: 0; bottom: 0;
+  }
+
+  .usuario {
+      margin-left: 10px; flex-direction: column; align-items:flex-start;
+
+      &-foto {
+        margin:10px;
+      }
+  }
+}

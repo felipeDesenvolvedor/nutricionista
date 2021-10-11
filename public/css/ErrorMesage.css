@@ -1,1 +1,21 @@
-.erro-container{background-color:red;display:inline-block;color:#fff}.erro-show{padding:10px}.campo-vazio{color:red}#mensagem-erro{color:#fff;background-color:orange;width:200px;padding:10px;border-radius:4px;opacity:0;visibility:hidden;transition:all 2000s;position:absolute;left:50%;z-index:1;bottom:0;transform:translateX(-50%);display:none;text-align:center;margin:4px;font-size:16px}#mensagem-erro.exibir{opacity:1;visibility:visible;display:inline-block}
+.erro {
+  &-container {
+    background-color: red; display:inline-block; color:#fff;
+  }
+
+  &-show {
+      padding: 10px;
+  }
+}
+
+.campo-vazio {
+    color:red;
+}
+
+#mensagem-erro {
+    color:white; background-color:orange; width:200px; padding: 10px; border-radius:4px; opacity: 0; visibility: hidden; transition: all 2000s; position: absolute; left: 50%; z-index: 1; bottom:0; transform: translateX(-50%); display: none; text-align: center; margin: 4px; font-size:16px;
+}
+
+#mensagem-erro.exibir {
+    opacity: 1; visibility: visible; display: inline-block;
+}

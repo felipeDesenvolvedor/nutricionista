@@ -1,1 +1,120 @@
-.separador{width:14px;display:inline-block}.lista-pacientes{display:flex;margin:20px 0}.lista-pacientes.esconder{display:none}@media (min-width:920px){.lista-pacientes{flex-wrap:wrap}}.lista-pacientes-acao-rapida{margin-left:14px;display:flex;flex-direction:column}.esconder,.esconder+.separador{display:none}.lista-paciente-box{position:relative;font-size:16px;background-color:#f3902c;color:#fff;height:300px;box-shadow:0 4px 8px 0 rgba(0,0,0,.2);border-bottom-right-radius:4px;border-top-right-radius:4px;margin:10px auto;float:left}.lista-paciente-foto{border-bottom-left-radius:4px;border-top-left-radius:4px;width:100%;height:200px}.lista-paciente-dados{position:relative;padding:24px}.lista-paciente-dados span{display:block;width:161px}.lista-paciente-dados .idade{position:absolute;right:0;top:4px}.lista-paciente-acao-rapida-agenda,.lista-paciente-acao-rapida-atendimento,.lista-paciente-acao-rapida-editar,.lista-paciente-acao-rapida-inativar{height:50px;width:50px;border-radius:100%}.lista-paciente-acao-rapida-item{position:relative}.lista-paciente-acao-rapida-item::before{content:'';width:20px;height:20px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background-repeat:no-repeat}.lista-paciente-acao-rapida-item:not(:last-child){margin-bottom:16px}.lista-paciente-acao-rapida-editar{background-color:#85ab3e}.lista-paciente-acao-rapida-editar::before{background-image:url(/public/img/Editar.svg)}.lista-paciente-acao-rapida-inativar{background-color:red}.lista-paciente-acao-rapida-inativar::before{background-image:url(/public/img/Inativar.svg)}.lista-paciente-acao-rapida-atendimento{background-color:#5470a6}.lista-paciente-acao-rapida-atendimento::before{background-image:url(/public/img/Telefone.svg)}.lista-paciente-acao-rapida-agenda{background-color:#f3902c}.lista-paciente-acao-rapida-agenda::before{background-image:url(/public/img/Agenda.svg)}.paciente{display:flex;align-items:center}
+@import '_partial.scss';
+
+.separador {
+  width: 14px; display: inline-block;
+ }
+
+.lista-pacientes {
+  display: flex; margin:20px 0;
+
+  &.esconder {
+      display:none;
+  }
+
+  @media (min-width:var(--tablete)) {
+    flex-wrap: wrap;
+  }
+
+  &-acao-rapida {
+    margin-left: 14px; display:flex; flex-direction: column;
+  }
+}
+
+.esconder,
+.esconder + .separador {
+    display:none;
+}
+
+
+.lista-paciente {
+
+  &-box {
+      position: relative; font-size: 16px; background-color: #f3902c; color: var(--branco); height: 300px; margin-top: 20px; box-shadow: 0 4px 8px 0 rgba(0,0,0,.2); border-bottom-right-radius: 4px; border-top-right-radius: 4px; margin: 10px auto; float: left;
+  }
+
+  &-foto {
+    border-bottom-left-radius: 4px; border-top-left-radius: 4px; width: 100%; height: 200px;
+    // width: 100%;
+  }
+
+  &-dados{
+    position:relative; padding:24px;
+
+    span {
+        display:block; width:161px;
+    }
+
+    .idade {
+        position:absolute; right:0; top:4px;
+    }
+  }
+
+  &-acao-rapida {
+      &-editar,
+      &-inativar,
+      &-atendimento,
+      &-agenda {
+        height:50px;
+        width: 50px;
+        background-color: green;
+        border-radius: 100%;
+      }
+
+      &-item {
+        position: relative;
+
+        &::before {
+          content:'';
+          width: 20px;
+          height:20px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform:translate(-50%, -50%);
+          background-repeat: no-repeat;
+        }
+
+        &:not(:last-child) {
+          margin-bottom:16px;
+        }
+      }
+
+      &-editar{
+        background-color: #85ab3e;
+
+        &::before {
+          background-image: url("/public/img/Editar.svg");
+        }
+      }
+
+      &-inativar {
+        background-color: #f00;
+
+        &::before {
+          background-image: url("/public/img/Inativar.svg");
+        }
+      }
+
+      &-atendimento {
+        background-color: #5470a6;
+
+        &::before {
+            background-image: url("/public/img/Telefone.svg");
+        }
+      }
+
+      &-agenda {
+        background-color: #f3902c;
+
+        &::before {
+          background-image: url("/public/img/Agenda.svg");
+        }
+      }
+  }
+}
+
+
+.paciente {
+  display: flex;
+  align-items: center;
+}
