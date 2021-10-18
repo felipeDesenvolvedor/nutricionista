@@ -178,7 +178,7 @@
             "complemento"    => filter_input(INPUT_POST, 'complemento',       FILTER_SANITIZE_STRING),
             "telefone1"      => filter_input(INPUT_POST, 'telefone1',         FILTER_SANITIZE_STRING),
             "telefone2"      => filter_input(INPUT_POST, 'telefone2',         FILTER_SANITIZE_STRING),
-            "email"          => filter_input(INPUT_POST, 'email',             FILTER_SANITIZE_STRING)
+            "email"          => filter_input(INPUT_POST, 'email',             FILTER_SANITIZE_STRING),
           ],
           filter_input(INPUT_POST, 'responsavel',    FILTER_SANITIZE_STRING),
           filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING)
