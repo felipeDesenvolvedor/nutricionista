@@ -153,17 +153,17 @@
 
       }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $controllerUploads = new ControllerUploads();
-        $upload            = $controllerUploads->enviar(FOTOSPACIENTES, $this->tipoFotoPaciente());
+        // $controllerUploads = new ControllerUploads();
+        // $upload            = $controllerUploads->enviar(FOTOSPACIENTES, $this->tipoFotoPaciente());
 
-        if ($upload != "0") {
-            echo $upload;
-            die();
-        }
+        // if ($upload != "0") {
+        //     echo $upload;
+        //     die();
+        // }
 
         $paciente = new ModelPaciente();
 
-        $paciente->salvarPaciente(
+       $paciente->salvarPaciente(
           [
             "nome"           => ucwords(filter_input(INPUT_POST, 'nome',      FILTER_SANITIZE_STRING)),
             "cpf"            => filter_input(INPUT_POST, 'cpf',               FILTER_SANITIZE_STRING),

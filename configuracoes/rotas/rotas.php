@@ -6,8 +6,7 @@ use Nutricionista\Controller\ControllerPaciente;
 
 $rotas = [
     '/'                    => ControllerPaciente::class,
-    '/pacientes'           => ControllerPaciente::class,
-    '/pacientes/novo'      => ControllerPacienteNovoForm::class
+    '/pacientes'           => ControllerPaciente::class
 ];
 
 return $rotas;

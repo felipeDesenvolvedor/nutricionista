@@ -2,3 +2,4 @@ node_modules
 npm-shrinkwrap.json
 psd
 dicas-para-construcao-de-sistema.txt
+.vscode
