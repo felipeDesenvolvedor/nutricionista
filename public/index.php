@@ -10,5 +10,6 @@ require_once('..'.DIRECTORY_SEPARATOR.'configuracoes'.DIRECTORY_SEPARATOR.'camin
 require_once('../configuracoes/configuracoes.php');
 require_once('../src/vendor/autoload.php');
 
+
 use app\Dispatch;
 $dispatch = new Dispatch();

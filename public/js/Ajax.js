@@ -55,6 +55,11 @@ function requestPost(url, method, parametros, dados, funcao, classPagina) {
                 funcao(xhr.responseText, classPagina);
                 // console.log(xhr.responseText);
             }
+
+            if(xhr.status == 201) {
+                funcao(xhr.status, classPagina);
+                // console.log(xhr.responseText);
+            }
         }
     }
 }

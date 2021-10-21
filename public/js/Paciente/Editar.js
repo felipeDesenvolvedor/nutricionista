@@ -9,8 +9,7 @@ const editarPaciente = () => {
     id = id[id.length - 1];
 
     window.history.pushState('Object', "Orange Nutri", `http://nutricionista.com.br/pacientes/editar/${id}`);
-
-    buscar("http://nutricionista.com.br/pacientes/editar/", "post", "id", id, exibirPagina, "modal");
+    buscar("http://nutricionista.com.br/pacientes/editar", "post", "idBusca", id, exibirPagina, "modal");
   });
 }
 

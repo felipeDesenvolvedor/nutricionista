@@ -19,20 +19,31 @@ const formPaciente = () => {
 
     if(!campoVazio(form.nome) && !campoVazio(form.dataNascimento) && !campoVazio(form.sexo)) {
       
+      let action = form.dataset.action;
       const response = (responseText, classPagina) => {
-        if(responseText) {
+        if(responseText != 201) {
 
           mostrarErro = true;
+          console.log(responseText)
           mensagemErro(responseText);
           return;
         }
 
-        redirecionar("", "");
-        return;
+        if(responseText == 201) {
+
+          redirecionar("", "");
+          return;
+        }
       }
 
       let $formData = new FormData(event.target);
-      requestPost("http://nutricionista.com.br/pacientes/novo", "POST", 'paciente', $formData, response, "");
+
+      if(action == "editar") {
+        $formData.append("id", window.location.pathname.slice(window.location.pathname.length - 1, window.location.pathname.length))
+        requestPost("http://nutricionista.com.br/pacientes/editar", "post", 'paciente', $formData, response, "");
+      }else {
+        requestPost("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', $formData, response, "");
+      }
     }
   });
 }

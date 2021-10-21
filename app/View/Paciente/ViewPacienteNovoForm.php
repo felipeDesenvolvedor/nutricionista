@@ -12,7 +12,7 @@ $paciente =  $this->pacientes;
       
 <?php $paciente =  $this->pacientes[0];?>
 
-<form name="paciente" class="paciente-novo-form" method="post">
+<form name="paciente" class="paciente-novo-form" method="post" <?php echo "data-action=$action"?>>
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>
@@ -130,7 +130,7 @@ $paciente =  $this->pacientes;
 
 <?php }else{ ?>
 
-    <form name="paciente" class="paciente-novo-form" method="post">
+    <form name="paciente" class="paciente-novo-form" method="post" <?php echo "data-action=$action"?>>
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>

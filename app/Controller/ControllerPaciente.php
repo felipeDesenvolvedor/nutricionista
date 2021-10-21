@@ -39,16 +39,17 @@
       $this->layout = !empty($layout) ? $layout : '';
     }
 
-    public function editar(string $valorParametro)
+    public function editar()
     {
+      
       $this->pacientes = new ModelPaciente();
 
-      if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['id']) {
+      if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idBusca'])) {
 
-        $valorParametro = $_POST['id'];
+        $valorParametro = $_POST['idBusca'];
         $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro);
         $this->pacienteid = $this->pacientes[0]['id'];
-        $this->action = "editar/";
+        $this->action = "editar";
 
         $modal = new Modal(
             ['class'=>''],
@@ -62,7 +63,8 @@
             ['botao'=>'']
         );
 
-      }elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
+      }elseif($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+        $valorParametro = $_POST['id'];
         $paciente = [
           "nome"           =>$_POST['nome'],
           "cpf"            =>$_POST['cpf'],
@@ -83,7 +85,8 @@
         ];
 
         $this->pacientes->editarPaciente($paciente, $valorParametro);
-        header('Location:/pacientes', true, 302);
+        // http_response_code(201);
+        header("HTTP/1.1 201 Created");
       }
     }
 

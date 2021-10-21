@@ -31,8 +31,6 @@ class ModelPaciente extends ModelPessoa {
 
         $query->execute();
         $query->close();
-
-        echo json_encode($query);
     }
 
     public function buscarPaciente(string $valorParametro):array
