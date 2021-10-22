@@ -1,5 +1,5 @@
 node_modules
 npm-shrinkwrap.json
-psd
+*.psd
 dicas-para-construcao-de-sistema.txt
 .vscode
