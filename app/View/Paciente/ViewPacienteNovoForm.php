@@ -28,9 +28,7 @@ $paciente =  $this->pacientes;
             <span>RG:</span>
             <input type="text" name="rg" id="idRG" value="<?php echo $paciente['rg'];?>">
         </label>
-    </div>
 
-    <div>
         <label for="idSexo">
             <span class="campo-obrigatorio">Sexo:</span>
             <input type="text" name="sexo" id="idSexo" value="<?php echo $paciente['sexo'];?>">
@@ -146,12 +144,10 @@ $paciente =  $this->pacientes;
             <span>RG:</span>
             <input type="text" name="rg" id="idRG" value="">
         </label>
-    </div>
 
-    <div>
         <label for="idSexo">
             <span class="campo-obrigatorio">Sexo:</span>
-            <input type="text" name="sexo" id="idSexo" value="Marculino">
+            <input type="text" name="sexo" id="idSexo" value="">
         </label>
     </div>
 
