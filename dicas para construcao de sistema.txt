@@ -12,3 +12,7 @@
 <!-- Passo 4 -->
    <!-- Desenhar a primeira tela\ Programar -->
    <!-- Pensar em uma tela de cada vez -->
+
+
+Fazer processamento no front-end ou no back-end ?
+https://pt.stackoverflow.com/questions/293009/fazer-processamento-no-front-end-ou-no-back-end
