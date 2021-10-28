@@ -52,12 +52,12 @@ function requestPost(url, method, parametros, dados, funcao, classPagina) {
         if(xhr.readyState == 4) {
                 // requisicao bem sucedida
             if(xhr.status == 200) {
-                funcao(xhr.responseText, classPagina);
+                funcao(xhr, classPagina);
                 // console.log(xhr.responseText);
             }
 
             if(xhr.status == 201) {
-                funcao(xhr.status, classPagina);
+                funcao(xhr, classPagina);
                 // console.log(xhr.responseText);
             }
         }

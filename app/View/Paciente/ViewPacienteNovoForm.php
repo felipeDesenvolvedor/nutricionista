@@ -132,7 +132,7 @@ $paciente =  $this->pacientes;
     <div>
         <label for="idNome">
             <span class="campo-obrigatorio">Nome:</span>
-            <input type="text" name="nome" id="idNome" value="Felipe">
+            <input type="text" name="nome" id="idNome" value="">
         </label>
 
         <label for="idCpf">
@@ -154,7 +154,7 @@ $paciente =  $this->pacientes;
     <div>
         <label for="idDataNascimento">
             <span class="campo-obrigatorio">Data de Nascimento:</span>
-            <input type="text" name="dataNascimento" id="idDataNascimento" value="21/05/1996">
+            <input type="text" name="dataNascimento" id="idDataNascimento" value="">
         </label>
 
         <label for="idResponsavel">

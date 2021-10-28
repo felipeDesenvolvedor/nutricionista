@@ -22,6 +22,7 @@ class ModelPaciente extends ModelPessoa {
     public function salvarPaciente(array $pessoa, $responsavel = "", $cpfResponsavel = "")
     {
         $status = "1";
+        $retorno = "";
 
         $this->responsavel    = $responsavel;
         $this->cpfResponsavel = $cpfResponsavel;
@@ -29,8 +30,9 @@ class ModelPaciente extends ModelPessoa {
         $query = $this->mysql->prepare('insert into paciente(nome, cpf, rg, responsavel, cpfResponsavel, sexo, status, dataNascimento, email, telefone1, telefone2) values(?,?,?,?,?,?,?,?,?,?,?)');
         $query->bind_param('sssssssssss', $pessoa['nome'], $pessoa['cpf'], $pessoa['rg'], $this->responsavel, $this->cpfResponsavel, $pessoa['sexo'], $status, $pessoa['dataNascimento'], $pessoa['email'], $pessoa['telefone1'], $pessoa['telefone2']);
 
-        $query->execute();
+        $retorno = $query->execute();
         $query->close();
+        return $retorno;
     }
 
     public function buscarPaciente(string $valorParametro):array
@@ -82,7 +84,11 @@ class ModelPaciente extends ModelPessoa {
 
     public function editarPaciente(array $valores, string $id)
     {
-        $query = $this->mysql->query("UPDATE paciente SET nome = '$valores[nome]', cpf = '$valores[cpf]', rg = '$valores[rg]', sexo = '$valores[sexo]', dataNascimento = '$valores[dataNascimento]', responsavel = '$valores[responsavel]', cpfResponsavel = '$valores[cpfResponsavel]', telefone1 = '$valores[telefone1]', telefone2 = '$valores[telefone2]', email = '$valores[email]' where id = '$id'");
+        try {
+            $query = $this->mysql->query("UPDATE paciente SET nome = '$valores[nome]', cpf = '$valores[cpf]', rg = '$valores[rg]', sexo = '$valores[sexo]', dataNascimento = '$valores[dataNascimento]', responsavel = '$valores[responsavel]', cpfResponsavel = '$valores[cpfResponsavel]', telefone1 = '$valores[telefone1]', telefone2 = '$valores[telefone2]', email = '$valores[email]' where id = '$id'");
+        } catch(Exception $erro) {
+            throw  $erro;
+        }
     }
 
     public function inativarPaciente(string $id, string $status)

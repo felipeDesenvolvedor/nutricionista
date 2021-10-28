@@ -20,18 +20,26 @@ const formPaciente = () => {
     if(!campoVazio(form.nome) && !campoVazio(form.dataNascimento) && !campoVazio(form.sexo)) {
       
       let action = form.dataset.action;
-      const response = (responseText, classPagina) => {
-        if(responseText != 201) {
+      const response = (xhr, classPagina) => {
+        if(xhr.status == 404) {
 
           mostrarErro = true;
-          console.log(responseText)
-          mensagemErro(responseText);
+          mensagemErro("Recurso não encontrado");
           return;
         }
 
-        if(responseText == 201) {
+        if(xhr.status == 201) {
 
-          redirecionar("", "");
+          mostrarErro = true;
+          mensagemErro("Paciente Salvo", redirecionar);
+          return;
+        }
+
+        if(xhr.status == 500) {
+
+          // mostrarErro = true;
+          console.log(xhr)
+          // mensagemErro(xhr.responseText, redirecionar);
           return;
         }
       }
@@ -39,7 +47,9 @@ const formPaciente = () => {
       let $formData = new FormData(event.target);
 
       if(action == "editar") {
-        $formData.append("id", window.location.pathname.slice(window.location.pathname.length - 1, window.location.pathname.length))
+        let id = extractIdUrl();
+
+        $formData.append("id", id)
         requestPost("http://nutricionista.com.br/pacientes/editar", "post", 'paciente', $formData, response, "");
       }else {
         requestPost("http://nutricionista.com.br/pacientes/novo", "post", 'paciente', $formData, response, "");

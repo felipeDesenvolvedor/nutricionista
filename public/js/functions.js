@@ -31,3 +31,11 @@ function removeClass(elemento, classe) {
 function inputEmpty(input) {
   return !input.value ? true : false;
 } 
+
+function extractIdUrl() {
+  let pattern = /\/\d+/
+  let text = window.location.href
+  let result = text.match(pattern)
+  result = result[0].split('/')[1]
+  return result;
+}

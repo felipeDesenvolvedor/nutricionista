@@ -39,7 +39,7 @@ function validaEmail(campoVazio) {
   }
 }
 
-function mensagemErro(erro) {
+function mensagemErro(erro, cb) {
     var popupMensagem = estruturaDaMensagem(erro);
 
     if(mostrarErro) {
@@ -51,6 +51,8 @@ function mensagemErro(erro) {
 
     myVarTemp = setTimeout(function(){
         removeClass(popupMensagem, 'exibir');
+
+        cb ? cb("", "") : "";
     }, 4000);
 }
 

@@ -73,20 +73,25 @@
           "dataNascimento" => $_POST['dataNascimento'],
           "responsavel"    => $_POST['responsavel'],
           "cpfResponsavel" => $_POST['cpfResponsavel'],
-          "CEP"            => $_POST['CEP'],
-          "endereco"       => $_POST['endereco'],
-          "numeroEndereco" => $_POST['numeroEndereco'],
-          "municipio"      => $_POST['municipio'],
-          "bairro"         => $_POST['bairro'],
-          "complemento"    => $_POST['complemento'],
+          // "CEP"            => $_POST['CEP'],
+          // "endereco"       => $_POST['endereco'],
+          // "numeroEndereco" => $_POST['numeroEndereco'],
+          // "municipio"      => $_POST['municipio'],
+          // "bairro"         => $_POST['bairro'],
+          // "complemento"    => $_POST['complemento'],
           "telefone1"      => $_POST['telefone1'],
           "telefone2"      => $_POST['telefone2'],
           "email"          => $_POST['email']
         ];
 
-        $this->pacientes->editarPaciente($paciente, $valorParametro);
+        try {
+          $this->pacientes->editarPaciente($paciente, $valorParametro);
+          header("HTTP/1.1 201 Created");
+        }catch(Exception $erro) {
+          header('HTTP/1.1 500 Internal Server Error');
+        }
+
         // http_response_code(201);
-        header("HTTP/1.1 201 Created");
       }
     }
 
@@ -137,7 +142,7 @@
 
     public function novo()
     {
-
+      $retorno = 0;
       if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $this->action = "novo";
@@ -166,7 +171,7 @@
 
         $paciente = new ModelPaciente();
 
-       $paciente->salvarPaciente(
+       $retorno = $paciente->salvarPaciente(
           [
             "nome"           => ucwords(filter_input(INPUT_POST, 'nome',      FILTER_SANITIZE_STRING)),
             "cpf"            => filter_input(INPUT_POST, 'cpf',               FILTER_SANITIZE_STRING),
@@ -186,7 +191,15 @@
           filter_input(INPUT_POST, 'responsavel',    FILTER_SANITIZE_STRING),
           filter_input(INPUT_POST, 'cpfResponsavel', FILTER_SANITIZE_STRING)
         );
+
+
+        if($retorno) {
+          header("HTTP/1.1 201 Created");
+        }else {
+          header("HTTP/1.1 404 Not Found");
+        }
       }
+
     }
   }
 ?>
