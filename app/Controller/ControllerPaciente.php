@@ -6,6 +6,7 @@
   use app\Model\ModelPaciente;
   use app\View\Modal\Modal;
   use app\Controller\ControllerUploads;
+  use app\Dispatch;
 
   class ControllerPaciente {
     use TipoArquivos;
@@ -66,14 +67,14 @@
       //   );
       // }
 
-      // echo "<pre>".var_dump($_SERVER)."</pre>";
-      // echo "Teste";
+      $dispatch = new Dispatch();
+
 
       if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idBusca'])) {
 
         $valorParametro = $_POST['idBusca'];
-        $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro);
-        $this->pacienteid = $this->pacientes[0]['id'];
+        $this->pacientes  = $this->pacientes->buscarPaciente($valorParametro)[0];
+
         $this->action = "editar";
 
         $modal = new Modal(
